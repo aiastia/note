@@ -1,0 +1,11 @@
+ssr 客户端运行方法
+
+python版
+
+python local.py -c /home/aiastia/ss/shadowsocksr/config.json
+
+
+ss-local
+
+
+ss-redir  -c /home/aiastia/ss/shadowsocksr/config.json

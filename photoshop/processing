@@ -12,3 +12,28 @@ processing 制作灰飞烟灭的效果
 下一步只需要在ps中再使用烟云画笔和颗粒画笔在边缘稍作修饰就可以。
 前两种笔刷搜索smoke brush 就能找到，  第三种是ps中自带的笔刷
 
+# 讨论
+在最后加一句
+void keyPressed(){
+save("xx.jpg");
+}
+生成图像后 随意按下键盘的一个键   Ctrl+k  弹出文件夹，图像应该就保存在里边。
+
+在前面代码中有 void keyPress（）
+｛background（bg）；｝
+添加后 删掉这个就可以了 确认
+
+如果跟上边有冲突，试下指定按键
+void keyPressed(){
+if (key == 's') {
+save("xx.jpg");
+}
+}
+
+void keyPressed(){
+if (key == 's') {
+save("xx.jpg");
+} 
+if (key == 'x')
+{ background(bg); } 
+}

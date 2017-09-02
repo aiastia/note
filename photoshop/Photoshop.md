@@ -40,11 +40,18 @@ Height=宽度
 #补充
 
 PS动作使用方法：
-准备：1、最好使用英文版PS,版本要求Photoshop CS6以上
+准备：
+
+1、最好使用英文版PS,版本要求Photoshop CS6以上
+
 2、如果不能通过  编辑首选项—选项卡 来修改使用语言的话，可以尝试一下：找到安装目录如下:【X:\Adobe PhotoshopCS6\Locales\zh_CN\Support Files\tw10428.dat】把【tw10428.dat】文件重命名为【tw10428_bak.dat】即可,如果需要恢复中文版,把文件名修改回去即可。
+
 ▼使用：
 1、打开一个图片，Layer(图层）-New(新建）-Background from layer
+
 2、新建一空白图层，命名为“brush”
+
 3、载入动作
+
 4、点击动作运行（left right...想要那个方向爆破，就运行哪个。）
 

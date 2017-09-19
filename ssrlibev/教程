@@ -1,0 +1,8 @@
+python ：
+ 
+      python local.py -c /home/aiastia/ss/shadowsocksr/config.json
+
+
+ss-local
+
+    ss-redir  -c /home/aiastia/ss/shadowsocksr/config.json

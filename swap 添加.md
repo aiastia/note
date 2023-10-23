@@ -40,3 +40,8 @@ sed -i "/swapfile1/d" /etc/fstab
 删除 SWAP文件
 
 rm -rf /var/swapfile1
+
+```
+https://github.com/zhucaidan/swap.sh
+wget https://raw.githubusercontent.com/zhucaidan/swap.sh/main/swap.sh && bash swap.sh
+```

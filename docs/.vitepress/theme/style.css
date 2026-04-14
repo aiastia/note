@@ -55,22 +55,41 @@
 }
 
 /* ========================================
- * Navbar - 毛玻璃模糊效果
+ * Navbar - 毛玻璃模糊效果（仅桌面端）
  * ======================================== */
 .VPNav {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.VPNav:not(.top) {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+/* 只在桌面端（>=768px）启用毛玻璃效果，避免移动端覆盖导航菜单 */
+@media (min-width: 768px) {
+  .VPNav:not(.top) {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .VPNav:not(.top) {
+    background-color: rgba(17, 17, 17, 0.8) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
 
-.dark .VPNav:not(.top) {
-  background-color: rgba(17, 17, 17, 0.8) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+/* 修复移动端导航菜单层级 */
+.VPNavScreen {
+  z-index: 100 !important;
+}
+
+/* 防止 Hero 背景挡点击 */
+.VPHero .image-bg {
+  pointer-events: none;
+}
+
+/* 内容层确保在正确层级 */
+.VPContent {
+  position: relative;
+  z-index: 1;
 }
 
 /* ========================================

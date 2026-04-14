@@ -111,6 +111,42 @@ jobs:
 | Build Command | `npm run docs:build` |
 | Publish Directory | `docs/.vitepress/dist` |
 
+## Cloudflare Pages
+
+### 1. 通过 Dashboard 部署
+
+在 [Cloudflare Dashboard](https://dash.cloudflare.com/) 中进入 **Workers & Pages** → **Create** → **Pages** → **Connect to Git**，选择你的 GitHub 仓库。
+
+配置构建：
+
+| 配置项 | 值 |
+|--------|-----|
+| Framework Preset | `None` |
+| Build Command | `npm run docs:build` |
+| Build output directory | `docs/.vitepress/dist` |
+
+::: tip
+如果 `base` 设置了子路径（如 `/my-docs/`），部署到 Cloudflare Pages 自定义域名时需要将 `base` 改为 `/`。
+:::
+
+项目根目录已包含 `wrangler.toml` 配置文件，Cloudflare 会自动读取其中的构建命令和输出目录。
+
+### 2. 通过 Wrangler CLI 部署
+
+安装 Wrangler 并登录：
+
+```bash
+npm install -g wrangler
+wrangler login
+```
+
+构建并部署：
+
+```bash
+npm run docs:build
+npx wrangler pages deploy docs/.vitepress/dist --project-name=my-docs
+```
+
 ::: tip 提示
-推荐使用 Vercel 或 Netlify，配置简单且自带 CDN 加速和 HTTPS。
+Cloudflare Pages 提供免费的 CDN 加速、HTTPS 和全球边缘网络，速度非常快。
 :::

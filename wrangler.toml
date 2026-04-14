@@ -1,0 +1,5 @@
+name = "my-docs"
+pages_build_output_dir = "docs/.vitepress/dist"
+
+[build]
+command = "npm run docs:build"

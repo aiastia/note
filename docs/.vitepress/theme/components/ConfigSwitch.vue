@@ -106,3 +106,15 @@ const handleCopy = async () => {
   color: #5171d7;
 }
 </style>
+
+<style>
+.config-switch .tk-segmented {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.config-switch .tk-segmented .tk-segmented-item {
+  min-width: auto !important;
+}
+</style>

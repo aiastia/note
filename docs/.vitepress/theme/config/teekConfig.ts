@@ -18,11 +18,28 @@ const teekBlogCommonConfig: TeekConfig = {
     enabled: true,
     hideBanner: true,
   },
-  footerInfo: {
-    copyright: {
-      createYear: 2024,
-      suffix: "aiastia",
-    },
+  friendLink: {
+    list: [
+      {
+        name: "未来",
+        desc: "记录学习与成长",
+        avatar: "https://avatars.githubusercontent.com/u/19776350?v=4",
+        link: "https://github.com/aiastia",
+      },
+      {
+        name: "VitePress",
+        desc: "由 Vite 和 Vue 驱动的静态站点生成器",
+        avatar: "https://vitepress.dev/vitepress-logo-mini.svg",
+        link: "https://vitepress.dev",
+      },
+      {
+        name: "Teek 主题",
+        desc: "轻量、简洁高效的 VitePress 主题",
+        avatar: "https://vp.teek.top/teek-logo-mini.svg",
+        link: "https://github.com/Kele-Bingtang/vitepress-theme-teek",
+      },
+    ],
+    autoScroll: true,
   },
 };
 

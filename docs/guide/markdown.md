@@ -1,3 +1,12 @@
+---
+title: Markdown 扩展
+date: 2024-01-04
+categories:
+  - 进阶使用
+tags:
+  - Markdown
+---
+
 # 📦 Markdown 扩展
 
 VitePress 在标准 Markdown 基础上提供了许多扩展功能，帮助你编写更丰富的文档。

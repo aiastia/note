@@ -1,3 +1,14 @@
+---
+title: 入门指南
+date: 2024-01-01
+categories:
+  - 使用指南
+tags:
+  - 快速开始
+  - VitePress
+sticky: 1
+---
+
 # 🚀 入门指南
 
 欢迎使用 My Docs 文档模板！本指南将帮助你快速搭建属于自己的文档站点。

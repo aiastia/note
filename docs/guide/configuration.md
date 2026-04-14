@@ -1,3 +1,12 @@
+---
+title: 配置说明
+date: 2024-01-02
+categories:
+  - 使用指南
+tags:
+  - 配置
+---
+
 # ⚙️ 配置说明
 
 VitePress 的配置文件位于 `docs/.vitepress/config.ts`，以下是对各配置项的详细说明。

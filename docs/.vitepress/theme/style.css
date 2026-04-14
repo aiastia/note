@@ -1,0 +1,48 @@
+:root {
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #4f46e5;
+  --vp-c-brand-3: #4338ca;
+}
+
+.VPHomeHero {
+  background: radial-gradient(circle at 20% 50%, #6366f1 0%, transparent 40%),
+              radial-gradient(circle at 80% 50%, #22c55e 0%, transparent 40%);
+}
+
+.VPHomeHero .name {
+  font-size: 56px;
+  font-weight: 800;
+}
+
+.VPNavBar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .VPNavBar {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.VPFeature {
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.VPDoc {
+  padding-top: 24px;
+  max-width: 900px;
+}
+
+.VPButton.brand {
+  border-radius: 999px;
+  padding: 12px 20px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

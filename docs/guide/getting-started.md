@@ -4,7 +4,7 @@
 
 ## 前置要求
 
-- [Node.js](https://nodejs.org/) 18+
+- [Node.js](https://nodejs.org/) 18+（推荐 20 LTS）
 - 包管理器（npm / yarn / pnpm）
 
 ## 快速开始

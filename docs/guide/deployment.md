@@ -125,11 +125,11 @@ jobs:
 | Build Command | `npm run docs:build` |
 | Build output directory | `docs/.vitepress/dist` |
 
-::: tip
-如果 `base` 设置了子路径（如 `/my-docs/`），部署到 Cloudflare Pages 自定义域名时需要将 `base` 改为 `/`。
-:::
-
 项目根目录已包含 `wrangler.toml` 配置文件，Cloudflare 会自动读取其中的构建命令和输出目录。
+
+::: tip 自动适配 base 路径
+`config.ts` 会自动检测 Cloudflare Pages 构建环境（通过 `CF_PAGES` 环境变量），自动将 `base` 设为 `/`，无需手动修改配置。
+:::
 
 ### 2. 通过 Wrangler CLI 部署
 

@@ -4,8 +4,11 @@ export default defineConfig({
   // 基本信息
   lang: 'zh-CN',
   title: 'My Docs',
-  // 如果部署到 GitHub Pages，请修改 base 为你的仓库名，如 '/my-docs/'
-  base: '/my-docs/',
+  // 部署路径配置：
+  // - GitHub Pages: 默认 '/my-docs/'（改为你的仓库名）
+  // - Cloudflare Pages: 自动检测 CF_PAGES 环境变量，使用 '/'
+  // - 其他平台: 可设置环境变量 BASE='/' 来覆盖
+  base: process.env.BASE || (process.env.CF_PAGES ? '/' : '/my-docs/'),
   description: '基于 VitePress 的文档模板',
 
   // 功能开关

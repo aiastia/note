@@ -4,7 +4,7 @@ Welcome to the My Docs template! This guide will help you set up your own docume
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 18+ (20 LTS recommended)
+- [Node.js](https://nodejs.org/) 24+
 - Package manager (npm / yarn / pnpm)
 
 ## Quick Start

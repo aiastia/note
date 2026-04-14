@@ -42,6 +42,9 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run docs:build
@@ -67,6 +70,11 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+::: tip
+- `node-version: 22` 是 Actions 运行环境的 Node 版本，与项目最低要求无关
+- `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` 消除 Node 20 弃用警告，GitHub 将于 2026 年 6 月强制切换到 Node 24
+:::
 
 ### 3. 启用 GitHub Pages
 

@@ -14,7 +14,7 @@ This is a template page. Modify the content to fit your project.
 
 ### Requirements
 
-- Node.js 18+ (20 LTS recommended)
+- Node.js 24+
 - Your project dependencies...
 
 ### Install

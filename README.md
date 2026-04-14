@@ -16,7 +16,7 @@
 
 ### 环境要求
 
-- [Node.js](https://nodejs.org/) 18+ （推荐 20 LTS）
+- [Node.js](https://nodejs.org/) 22+
 - npm / yarn / pnpm
 
 ### 安装与运行

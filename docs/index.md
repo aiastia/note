@@ -37,5 +37,5 @@ features:
     details: 内置本地搜索，无需外部服务，输入即搜，快速定位。
   - icon: 🚀
     title: 一键部署
-    details: 支持 GitHub Pages、Vercel、Netlify 等多种平台一键部署。
+    details: 支持 GitHub Pages、Cloudflare Pages、Vercel、Netlify 等多种平台一键部署。
 ---

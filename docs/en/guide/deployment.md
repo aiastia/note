@@ -88,6 +88,42 @@ Import on [Netlify](https://netlify.com) and configure:
 | Build Command | `npm run docs:build` |
 | Publish Directory | `docs/.vitepress/dist` |
 
+## Cloudflare Pages
+
+### 1. Deploy via Dashboard
+
+Go to [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**, and select your GitHub repository.
+
+Configure the build:
+
+| Setting | Value |
+|---------|-------|
+| Framework Preset | `None` |
+| Build Command | `npm run docs:build` |
+| Build output directory | `docs/.vitepress/dist` |
+
 ::: tip
-Vercel and Netlify provide free CDN and HTTPS out of the box.
+If `base` is set to a sub-path (e.g. `/my-docs/`), change it to `/` when deploying to a custom domain on Cloudflare Pages.
+:::
+
+The project root already includes a `wrangler.toml` config file — Cloudflare will automatically read the build command and output directory from it.
+
+### 2. Deploy via Wrangler CLI
+
+Install Wrangler and log in:
+
+```bash
+npm install -g wrangler
+wrangler login
+```
+
+Build and deploy:
+
+```bash
+npm run docs:build
+npx wrangler pages deploy docs/.vitepress/dist --project-name=my-docs
+```
+
+::: tip
+Cloudflare Pages provides free CDN, HTTPS, and global edge network — extremely fast.
 :::

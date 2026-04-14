@@ -4,6 +4,14 @@
 
 > 🌐 在线预览：https://aiastia123.github.io/my-docs/
 
+## ☁️ 一键部署
+
+点击下方按钮，即可将此项目部署到对应平台（会自动 Fork 仓库并部署）：
+
+[![Deploy to Cloudflare Pages](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aiastia123/my-docs)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/aiastia123/my-docs)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aiastia123/my-docs)
+
 ---
 
 ## 🚀 日常使用（只需 3 步）

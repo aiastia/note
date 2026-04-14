@@ -13,6 +13,9 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "vitepress": "^2.0.0-alpha.17"
+    "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "vitepress-theme-teek": "^1.5.6"
   }
 }

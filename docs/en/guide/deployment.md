@@ -38,6 +38,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,7 +48,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run docs:build
@@ -60,6 +63,11 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+::: tip
+- `node-version: 22` is the Actions runtime Node version, not your project minimum
+- `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` suppresses the Node 20 deprecation warning (GitHub forces Node 24 starting June 2026)
+:::
 
 ### 3. Enable GitHub Pages
 

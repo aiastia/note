@@ -1,48 +1,49 @@
+/* ========================================
+ * 自定义样式 - My Docs
+ * 参考项目: LlmKira/Docs
+ * ======================================== */
+
+/* 主题色覆盖 */
 :root {
-  --vp-c-brand-1: #6366f1;
-  --vp-c-brand-2: #4f46e5;
-  --vp-c-brand-3: #4338ca;
+  /* 品牌色 - 修改这里来自定义你的主题色 */
+  --vp-c-brand-1: #3c8772;
+  --vp-c-brand-2: #2f6d5a;
+  --vp-c-brand-3: #245848;
+
+  /* 首页 Hero 标题渐变色 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #3c8772 10%, #2f6d5a 100%);
+
+  /* Hero 图片背景光效 */
+  --vp-home-hero-image-background-image: linear-gradient(
+    135deg,
+    rgba(60, 135, 114, 0.2) 10%,
+    rgba(47, 109, 90, 0.1) 100%
+  );
+  --vp-home-hero-image-filter: blur(44px);
 }
 
-.VPHomeHero {
-  background: radial-gradient(circle at 20% 50%, #6366f1 0%, transparent 40%),
-              radial-gradient(circle at 80% 50%, #22c55e 0%, transparent 40%);
+/* 暗色模式 */
+.dark {
+  --vp-c-brand-1: #5abf9e;
+  --vp-c-brand-2: #4aad8c;
+  --vp-c-brand-3: #3c8772;
 }
 
-.VPHomeHero .name {
-  font-size: 56px;
-  font-weight: 800;
-}
+/* ========================================
+ * 可选自定义样式
+ * ======================================== */
 
-.VPNavBar {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.6);
+/* 自定义容器样式 */
+/*
+.custom-block.tip {
+  border-color: var(--vp-c-brand-1);
 }
+*/
 
-.dark .VPNavBar {
-  background-color: rgba(0, 0, 0, 0.6);
+/* 自定义代码块样式 */
+/*
+div[class*='language-'] > pre > code {
+  font-size: 14px;
 }
-
-.VPFeature {
-  border-radius: 16px;
-  transition: all 0.25s ease;
-}
-
-.VPFeature:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.VPDoc {
-  padding-top: 24px;
-  max-width: 900px;
-}
-
-.VPButton.brand {
-  border-radius: 999px;
-  padding: 12px 20px;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+*/

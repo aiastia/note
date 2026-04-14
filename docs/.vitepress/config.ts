@@ -5,7 +5,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'My Docs',
   // 如果部署到 GitHub Pages，请修改 base 为你的仓库名，如 '/my-docs/'
-  base: '/',
+  base: '/my-docs/',
   description: '基于 VitePress 的文档模板',
 
   // 功能开关

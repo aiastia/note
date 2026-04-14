@@ -102,11 +102,11 @@ Configure the build:
 | Build Command | `npm run docs:build` |
 | Build output directory | `docs/.vitepress/dist` |
 
-::: tip
-If `base` is set to a sub-path (e.g. `/my-docs/`), change it to `/` when deploying to a custom domain on Cloudflare Pages.
-:::
-
 The project root already includes a `wrangler.toml` config file — Cloudflare will automatically read the build command and output directory from it.
+
+::: tip Auto base path detection
+`config.ts` automatically detects the Cloudflare Pages build environment (via the `CF_PAGES` env variable) and sets `base` to `/` — no manual config changes needed.
+:::
 
 ### 2. Deploy via Wrangler CLI
 

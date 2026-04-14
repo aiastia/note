@@ -12,6 +12,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "vitepress": "^2.0.0-alpha.17"
   }
 }

@@ -1,101 +1,228 @@
 # 📝 My Docs
 
-基于 [VitePress](https://vitepress.dev) 的现代化文档模板，参考 [LlmKira/Docs](https://github.com/LlmKira/Docs) 构建。
+这是我的文档网站模板，基于 VitePress 2 构建。
 
-## ✨ 特性
+> 🌐 在线预览：https://aiastia123.github.io/my-docs/
 
-- 🏠 Hero 首页布局，支持特性展示
-- 🌍 中英文双语支持，一键切换
-- 🔍 内置全文搜索
-- 🎨 自定义主题色和 CSS 变量
-- 🌙 暗色模式支持
-- 📱 响应式设计
-- 🚀 支持多种平台一键部署
+---
 
-## 📦 快速开始
+## 🚀 日常使用（只需 3 步）
 
-### 环境要求
+### 第 1 步：写 Markdown 文件
 
-- [Node.js](https://nodejs.org/) 22+
-- npm / yarn / pnpm
+在 `docs/` 目录下创建 `.md` 文件就行了！比如：
 
-### 安装与运行
+```
+docs/guide/my-new-page.md   ← 中文文档放这里
+docs/en/guide/my-new-page.md ← 英文文档放这里
+```
+
+### 第 2 步：注册到侧边栏
+
+打开 `docs/.vitepress/config.ts`，在 `sidebar` 里加一行：
+
+```ts
+// 找到对应的位置，加一行：
+{ text: '我的新页面', link: '/guide/my-new-page' }
+```
+
+### 第 3 步：本地预览 & 推送
 
 ```bash
-# 克隆仓库
-git clone https://github.com/aiastia123/my-docs.git
-cd my-docs
-
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm run docs:dev
+npm run docs:dev    # 本地预览（浏览器打开 localhost:5173）
+git add .           # 添加文件
+git commit -m "docs: 添加新页面"
+git push            # 推送到 GitHub，自动部署
 ```
 
-访问 `http://localhost:5173` 即可预览。
+**就这样！没有第 4 步了。**
 
-### 构建
+---
 
-```bash
-npm run docs:build
-```
-
-构建产物在 `docs/.vitepress/dist` 目录。
-
-## 📁 项目结构
+## 📂 目录结构（你需要关心的部分）
 
 ```
-my-docs/
-├── docs/
-│   ├── .vitepress/
-│   │   ├── config.ts          # VitePress 配置
-│   │   └── theme/
-│   │       ├── index.ts        # 主题入口
-│   │       └── style.css       # 自定义样式
-│   ├── public/                 # 静态资源
-│   ├── guide/                  # 中文使用指南
-│   ├── dev/                    # 中文开发文档
-│   ├── en/                     # 英文文档
-│   │   ├── guide/
-│   │   └── dev/
-│   └── index.md                # 首页
-├── package.json
-└── README.md
+docs/
+├── guide/              ← 📖 使用指南（中文）
+│   ├── getting-started.md
+│   ├── configuration.md
+│   └── ...在这里添加新的指南页面
+├── dev/                ← 💻 开发文档（中文）
+│   ├── basic.md
+│   └── ...在这里添加新的开发页面
+├── en/                 ← 🌍 英文文档（和中文一一对应）
+│   ├── guide/
+│   └── dev/
+└── index.md            ← 🏠 首页
 ```
 
-## ✏️ 写新文档
+> 💡 **简单记**：中文放 `docs/guide/` 或 `docs/dev/`，英文放 `docs/en/` 对应位置。
 
-1. 在 `docs/guide/` 或 `docs/dev/` 下创建新的 `.md` 文件
-2. 在 `docs/.vitepress/config.ts` 的侧边栏函数中注册
-3. （如需英文版）在 `docs/en/` 对应目录下创建同名文件
+---
 
-## 🚀 部署
+## ✍️ Markdown 写法速查
 
-支持部署到以下平台：
+写文档只需要会用 Markdown 就行，以下是常用语法：
 
-- **GitHub Pages** - 免费，适合开源项目
-- **Vercel** - 自动部署，CDN 加速
-- **Netlify** - 功能丰富
+```markdown
+# 一级标题（页面大标题）
 
-详细部署步骤请参考 [部署文档](https://aiastia123.github.io/my-docs/guide/deployment)。
+## 二级标题
 
-## 🛠️ 自定义
+### 三级标题
 
-### 修改主题色
+普通文字，**加粗**，*斜体*，`代码`
 
-编辑 `docs/.vitepress/theme/style.css`：
+- 列表项 1
+- 列表项 2
 
-```css
-:root {
-  --vp-c-brand-1: #your-color;
-  --vp-c-brand-2: #your-color-dark;
+1. 有序列表 1
+2. 有序列表 2
+
+[链接文字](https://example.com)
+
+![图片描述](./path/to/image.png)
+
+> 这是引用/提示框
+
+| 表头 1 | 表头 2 |
+|--------|--------|
+| 内容 1 | 内容 2 |
+
+\```bash
+代码块
+\```
+
+---
+
+<!-- 提示框（VitePress 扩展语法） -->
+::: tip 提示
+这是一个提示框
+:::
+
+::: warning 注意
+这是一个警告框
+:::
+```
+
+---
+
+## 🔧 配置文件说明
+
+| 文件 | 作用 | 你需要改吗？ |
+|------|------|-------------|
+| `docs/.vitepress/config.ts` | 站点配置、导航栏、侧边栏 | ✅ 添加新页面时改 |
+| `docs/.vitepress/theme/style.css` | 自定义样式、颜色 | 随意 |
+| `package.json` | 项目依赖 | 一般不用改 |
+
+---
+
+## 📋 添加新页面的完整示例
+
+假设你要添加一个叫「API 接口」的页面：
+
+### 1. 创建文件
+
+创建 `docs/guide/api.md`：
+
+```markdown
+# 📡 API 接口文档
+
+这是 API 接口的说明。
+
+## 用户接口
+
+### 获取用户信息
+
+**请求地址：** \`GET /api/user\`
+
+**返回示例：**
+
+\```json
+{
+  "name": "张三",
+  "age": 25
 }
+\```
+
+::: tip 提示
+需要在 Header 中携带 Token。
+:::
 ```
 
-### 修改站点信息
+### 2. 修改配置
 
-编辑 `docs/.vitepress/config.ts` 中的 `title`、`description` 等字段。
+打开 `docs/.vitepress/config.ts`，找到 `sidebar` 的中文部分：
+
+```ts
+// 在 items 数组里加一行：
+{ text: '📡 API 接口', link: '/guide/api' }
+```
+
+如果要英文版，同样在 `docs/en/guide/api.md` 创建文件，并在配置的英文 sidebar 里注册。
+
+### 3. 完成！
+
+本地预览确认没问题后，`git push` 推送即可。
+
+---
+
+## 🌍 中英文对照
+
+每个中文页面都可以有对应的英文版：
+
+| 中文 | 英文 |
+|------|------|
+| `docs/guide/getting-started.md` | `docs/en/guide/getting-started.md` |
+| `docs/guide/api.md` | `docs/en/guide/api.md` |
+| `docs/dev/basic.md` | `docs/en/dev/basic.md` |
+
+不需要英文版也可以，只写中文完全没问题。
+
+---
+
+## 🛠️ 常用命令
+
+```bash
+# 本地开发（修改后自动刷新）
+npm run docs:dev
+
+# 构建生产版本（检查有没有报错）
+npm run docs:build
+
+# 推送到 GitHub（会自动部署）
+git add .
+git commit -m "docs: 描述你改了什么"
+git push
+```
+
+---
+
+## ❓ 常见问题
+
+### 页面显示 404？
+检查 `config.ts` 里的 `link` 路径是否和文件路径对应（不要加 `.md` 后缀）。
+
+### 侧边栏没有显示新页面？
+需要在 `config.ts` 的 `sidebar` 里注册才会显示。
+
+### 怎么修改网站标题/描述？
+在 `config.ts` 里修改 `title` 和 `description` 字段。
+
+### 怎么修改主题颜色？
+编辑 `docs/.vitepress/theme/style.css`，修改 `--vp-c-brand-1` 等颜色变量。
+
+### 推送后多久能看到更新？
+GitHub Pages 自动部署，一般 1-3 分钟。
+
+---
+
+## 📦 环境要求
+
+- [Node.js](https://nodejs.org/) 24+
+- npm（Node.js 自带）
+
+---
 
 ## 📄 License
 

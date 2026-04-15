@@ -29,7 +29,7 @@ export default defineConfig({
   extends: teekConfig,
   lang: "zh-CN",
   title: "My Docs",
-  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/my-docs/"),
+  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/"),
   description: "基于 VitePress + Teek 主题的文档站",
   lastUpdated: true,
   cleanUrls: true,

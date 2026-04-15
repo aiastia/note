@@ -6,6 +6,7 @@ categories:
 tags:
   - 快速开始
   - VitePress
+top: true
 sticky: 1
 ---
 

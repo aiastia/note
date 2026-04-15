@@ -5,6 +5,7 @@ categories:
   - 开发文档
 tags:
   - 架构
+sticky: 2
 ---
 
 # 🏗️ 架构介绍

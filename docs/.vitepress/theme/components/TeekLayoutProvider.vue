@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted, nextTick } from "vue";
+import { ref, provide, onMounted } from "vue";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
-import { withBase } from "vitepress";
 
 // 从 localStorage 读取保存的配置，避免初始加载时需要 remount
 const getInitialConfig = () => {
@@ -18,35 +17,8 @@ const getInitialConfig = () => {
   return teekDocConfig;
 };
 
-const teekConfig = ref(getInitialConfig());
+const teekConfig = ref<TeekConfig>(getInitialConfig());
 provide(teekConfigContext, teekConfig);
-
-// 通过 DOM 操作直接更新背景图 CSS 变量，无需 remount Layout
-const updateBackgroundImages = (config: typeof teekDocConfig) => {
-  if (typeof window === "undefined") return;
-
-  // 更新 Banner 背景图
-  const bannerBgEl = document.querySelector(".tk-banner-bg-image") as HTMLElement;
-  if (bannerBgEl) {
-    const imgSrc = config.banner?.imgSrc;
-    if (imgSrc?.length) {
-      const src = Array.isArray(imgSrc) ? imgSrc[0] : typeof imgSrc === 'string' ? imgSrc : '';
-      const url = withBase(src);
-      bannerBgEl.style.setProperty("--tk-banner-bg-image-banner-img-bg", `url(${url}) center center / cover no-repeat`);
-    }
-  }
-
-  // 更新 Body 背景图
-  const bodyBgEl = document.querySelector(".tk-body-bg-image") as HTMLElement;
-  if (bodyBgEl) {
-    const imgSrc = config.bodyBgImg?.imgSrc;
-    if (imgSrc?.length) {
-      const src = Array.isArray(imgSrc) ? imgSrc[0] : typeof imgSrc === 'string' ? imgSrc : '';
-      const url = withBase(src);
-      bodyBgEl.style.setProperty("--tk-body-bg-image-body-bg-img", `url(${url}) center center / cover no-repeat`);
-    }
-  }
-};
 
 // 获取所有文章链接
 const getPostLinks = (): string[] => {
@@ -120,23 +92,16 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
   // 所有博客模式都从一言 API 获取 description
   const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
-  if (blogStyles.includes(style)) {
-    const hitokotoList = await fetchHitokotoList(3);
-    teekConfig.value = {
-      ...config,
-      banner: {
-        ...config.banner,
-        descStyle: "types",
-        description: hitokotoList,
-      },
-    };
-  } else {
-    teekConfig.value = config;
-  }
+  const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
 
-  // 通过 DOM 操作更新背景图，避免 remount 导致文章内容消失
-  await nextTick();
-  updateBackgroundImages(teekConfig.value);
+  // 用 Object.assign 就地更新，保持 Vue 响应式引用不变，
+  // Teek 内部组件会自动响应属性变化，无需 remount Layout
+  Object.assign(teekConfig.value, config);
+
+  if (blogStyles.includes(style) && teekConfig.value.banner) {
+    teekConfig.value.banner.descStyle = "types";
+    teekConfig.value.banner.description = hitokotoList;
+  }
 };
 </script>
 

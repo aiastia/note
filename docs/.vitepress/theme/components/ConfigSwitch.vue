@@ -1,6 +1,6 @@
 <script setup lang="ts" name="ConfigSwitch">
 import { TkSegmented, TkMessage, isClient, useCommon } from "vitepress-theme-teek";
-import { nextTick, ref, watch } from "vue";
+import { nextTick, ref, watch, onMounted } from "vue";
 import {
   teekDocConfig,
   teekBlogConfig,
@@ -27,10 +27,16 @@ const themeStyle = defineModel({ default: "doc" });
 
 // 简易 localStorage 持久化
 const storageKey = "tk:configStyle";
-const currentStyle = ref(typeof window !== "undefined" ? localStorage.getItem(storageKey) || "doc" : "doc");
+const currentStyle = ref("doc");
 
 const teekConfig = ref(teekDocConfig);
 const { isMobile } = useCommon();
+
+// 客户端挂载后读取 localStorage，避免 SSR 水合不匹配
+onMounted(() => {
+  const saved = localStorage.getItem(storageKey);
+  if (saved) currentStyle.value = saved;
+});
 
 const update = async (style: string) => {
   if (style === "doc") teekConfig.value = teekDocConfig;

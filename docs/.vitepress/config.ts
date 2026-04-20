@@ -109,6 +109,22 @@ export default defineConfig({
     // 搜索配置：使用 VitePress 内置本地搜索
     search: {
       provider: "local",
+      options: {
+        locales: {
+          root: { translations: { button: { buttonText: "搜索" } } },
+        },
+      },
     },
+
+    // 暗色模式切换按钮文字中文化
+    darkModeSwitchLabel: "主题模式",
+    // 轻量/暗色模式文字
+    lightModeSwitchTitle: "切换到浅色模式",
+    darkModeSwitchTitle: "切换到深色模式",
+
+    // 导航栏菜单（移动端）
+    sidebarMenuLabel: "菜单",
+    returnToTopLabel: "回到顶部",
+    langMenuLabel: "选择语言",
   },
 })

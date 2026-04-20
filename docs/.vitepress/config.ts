@@ -3,10 +3,10 @@ import { defineTeekConfig } from "vitepress-theme-teek/config"
 
 const teekConfig = defineTeekConfig({
   sidebarTrigger: true,
-  author: { name: "未来", link: "https://github.com/aiastia" },
+  author: { name: "西米露", link: "https://github.com/aiastia" },
   blogger: {
     name: "西米露",
-    slogan: "这也不会，那也不会",
+    slogan: "记录技术探索与折腾之路",
     avatar: "https://avatars.githubusercontent.com/u/19776350?v=4",
     shape: "circle-rotate",
     circleSize: 120,
@@ -17,7 +17,7 @@ const teekConfig = defineTeekConfig({
     },
     copyright: {
       createYear: 2024,
-      suffix: "aiastia",
+      suffix: "西米露",
     },
   },
   post: {
@@ -28,9 +28,9 @@ const teekConfig = defineTeekConfig({
 export default defineConfig({
   extends: teekConfig,
   lang: "zh-CN",
-  title: "My Docs",
+  title: "西米露的笔记",
   base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/"),
-  description: "基于 VitePress + Teek 主题的文档站",
+  description: "西米露的技术博客 - 记录技术探索与折腾之路",
   lastUpdated: true,
   cleanUrls: true,
 
@@ -41,61 +41,25 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
-      { text: "使用指南", link: "/guide/getting-started", activeMatch: "/guide/" },
-      { text: "开发文档", link: "/dev/basic", activeMatch: "/dev/" },
-      {
-        text: "更多",
-        items: [
-          { text: "更新日志", link: "https://github.com/aiastia123/my-docs/releases" },
-          { text: "贡献指南", link: "/guide/contributing" },
-        ],
-      },
+      { text: "归档", link: "/@pages/archivesPage" },
+      { text: "分类", link: "/@pages/categoriesPage" },
+      { text: "标签", link: "/@pages/tagsPage" },
     ],
 
-    sidebar: {
-      "/guide/": [
-        {
-          text: "快速开始",
-          collapsed: false,
-          items: [
-            { text: "入门指南", link: "/guide/getting-started" },
-            { text: "配置说明", link: "/guide/configuration" },
-            { text: "部署上线", link: "/guide/deployment" },
-          ],
-        },
-        {
-          text: "进阶使用",
-          collapsed: false,
-          items: [
-            { text: "Markdown 扩展", link: "/guide/markdown" },
-            { text: "自定义主题", link: "/guide/custom-theme" },
-            { text: "贡献指南", link: "/guide/contributing" },
-          ],
-        },
-      ],
-      "/dev/": [
-        {
-          text: "开发指南",
-          items: [
-            { text: "快速开发", link: "/dev/basic" },
-            { text: "架构介绍", link: "/dev/arch" },
-          ],
-        },
-      ],
-    },
+    sidebar: {},
 
     editLink: {
-      pattern: "https://github.com/aiastia123/my-docs/edit/teek/docs/:path",
+      pattern: "https://github.com/aiastia/note/edit/tree/docs/:path",
       text: "在 GitHub 上编辑此页",
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/aiastia123/my-docs" },
+      { icon: "github", link: "https://github.com/aiastia" },
     ],
 
     footer: {
       message: "基于 VitePress + Teek 主题构建",
-      copyright: "Copyright © 2024-present",
+      copyright: "Copyright © 2024-present 西米露",
     },
 
     lastUpdated: {

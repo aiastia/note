@@ -44,7 +44,6 @@ const teekConfig = defineTeekConfig({
     // 侧边栏插件：按年月目录自动分组，按路径区分不同侧边栏
     sidebarOption: {
       path: "posts",                // 扫描 posts 目录
-      type: "array",                // 数组模式，sidebarResolved 中统一处理
       collapsed: true,              // 分组默认折叠
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
@@ -52,8 +51,17 @@ const teekConfig = defineTeekConfig({
       sidebarResolved: (data: any) => {
         const result: Record<string, any> = {};
 
-        // ✅ 1. posts（不污染原数据，函数式链式处理）
-        const postsData = (Array.isArray(data) ? data : [])
+        // ✅ 1. posts（从 object 格式中提取所有分组，合并处理）
+        const obj = data as Record<string, any>;
+        const allGroups: any[] = [];
+        Object.keys(obj).forEach((key) => {
+          const groups = obj[key];
+          if (Array.isArray(groups)) {
+            groups.forEach((g: any) => allGroups.push(g));
+          }
+        });
+
+        const postsData = allGroups
           .map((group: any) => ({
             ...group,
             items: (group.items || [])

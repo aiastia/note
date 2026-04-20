@@ -47,13 +47,20 @@ const teekConfig = defineTeekConfig({
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
       scannerRootMd: false,         // 不扫描根目录 md
-      // 按目录名倒序排列（最新年份排最前面）
+      // 修正链接路径（补上 posts/ 前缀）+ 倒序排列
       sidebarResolved: (data: any) => {
         if (Array.isArray(data)) {
+          // 倒序排列分组（最新年份排最前）
           data.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
-          // 同时对每个分组内的文章也倒序
           data.forEach((group: any) => {
             if (Array.isArray(group.items)) {
+              // 修正每个文章链接：补上 /posts 前缀
+              group.items.forEach((item: any) => {
+                if (item.link && !item.link.startsWith("/posts")) {
+                  item.link = "/posts" + (item.link.startsWith("/") ? "" : "/") + item.link;
+                }
+              });
+              // 文章也倒序
               group.items.reverse();
             }
           });

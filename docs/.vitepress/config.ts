@@ -45,6 +45,22 @@ const teekConfig = defineTeekConfig({
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
       scannerRootMd: false,         // 不扫描根目录 md
+      // 按目录名倒序排列（最新年份排最前面）
+      sidebarResolved: (data: any) => {
+        if (Array.isArray(data)) {
+          data.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
+        } else {
+          const sorted: Record<string, any> = {};
+          Object.keys(data as Record<string, any>)
+            .sort()
+            .reverse()
+            .forEach((key) => {
+              sorted[key] = (data as Record<string, any>)[key];
+            });
+          return sorted;
+        }
+        return data;
+      },
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问

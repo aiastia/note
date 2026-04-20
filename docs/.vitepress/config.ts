@@ -79,7 +79,7 @@ export default defineConfig({
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）
     editLink: {
-      pattern: "https://github.com/aiastia/note/edit/tree/docs/:path",
+      pattern: "https://github.com/aiastia/note/edit/master/docs/:path",
       text: "在 GitHub 上编辑此页",
     },
 

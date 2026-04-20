@@ -1,6 +1,6 @@
 <script setup lang="ts" name="ConfigSwitch">
 import { TkSegmented, TkMessage, isClient, useCommon } from "vitepress-theme-teek";
-import { ref, onMounted, nextTick, watchEffect } from "vue";
+import { ref, onMounted, nextTick, watch } from "vue";
 import {
   teekDocConfig,
   teekBlogConfig,
@@ -64,7 +64,7 @@ onMounted(() => {
   const saved = localStorage.getItem(storageKey);
   if (saved) currentStyle.value = saved;
   update(currentStyle.value);
-  watchEffect(() => update(currentStyle.value));
+  watch(currentStyle, (val) => update(val));
 });
 
 const handleCopy = async () => {

@@ -1,5 +1,5 @@
 ---
-title: 1Panel openresty 反向代理 WebSocket 配置
+title: 1Panel openresty反向代理
 date: 2026-04-20
 categories:
   - 运维

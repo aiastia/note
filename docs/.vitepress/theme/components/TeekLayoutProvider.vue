@@ -4,6 +4,7 @@ import Teek, { teekConfigContext } from "vitepress-theme-teek";
 import { ref, provide, onMounted, nextTick } from "vue";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
+import { withBase } from "vitepress";
 
 // 从 localStorage 读取保存的配置，避免初始加载时需要 remount
 const getInitialConfig = () => {
@@ -18,8 +19,34 @@ const getInitialConfig = () => {
 };
 
 const teekConfig = ref(getInitialConfig());
-const layoutKey = ref(0);
 provide(teekConfigContext, teekConfig);
+
+// 通过 DOM 操作直接更新背景图 CSS 变量，无需 remount Layout
+const updateBackgroundImages = (config: typeof teekDocConfig) => {
+  if (typeof window === "undefined") return;
+
+  // 更新 Banner 背景图
+  const bannerBgEl = document.querySelector(".tk-banner-bg-image") as HTMLElement;
+  if (bannerBgEl) {
+    const imgSrc = config.banner?.imgSrc;
+    if (imgSrc?.length) {
+      const src = Array.isArray(imgSrc) ? imgSrc[0] : typeof imgSrc === 'string' ? imgSrc : '';
+      const url = withBase(src);
+      bannerBgEl.style.setProperty("--tk-banner-bg-image-banner-img-bg", `url(${url}) center center / cover no-repeat`);
+    }
+  }
+
+  // 更新 Body 背景图
+  const bodyBgEl = document.querySelector(".tk-body-bg-image") as HTMLElement;
+  if (bodyBgEl) {
+    const imgSrc = config.bodyBgImg?.imgSrc;
+    if (imgSrc?.length) {
+      const src = Array.isArray(imgSrc) ? imgSrc[0] : typeof imgSrc === 'string' ? imgSrc : '';
+      const url = withBase(src);
+      bodyBgEl.style.setProperty("--tk-body-bg-image-body-bg-img", `url(${url}) center center / cover no-repeat`);
+    }
+  }
+};
 
 // 获取所有文章链接
 const getPostLinks = (): string[] => {
@@ -86,10 +113,8 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 };
 
 let previousStyle = "";
-let isInitialized = false;
 
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
-  // 防止 Layout 重新挂载时 ConfigSwitch 再次触发导致无限循环
   if (style === previousStyle) return;
   previousStyle = style;
 
@@ -109,20 +134,14 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
     teekConfig.value = config;
   }
 
-  // 首次调用（恢复保存的配置）不 remount，避免页面刷新时文章内容消失
-  if (!isInitialized) {
-    isInitialized = true;
-    return;
-  }
-
-  // 用户主动切换配置时，remount Layout 使背景图重新初始化
+  // 通过 DOM 操作更新背景图，避免 remount 导致文章内容消失
   await nextTick();
-  layoutKey.value++;
+  updateBackgroundImages(teekConfig.value);
 };
 </script>
 
 <template>
-  <Teek.Layout :key="layoutKey">
+  <Teek.Layout>
     <template #teek-theme-enhance-bottom>
       <ClientOnly>
         <ConfigSwitch @switch="handleConfigSwitch" />

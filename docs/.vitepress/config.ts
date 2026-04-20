@@ -39,6 +39,13 @@ const teekConfig = defineTeekConfig({
 
   // 内置 Vite 插件配置
   vitePlugins: {
+    // 侧边栏插件：按年份月份目录自动分组，支持折叠
+    sidebarOption: {
+      collapsed: true,              // 分组默认折叠
+      initItemsText: true,          // 显示目录名作为分组标题
+      sortNumFromFileName: true,    // 按文件名前缀序号排序
+      scannerRootMd: false,         // 不扫描根目录 md
+    },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问
     fileContentLoaderIgnore: ["**/ai/**"],
@@ -71,9 +78,6 @@ export default defineConfig({
       { text: "标签", link: "/@pages/tagsPage" },
       { text: "🐾 Clawy 专栏", link: "/ai/clawy-first-post" },
     ],
-
-    // 侧边栏配置（空对象表示不启用侧边栏导航）
-    sidebar: {},
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）
     editLink: {

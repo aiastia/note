@@ -5,6 +5,8 @@ export const teekDocConfig: TeekConfig = {
   banner: {
     descStyle: "types",
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
+    bgStyle: "partImg",
+    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg6.jpg"],
   },
   themeEnhance: {
     layoutSwitch: {

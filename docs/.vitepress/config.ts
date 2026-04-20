@@ -44,59 +44,66 @@ const teekConfig = defineTeekConfig({
     // 侧边栏插件：按年月目录自动分组，按路径区分不同侧边栏
     sidebarOption: {
       path: "posts",                // 扫描 posts 目录
+      type: "array",                // 数组模式，sidebarResolved 中统一处理
       collapsed: true,              // 分组默认折叠
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
       scannerRootMd: false,         // 不扫描根目录 md
-      // 合并所有年月到 /posts/ 路径 + 手动添加 /ai/ 侧边栏
       sidebarResolved: (data: any) => {
         const result: Record<string, any> = {};
 
-        // 1. 收集所有分组，合并到 /posts/ 下
-        const allGroups: any[] = [];
-        const obj = data as Record<string, any>;
-        Object.keys(obj).forEach((key) => {
-          const groups = obj[key];
-          if (Array.isArray(groups)) {
-            groups.forEach((group: any) => {
-              if (group.items) {
-                // 修正链接：补上 /posts 前缀
-                group.items.forEach((item: any) => {
-                  if (item.link && !item.link.startsWith("/posts")) {
-                    item.link = "/posts" + (item.link.startsWith("/") ? "" : "/") + item.link;
-                  }
-                });
-                // 文章倒序
-                group.items.reverse();
+        // ✅ 1. posts（不污染原数据，函数式链式处理）
+        const postsData = (Array.isArray(data) ? data : [])
+          .map((group: any) => ({
+            ...group,
+            items: (group.items || [])
+              .map((item: any) => ({
+                ...item,
+                link: item.link?.startsWith("/posts")
+                  ? item.link
+                  : "/posts/" + item.link.replace(/^\/?/, ""),
+              }))
+              .reverse(),
+          }))
+          .sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
+
+        result["/posts/"] = postsData;
+
+        // ✅ 2. ai（递归扫描，支持嵌套目录）
+        const scan = (dir: string, base = "/ai"): any[] => {
+          const entries = readdirSync(dir, { withFileTypes: true });
+          return entries
+            .filter((e: any) => e.name !== "index.md")
+            .map((e: any) => {
+              const fullPath = resolve(dir, e.name);
+              if (e.isDirectory()) {
+                return {
+                  text: e.name,
+                  items: scan(fullPath, `${base}/${e.name}`),
+                };
               }
-              allGroups.push(group);
-            });
-          }
-        });
+              if (e.name.endsWith(".md")) {
+                const content = readFileSync(fullPath, "utf-8");
+                const titleMatch = content.match(/^---[\s\S]*?title:\s*(.+)$/m);
+                const h1Match = content.match(/^#\s+(.+)$/m);
+                const text = (titleMatch?.[1] || h1Match?.[1] || e.name.replace(".md", "")).trim();
+                return {
+                  text,
+                  link: `${base}/${e.name.replace(".md", "")}`,
+                };
+              }
+              return null;
+            })
+            .filter(Boolean);
+        };
 
-        // 按年份月份倒序排列
-        allGroups.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
-        result["/posts/"] = allGroups;
-
-        // 2. AI 页面侧边栏（自动扫描 docs/ai/ 目录生成）
-        const aiDir = resolve("docs/ai");
-        try {
-          const aiFiles = readdirSync(aiDir)
-            .filter((f: string) => f.endsWith(".md"))
-            .sort();
-          const aiItems = aiFiles.map((f: string) => {
-            const link = `/ai/${f.replace(/\.md$/, "")}`;
-            // 读取 frontmatter title 或 h1 标题
-            const content = readFileSync(resolve(aiDir, f), "utf-8");
-            const titleMatch = content.match(/^---\n[\s\S]*?^title:\s*["']?(.+?)["']?\s*$/m);
-            const h1Match = content.match(/^#\s+(.+)$/m);
-            const text = (titleMatch ? titleMatch[1] : h1Match ? h1Match[1] : f.replace(/\.md$/, "")).trim();
-            return { text, link };
-          });
-          result["/ai/"] = aiItems;
-        } catch {
-          result["/ai/"] = [];
-        }
+        result["/ai/"] = [
+          {
+            text: "Clawy 专栏",
+            collapsed: true,
+            items: scan(resolve("docs/ai")),
+          },
+        ];
 
         return result;
       },

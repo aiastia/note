@@ -76,6 +76,12 @@ export const teekBlogParkConfig: TeekConfig = {
         { name: "Telegram", link: "https://t.me/aiastia" },
       ],
     },
+    {
+      title: "联系我",
+      links: [
+        { name: "X (Twitter)", link: "https://x.com/aiastia123" },
+      ],
+    },
   ],
 };
 

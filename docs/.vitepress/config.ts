@@ -41,6 +41,8 @@ const teekConfig = defineTeekConfig({
   vitePlugins: {
     // 侧边栏插件：按年份月份目录自动分组，支持折叠
     sidebarOption: {
+      path: "posts",                // 扫描 posts 目录
+      type: "array",                // 使用数组模式，所有分组显示在同一个侧边栏
       collapsed: true,              // 分组默认折叠
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
@@ -49,15 +51,12 @@ const teekConfig = defineTeekConfig({
       sidebarResolved: (data: any) => {
         if (Array.isArray(data)) {
           data.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
-        } else {
-          const sorted: Record<string, any> = {};
-          Object.keys(data as Record<string, any>)
-            .sort()
-            .reverse()
-            .forEach((key) => {
-              sorted[key] = (data as Record<string, any>)[key];
-            });
-          return sorted;
+          // 同时对每个分组内的文章也倒序
+          data.forEach((group: any) => {
+            if (Array.isArray(group.items)) {
+              group.items.reverse();
+            }
+          });
         }
         return data;
       },

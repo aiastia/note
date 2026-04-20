@@ -2,10 +2,22 @@
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
 import { ref, provide, onMounted, nextTick } from "vue";
-import { teekDocConfig } from "../config/teekConfig";
+import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
-const teekConfig = ref(teekDocConfig);
+// 从 localStorage 读取保存的配置，避免初始加载时需要 remount
+const getInitialConfig = () => {
+  if (typeof window === "undefined") return teekDocConfig;
+  const saved = localStorage.getItem("tk:configStyle");
+  if (saved === "blog") return teekBlogConfig;
+  if (saved === "blog-part") return teekBlogParkConfig;
+  if (saved === "blog-full") return teekBlogFullConfig;
+  if (saved === "blog-body") return teekBlogBodyConfig;
+  if (saved === "blog-card") return teekBlogCardConfig;
+  return teekDocConfig;
+};
+
+const teekConfig = ref(getInitialConfig());
 const layoutKey = ref(0);
 provide(teekConfigContext, teekConfig);
 
@@ -74,6 +86,7 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 };
 
 let previousStyle = "";
+let isInitialized = false;
 
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   // 防止 Layout 重新挂载时 ConfigSwitch 再次触发导致无限循环
@@ -96,6 +109,13 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
     teekConfig.value = config;
   }
 
+  // 首次调用（恢复保存的配置）不 remount，避免页面刷新时文章内容消失
+  if (!isInitialized) {
+    isInitialized = true;
+    return;
+  }
+
+  // 用户主动切换配置时，remount Layout 使背景图重新初始化
   await nextTick();
   layoutKey.value++;
 };

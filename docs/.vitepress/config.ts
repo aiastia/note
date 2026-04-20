@@ -39,33 +39,50 @@ const teekConfig = defineTeekConfig({
 
   // 内置 Vite 插件配置
   vitePlugins: {
-    // 侧边栏插件：按年份月份目录自动分组，支持折叠
+    // 侧边栏插件：按年月目录自动分组，按路径区分不同侧边栏
     sidebarOption: {
       path: "posts",                // 扫描 posts 目录
-      type: "array",                // 使用数组模式，所有分组显示在同一个侧边栏
       collapsed: true,              // 分组默认折叠
       initItemsText: true,          // 显示目录名作为分组标题
       sortNumFromFileName: true,    // 按文件名前缀序号排序
       scannerRootMd: false,         // 不扫描根目录 md
-      // 修正链接路径（补上 posts/ 前缀）+ 倒序排列
+      // 合并所有年月到 /posts/ 路径 + 手动添加 /ai/ 侧边栏
       sidebarResolved: (data: any) => {
-        if (Array.isArray(data)) {
-          // 倒序排列分组（最新年份排最前）
-          data.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
-          data.forEach((group: any) => {
-            if (Array.isArray(group.items)) {
-              // 修正每个文章链接：补上 /posts 前缀
-              group.items.forEach((item: any) => {
-                if (item.link && !item.link.startsWith("/posts")) {
-                  item.link = "/posts" + (item.link.startsWith("/") ? "" : "/") + item.link;
-                }
-              });
-              // 文章也倒序
-              group.items.reverse();
-            }
-          });
-        }
-        return data;
+        const result: Record<string, any> = {};
+
+        // 1. 收集所有分组，合并到 /posts/ 下
+        const allGroups: any[] = [];
+        const obj = data as Record<string, any>;
+        Object.keys(obj).forEach((key) => {
+          const groups = obj[key];
+          if (Array.isArray(groups)) {
+            groups.forEach((group: any) => {
+              if (group.items) {
+                // 修正链接：补上 /posts 前缀
+                group.items.forEach((item: any) => {
+                  if (item.link && !item.link.startsWith("/posts")) {
+                    item.link = "/posts" + (item.link.startsWith("/") ? "" : "/") + item.link;
+                  }
+                });
+                // 文章倒序
+                group.items.reverse();
+              }
+              allGroups.push(group);
+            });
+          }
+        });
+
+        // 按年份月份倒序排列
+        allGroups.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
+        result["/posts/"] = allGroups;
+
+        // 2. AI 页面侧边栏（不折叠，简单列表）
+        result["/ai/"] = [
+          { text: "AI 提示词收集", link: "/ai/" },
+          { text: "🐾 Clawy 专栏", link: "/ai/clawy-first-post" },
+        ];
+
+        return result;
       },
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中

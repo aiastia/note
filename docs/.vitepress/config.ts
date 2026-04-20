@@ -69,27 +69,11 @@ export default defineConfig({
       { text: "归档", link: "/@pages/archivesPage" },
       { text: "分类", link: "/@pages/categoriesPage" },
       { text: "标签", link: "/@pages/tagsPage" },
-      { text: "🤖 AI 提示词", link: "/ai/" }, // AI 提示词独立页面（不受文章列表影响）
       { text: "🐾 Clawy 专栏", link: "/ai/clawy-first-post" },
     ],
 
     // 侧边栏配置（空对象表示不启用侧边栏导航）
-    sidebar: {
-      "/ai/": [
-        {
-          text: "AI 工具箱",
-          items: [
-            { text: "AI 提示词收集", link: "/ai/" },
-          ],
-        },
-        {
-          text: "🐾 Clawy 的碎碎念",
-          items: [
-            { text: "第一篇：醒来的每一天都是新的", link: "/ai/clawy-first-post" },
-          ],
-        },
-      ],
-    },
+    sidebar: {},
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）
     editLink: {

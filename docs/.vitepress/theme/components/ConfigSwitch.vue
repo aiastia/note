@@ -1,6 +1,6 @@
 <script setup lang="ts" name="ConfigSwitch">
 import { TkSegmented, TkMessage, isClient, useCommon } from "vitepress-theme-teek";
-import { nextTick, ref, watch, onMounted } from "vue";
+import { ref, onMounted, nextTick, watchEffect } from "vue";
 import {
   teekDocConfig,
   teekBlogConfig,
@@ -23,48 +23,46 @@ const emit = defineEmits<{
   switch: [config: typeof teekDocConfig, style: string];
 }>();
 
-const themeStyle = defineModel({ default: "doc" });
-
-// 简易 localStorage 持久化
-const storageKey = "tk:configStyle";
+// 单一数据源
 const currentStyle = ref("doc");
-
 const teekConfig = ref(teekDocConfig);
+
+const storageKey = "tk:configStyle";
 const { isMobile } = useCommon();
 
-// 客户端挂载后读取 localStorage，避免 SSR 水合不匹配
-onMounted(() => {
-  const saved = localStorage.getItem(storageKey);
-  if (saved) currentStyle.value = saved;
-});
-
+// 统一更新函数（只在客户端执行）
 const update = async (style: string) => {
   if (style === "doc") teekConfig.value = teekDocConfig;
-  if (style === "blog") teekConfig.value = teekBlogConfig;
-  if (style === "blog-part") teekConfig.value = teekBlogParkConfig;
-  if (style === "blog-full") teekConfig.value = teekBlogFullConfig;
-  if (style === "blog-body") teekConfig.value = teekBlogBodyConfig;
-  if (style === "blog-card") teekConfig.value = teekBlogCardConfig;
+  else if (style === "blog") teekConfig.value = teekBlogConfig;
+  else if (style === "blog-part") teekConfig.value = teekBlogParkConfig;
+  else if (style === "blog-full") teekConfig.value = teekBlogFullConfig;
+  else if (style === "blog-body") teekConfig.value = teekBlogBodyConfig;
+  else if (style === "blog-card") teekConfig.value = teekBlogCardConfig;
 
   emit("switch", teekConfig.value, style);
-
-  if (typeof window !== "undefined") localStorage.setItem(storageKey, style);
+  localStorage.setItem(storageKey, style);
 
   await nextTick();
 
   if (!isClient) return;
   const navDom = document.querySelector(".VPNavBar") as HTMLElement;
-  if (["blog-full", "blog-body", "blog-card"].includes(style) && teekConfig.value.banner?.enabled !== false) {
+  if (
+    ["blog-full", "blog-body", "blog-card"].includes(style) &&
+    teekConfig.value.banner?.enabled !== false
+  ) {
     navDom?.classList.add("full-img-nav-bar");
-  } else navDom?.classList.remove("full-img-nav-bar");
+  } else {
+    navDom?.classList.remove("full-img-nav-bar");
+  }
 };
 
-watch(themeStyle, update, { immediate: true });
-watch(currentStyle, newVal => {
-  if (newVal) {
-    themeStyle.value = newVal;
-  }
-}, { immediate: true });
+// 所有副作用统一延迟到客户端
+onMounted(() => {
+  const saved = localStorage.getItem(storageKey);
+  if (saved) currentStyle.value = saved;
+  update(currentStyle.value);
+  watchEffect(() => update(currentStyle.value));
+});
 
 const handleCopy = async () => {
   try {

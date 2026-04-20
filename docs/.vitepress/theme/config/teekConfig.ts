@@ -50,6 +50,7 @@ export const teekBlogConfig: TeekConfig = {
     name: "🎉 My Docs",
     description: "记录学习与成长",
     bgStyle: "partImg",
+    imgSrc: ["/blog/bg1.jpg"],
   },
 };
 

@@ -55,3 +55,25 @@ slmgr /xpr
 
 # 查看详细激活信息
 slmgr /dlv
+```
+
+## 常用 GVLK 密钥
+
+不同版本的 Windows / Office 需要使用不同的 KMS 客户端安装密钥（GVLK），上文使用的 `W269N-WFGWX-YVC9B-4J6C9-T83GX` 适用于 Windows 10/11 Pro。
+
+更多版本的密钥请查看微软官方文档：
+
+- **Windows**：[KMS 客户端安装密钥](https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys)
+- **Office**：[Office GVLK 密钥](https://learn.microsoft.com/zh-cn/DeployOffice/vlactivation/gvlks)
+
+## KMS 服务器
+
+网络上有很多公开的 KMS 服务器，可参考：
+
+- [KMS 服务器合集 - CoolHub](https://www.coolhub.top/archives/14/comment-page-8)
+
+## 参考链接
+
+- [Windows KMS 客户端激活密钥（英文）](https://learn.microsoft.com/en-us/DeployOffice/vlactivation/gvlks)
+- [Windows Server KMS 客户端激活密钥](https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys)
+- [Office GVLK 密钥](https://learn.microsoft.com/zh-cn/DeployOffice/vlactivation/gvlks)

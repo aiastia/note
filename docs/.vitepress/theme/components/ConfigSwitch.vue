@@ -44,6 +44,9 @@ const update = async (style: string) => {
 
   await nextTick();
 
+  // 博客全图模式：添加 body class
+  document.body.classList.toggle("tk-style-blog-body", style === "blog-body");
+
   if (!isClient) return;
   const navDom = document.querySelector(".VPNavBar") as HTMLElement;
   if (

@@ -16,7 +16,7 @@ const teekConfig = defineTeekConfig({
       name: "Theme By Teek",
     },
     copyright: {
-      createYear: 2024,
+      createYear: 2026,
       suffix: "西米露",
     },
   },
@@ -59,7 +59,7 @@ export default defineConfig({
 
     footer: {
       message: "基于 VitePress + Teek 主题构建",
-      copyright: "Copyright © 2024-present 西米露",
+      copyright: "Copyright © 2026-present 西米露",
     },
 
     lastUpdated: {

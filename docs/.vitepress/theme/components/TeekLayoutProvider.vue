@@ -94,9 +94,18 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
   const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
 
-  // 用 Object.assign 就地更新，保持 Vue 响应式引用不变，
-  // Teek 内部组件会自动响应属性变化，无需 remount Layout
+  // 先展开嵌套对象，创建新引用，确保 Vue 能追踪到深层变更
+  // Teek 内部可能只 watch 了 banner/bodyBgImg 本身的引用，
+  // 而不是其内部属性（如 imgSrc），所以必须替换整个对象
+  if (config.banner) teekConfig.value.banner = { ...config.banner };
+  if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+
+  // 其他配置再 merge
   Object.assign(teekConfig.value, config);
+
+  // 再次展开，确保赋值后的引用也是新的（覆盖 Object.assign 的浅拷贝）
+  if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };
+  if (teekConfig.value.bodyBgImg) teekConfig.value.bodyBgImg = { ...teekConfig.value.bodyBgImg };
 
   if (blogStyles.includes(style) && teekConfig.value.banner) {
     teekConfig.value.banner.descStyle = "types";

@@ -1,27 +1,52 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide } from "vue";
+import { ref, provide, onMounted } from "vue";
 import { teekDocConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
 const teekConfig = ref(teekDocConfig);
 provide(teekConfigContext, teekConfig);
 
-const goRandom = () => {
-  const posts = document.querySelectorAll("a[class*='title']");
-  if (posts.length === 0) return;
+// 获取所有文章链接
+const getPostLinks = (): string[] => {
   const links: string[] = [];
+  const posts = document.querySelectorAll("a[class*='title']");
   posts.forEach((el) => {
     const href = (el as HTMLAnchorElement).href;
     if (href && !href.includes("#")) {
       links.push(href);
     }
   });
+  return links;
+};
+
+const goRandom = () => {
+  // 先从 sessionStorage 获取缓存的链接列表
+  let links: string[] = [];
+  const cached = sessionStorage.getItem('postLinks');
+  if (cached) {
+    links = JSON.parse(cached);
+  } else {
+    links = getPostLinks();
+    if (links.length > 0) {
+      sessionStorage.setItem('postLinks', JSON.stringify(links));
+    }
+  }
   if (links.length > 0) {
     window.location.href = links[Math.floor(Math.random() * links.length)];
   }
 };
+
+// 首页时缓存文章链接
+onMounted(() => {
+  if (window.location.pathname === '/' || window.location.pathname === '/note/') {
+    const links = getPostLinks();
+    if (links.length > 0) {
+      sessionStorage.setItem('postLinks', JSON.stringify(links));
+    }
+  }
+});
 
 // 从一言 Hitokoto API 获取多条不重复句子
 const fetchHitokotoList = async (count: number): Promise<string[]> => {

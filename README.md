@@ -2,7 +2,7 @@
 
 这是我的文档网站模板，基于 VitePress 2 构建。
 
-> 🌐 在线预览：https://aiastia123.github.io/my-docs/
+> 🌐 [在线预览](https://my.aiastia.me/note/)
 
 ## ☁️ 一键部署
 

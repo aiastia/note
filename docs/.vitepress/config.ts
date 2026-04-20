@@ -1,5 +1,7 @@
 import { defineConfig } from "vitepress"
 import { defineTeekConfig } from "vitepress-theme-teek/config"
+import { readdirSync, readFileSync } from "node:fs"
+import { resolve } from "node:path"
 
 /**
  * Teek 主题配置
@@ -76,11 +78,25 @@ const teekConfig = defineTeekConfig({
         allGroups.sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
         result["/posts/"] = allGroups;
 
-        // 2. AI 页面侧边栏（不折叠，简单列表）
-        result["/ai/"] = [
-          { text: "AI 提示词收集", link: "/ai/" },
-          { text: "🐾 Clawy 专栏", link: "/ai/clawy-first-post" },
-        ];
+        // 2. AI 页面侧边栏（自动扫描 docs/ai/ 目录生成）
+        const aiDir = resolve("docs/ai");
+        try {
+          const aiFiles = readdirSync(aiDir)
+            .filter((f: string) => f.endsWith(".md"))
+            .sort();
+          const aiItems = aiFiles.map((f: string) => {
+            const link = `/ai/${f.replace(/\.md$/, "")}`;
+            // 读取 frontmatter title 或 h1 标题
+            const content = readFileSync(resolve(aiDir, f), "utf-8");
+            const titleMatch = content.match(/^---\n[\s\S]*?^title:\s*["']?(.+?)["']?\s*$/m);
+            const h1Match = content.match(/^#\s+(.+)$/m);
+            const text = (titleMatch ? titleMatch[1] : h1Match ? h1Match[1] : f.replace(/\.md$/, "")).trim();
+            return { text, link };
+          });
+          result["/ai/"] = aiItems;
+        } catch {
+          result["/ai/"] = [];
+        }
 
         return result;
       },

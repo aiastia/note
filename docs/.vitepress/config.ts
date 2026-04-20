@@ -29,7 +29,7 @@ export default defineConfig({
   extends: teekConfig,
   lang: "zh-CN",
   title: "西米露的笔记",
-  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/"),
+  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/note"),
   description: "西米露的技术博客 - 记录技术探索与折腾之路",
   lastUpdated: true,
   cleanUrls: true,

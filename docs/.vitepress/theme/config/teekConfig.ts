@@ -59,7 +59,7 @@ export const teekBlogParkConfig: TeekConfig = {
   banner: {
     name: "🎉 My Docs",
     bgStyle: "partImg",
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    imgSrc: ["/blog/bg1.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",
@@ -87,7 +87,7 @@ export const teekBlogFullConfig: TeekConfig = {
   banner: {
     name: "🎉 My Docs",
     bgStyle: "fullImg",
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    imgSrc: ["/blog/bg1.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",
@@ -105,7 +105,7 @@ export const teekBlogBodyConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   pageStyle: "segment-nav",
   bodyBgImg: {
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    imgSrc: ["/blog/bg1.jpg"],
   },
   banner: {
     name: "🎉 My Docs",
@@ -133,7 +133,7 @@ export const teekBlogCardConfig: TeekConfig = {
   banner: {
     name: "🎉 My Docs",
     bgStyle: "fullImg",
-    imgSrc: ["/blog/bg1.webp", "/blog/bg2.webp", "/blog/bg3.webp"],
+    imgSrc: ["/blog/bg1.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",

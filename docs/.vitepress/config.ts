@@ -1,7 +1,5 @@
 import { defineConfig } from "vitepress"
 import { defineTeekConfig } from "vitepress-theme-teek/config"
-import { readdirSync, readFileSync } from "node:fs"
-import { resolve } from "node:path"
 
 /**
  * Teek 主题配置
@@ -41,80 +39,9 @@ const teekConfig = defineTeekConfig({
 
   // 内置 Vite 插件配置
   vitePlugins: {
-    // 侧边栏插件：按年月目录自动分组，按路径区分不同侧边栏
+    // 侧边栏插件：使用 Teek 默认自动生成
     sidebarOption: {
-      path: "posts",                // 扫描 posts 目录
       collapsed: true,              // 分组默认折叠
-      initItemsText: true,          // 显示目录名作为分组标题
-      sortNumFromFileName: true,    // 按文件名前缀序号排序
-      scannerRootMd: false,         // 不扫描根目录 md
-      sidebarResolved: (data: any) => {
-        const result: Record<string, any> = {};
-
-        // ✅ 1. posts（从 object 格式中提取所有分组，合并处理）
-        const obj = data as Record<string, any>;
-        const allGroups: any[] = [];
-        Object.keys(obj).forEach((key) => {
-          const groups = obj[key];
-          if (Array.isArray(groups)) {
-            groups.forEach((g: any) => allGroups.push(g));
-          }
-        });
-
-        const postsData = allGroups
-          .map((group: any) => ({
-            ...group,
-            items: (group.items || [])
-              .map((item: any) => ({
-                ...item,
-                link: item.link?.startsWith("/posts")
-                  ? item.link
-                  : "/posts/" + item.link.replace(/^\/?/, ""),
-              }))
-              .reverse(),
-          }))
-          .sort((a: any, b: any) => (b.text || "").localeCompare(a.text || ""));
-
-        result["/posts/"] = postsData;
-
-        // ✅ 2. ai（递归扫描，支持嵌套目录）
-        const scan = (dir: string, base = "/ai"): any[] => {
-          const entries = readdirSync(dir, { withFileTypes: true });
-          return entries
-            .filter((e: any) => e.name !== "index.md")
-            .map((e: any) => {
-              const fullPath = resolve(dir, e.name);
-              if (e.isDirectory()) {
-                return {
-                  text: e.name,
-                  items: scan(fullPath, `${base}/${e.name}`),
-                };
-              }
-              if (e.name.endsWith(".md")) {
-                const content = readFileSync(fullPath, "utf-8");
-                const titleMatch = content.match(/^---[\s\S]*?title:\s*(.+)$/m);
-                const h1Match = content.match(/^#\s+(.+)$/m);
-                const text = (titleMatch?.[1] || h1Match?.[1] || e.name.replace(".md", "")).trim();
-                return {
-                  text,
-                  link: `${base}/${e.name.replace(".md", "")}`,
-                };
-              }
-              return null;
-            })
-            .filter(Boolean);
-        };
-
-        result["/ai/"] = [
-          {
-            text: "Clawy 专栏",
-            collapsed: true,
-            items: scan(resolve("docs/ai")),
-          },
-        ];
-
-        return result;
-      },
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问

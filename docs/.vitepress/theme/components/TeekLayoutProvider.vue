@@ -1,20 +1,12 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { watch, ref, provide } from "vue";
+import { ref, provide } from "vue";
 import { teekDocConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
-const currentStyle = ref("doc");
 const teekConfig = ref(teekDocConfig);
 provide(teekConfigContext, teekConfig);
-
-// 监听模式切换，动态添加 body class
-watch(currentStyle, (style) => {
-  if (typeof document !== "undefined") {
-    document.body.classList.toggle("tk-style-blog-body", style === "blog-body");
-  }
-});
 
 // 从一言 Hitokoto API 获取多条不重复句子
 const fetchHitokotoList = async (count: number): Promise<string[]> => {
@@ -59,13 +51,13 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   <Teek.Layout>
     <template #teek-theme-enhance-bottom>
       <ClientOnly>
-        <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+        <ConfigSwitch @switch="handleConfigSwitch" />
       </ClientOnly>
     </template>
 
     <template #nav-screen-content-after>
       <ClientOnly>
-        <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+        <ConfigSwitch @switch="handleConfigSwitch" />
       </ClientOnly>
     </template>
   </Teek.Layout>

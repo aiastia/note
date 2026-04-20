@@ -2,10 +2,9 @@
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
 import { useData } from "vitepress";
-import { watch, ref, provide, computed } from "vue";
+import { watch, ref, provide } from "vue";
 import { teekDocConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
-import HitokotoBanner from "./HitokotoBanner.vue";
 
 const { frontmatter } = useData();
 
@@ -35,7 +34,7 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   // 所有博客模式都从一言 API 获取 description
-  const blogStyles = ["blog", "blog-part", "blog-full", "blog-body", "blog-card"];
+  const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
   if (blogStyles.includes(style)) {
     const hitokotoList = await fetchHitokotoList(3);
     teekConfig.value = {
@@ -54,10 +53,6 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
 <template>
   <Teek.Layout>
-    <template #home-hero-after>
-      <HitokotoBanner v-if="currentStyle === 'doc'" />
-    </template>
-
     <template #teek-theme-enhance-bottom>
       <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
     </template>

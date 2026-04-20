@@ -1,6 +1,6 @@
 ---
 title: dig 命令使用指南
-date: 2026-04-20
+date: 2026-04-19
 categories:
   - 工具使用
 tags:

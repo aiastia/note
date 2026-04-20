@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted } from "vue";
+import { ref, provide, onMounted, nextTick } from "vue";
 import { teekDocConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
 const teekConfig = ref(teekDocConfig);
+const layoutKey = ref(0);
 provide(teekConfigContext, teekConfig);
 
 // 获取所有文章链接
@@ -72,7 +73,13 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
   }
 };
 
+let previousStyle = "";
+
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
+  // 防止 Layout 重新挂载时 ConfigSwitch 再次触发导致无限循环
+  if (style === previousStyle) return;
+  previousStyle = style;
+
   // 所有博客模式都从一言 API 获取 description
   const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
   if (blogStyles.includes(style)) {
@@ -88,11 +95,14 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   } else {
     teekConfig.value = config;
   }
+
+  await nextTick();
+  layoutKey.value++;
 };
 </script>
 
 <template>
-  <Teek.Layout>
+  <Teek.Layout :key="layoutKey">
     <template #teek-theme-enhance-bottom>
       <ClientOnly>
         <ConfigSwitch @switch="handleConfigSwitch" />

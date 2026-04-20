@@ -27,7 +27,7 @@ const themeStyle = defineModel({ default: "doc" });
 
 // 简易 localStorage 持久化
 const storageKey = "tk:configStyle";
-const currentStyle = ref(typeof localStorage !== "undefined" ? localStorage.getItem(storageKey) || "doc" : "doc");
+const currentStyle = ref(typeof window !== "undefined" ? localStorage.getItem(storageKey) || "doc" : "doc");
 
 const teekConfig = ref(teekDocConfig);
 const { isMobile } = useCommon();
@@ -42,7 +42,7 @@ const update = async (style: string) => {
 
   emit("switch", teekConfig.value, style);
 
-  if (typeof localStorage !== "undefined") localStorage.setItem(storageKey, style);
+  if (typeof window !== "undefined") localStorage.setItem(storageKey, style);
 
   await nextTick();
 

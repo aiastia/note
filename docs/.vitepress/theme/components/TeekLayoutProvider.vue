@@ -58,11 +58,15 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 <template>
   <Teek.Layout>
     <template #teek-theme-enhance-bottom>
-      <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+      <ClientOnly>
+        <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+      </ClientOnly>
     </template>
 
     <template #nav-screen-content-after>
-      <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+      <ClientOnly>
+        <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
+      </ClientOnly>
     </template>
   </Teek.Layout>
 </template>

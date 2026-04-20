@@ -1,6 +1,6 @@
 ---
 title: OpenWrt 实用配置与运维总结
-date: 2026-04-20
+date: 2026-04-18
 categories:
   - 网络运维
 tags:
@@ -32,7 +32,7 @@ tags:
 opkg update                # 更新软件源
 opkg install <pkg>         # 安装软件
 opkg remove <pkg>          # 删除软件
-````
+```
 
 ### 安装本地 / 远程包
 
@@ -56,11 +56,10 @@ cat /proc/cpuinfo
 ```
 
 ::: tip 安装失败大多数是
-
 * 架构不对
 * 依赖缺失
 * 源版本不一致
-  :::
+:::
 
 ---
 
@@ -110,10 +109,9 @@ ethtool -K eth0 gso off
 ```
 
 ::: warning 注意
-
 * 只开 TSO 没用，必须同时开启 GSO
 * 虚拟化环境（ESXi / PVE）建议实际测速验证效果
-  :::
+:::
 
 ---
 
@@ -132,10 +130,9 @@ src/gz openwrt_core https://downloads.openwrt.org/...
 ```
 
 ::: tip 建议
-
 * 国内环境优先镜像源
 * 必须与当前系统版本完全匹配
-  :::
+:::
 
 ---
 
@@ -239,11 +236,10 @@ nohup /root/status-client -dsn wss://xxx -vnstat >/dev/null 2>&1 &
 
 ::: tip 推荐升级写法（更规范）
 建议使用 `/etc/init.d/` 或 `procd` 管理服务，支持：
-
 * 开机自启
 * 崩溃自动重启
 * 依赖管理
-  :::
+:::
 
 ---
 
@@ -321,9 +317,8 @@ server=/abema.tv/#
 ```
 
 ::: tip 建议
-
 * 使用规则仓库（如 geosite）
 * 配合 smartdns / mosdns 自动更新
-  :::
+:::
 
 ---

@@ -15,7 +15,11 @@ const getPostLinks = (): string[] => {
   posts.forEach((el) => {
     const href = (el as HTMLAnchorElement).href;
     if (href && !href.includes("#")) {
-      links.push(href);
+      // 排除首页
+      const url = new URL(href);
+      if (url.pathname !== '/' && url.pathname !== '/note/') {
+        links.push(href);
+      }
     }
   });
   return links;

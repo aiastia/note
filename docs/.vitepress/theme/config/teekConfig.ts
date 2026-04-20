@@ -54,7 +54,7 @@ export const teekBlogConfig: TeekConfig = {
     name: "🎉 西米露的笔记",
     description: "记录学习与成长",
     bgStyle: "partImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg1.jpg"],
+    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg2.jpg"],
   },
 };
 
@@ -64,7 +64,7 @@ export const teekBlogParkConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "partImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg1.jpg"],
+    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg3.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",
@@ -98,7 +98,7 @@ export const teekBlogFullConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg1.jpg"],
+    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg4.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",
@@ -144,7 +144,7 @@ export const teekBlogCardConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg1.jpg"],
+    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg5.jpg"],
     description: [
       "记录学习与成长",
       "积跬步以至千里",

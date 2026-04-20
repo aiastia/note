@@ -47,7 +47,7 @@ const teekBlogCommonConfig: TeekConfig = {
 export const teekBlogConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 My Docs",
+    name: "🎉 西米露的笔记",
     description: "记录学习与成长",
     bgStyle: "partImg",
     imgSrc: ["/blog/bg1.jpg"],
@@ -58,7 +58,7 @@ export const teekBlogConfig: TeekConfig = {
 export const teekBlogParkConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 My Docs",
+    name: "🎉 西米露的笔记",
     bgStyle: "partImg",
     imgSrc: ["/blog/bg1.jpg"],
     description: [
@@ -92,7 +92,7 @@ export const teekBlogFullConfig: TeekConfig = {
     coverImgMode: "full",
   },
   banner: {
-    name: "🎉 My Docs",
+    name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
     imgSrc: ["/blog/bg1.jpg"],
     description: [
@@ -115,7 +115,7 @@ export const teekBlogBodyConfig: TeekConfig = {
     imgSrc: ["/blog/bg1.jpg"],
   },
   banner: {
-    name: "🎉 My Docs",
+    name: "🎉 西米露的笔记",
     description: [
       "记录学习与成长",
       "积跬步以至千里",
@@ -138,7 +138,7 @@ export const teekBlogCardConfig: TeekConfig = {
   },
   homeCardListPosition: "left",
   banner: {
-    name: "🎉 My Docs",
+    name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
     imgSrc: ["/blog/bg1.jpg"],
     description: [

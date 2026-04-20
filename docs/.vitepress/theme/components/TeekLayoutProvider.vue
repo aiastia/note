@@ -2,9 +2,10 @@
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
 import { useData } from "vitepress";
-import { watch, ref, provide } from "vue";
+import { watch, ref, provide, computed } from "vue";
 import { teekDocConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
+import HitokotoBanner from "./HitokotoBanner.vue";
 
 const { frontmatter } = useData();
 
@@ -53,6 +54,10 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
 <template>
   <Teek.Layout>
+    <template #home-hero-after>
+      <HitokotoBanner v-if="currentStyle === 'doc'" />
+    </template>
+
     <template #teek-theme-enhance-bottom>
       <ConfigSwitch v-model="currentStyle" @switch="handleConfigSwitch" />
     </template>

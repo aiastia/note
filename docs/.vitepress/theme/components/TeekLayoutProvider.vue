@@ -12,6 +12,11 @@ const currentStyle = ref("doc");
 const teekConfig = ref(teekDocConfig);
 provide(teekConfigContext, teekConfig);
 
+// 监听模式切换，动态添加 body class
+watch(currentStyle, (style) => {
+  document.body.classList.toggle("tk-style-blog-body", style === "blog-body");
+}, { immediate: true });
+
 // 从一言 Hitokoto API 获取多条不重复句子
 const fetchHitokotoList = async (count: number): Promise<string[]> => {
   const fallbacks = ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"];

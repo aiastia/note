@@ -8,6 +8,21 @@ import ConfigSwitch from "./ConfigSwitch.vue";
 const teekConfig = ref(teekDocConfig);
 provide(teekConfigContext, teekConfig);
 
+const goRandom = () => {
+  const posts = document.querySelectorAll("a[class*='title']");
+  if (posts.length === 0) return;
+  const links: string[] = [];
+  posts.forEach((el) => {
+    const href = (el as HTMLAnchorElement).href;
+    if (href && !href.includes("#")) {
+      links.push(href);
+    }
+  });
+  if (links.length > 0) {
+    window.location.href = links[Math.floor(Math.random() * links.length)];
+  }
+};
+
 // 从一言 Hitokoto API 获取多条不重复句子
 const fetchHitokotoList = async (count: number): Promise<string[]> => {
   const fallbacks = ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"];
@@ -60,5 +75,29 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
         <ConfigSwitch @switch="handleConfigSwitch" />
       </ClientOnly>
     </template>
+
+    <template #nav-bar-content-after>
+      <button class="nav-random-btn" @click="goRandom" title="随机看一篇">🎲</button>
+    </template>
   </Teek.Layout>
 </template>
+
+<style>
+.nav-random-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s, color 0.25s;
+  color: var(--vp-c-text-1);
+}
+.nav-random-btn:hover {
+  transform: rotate(180deg) scale(1.2);
+  color: var(--vp-c-brand);
+}
+</style>

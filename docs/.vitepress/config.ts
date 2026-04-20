@@ -63,6 +63,7 @@ export default defineConfig({
 
   // HTML <head> 额外标签
   head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }], // 网站图标（favicon）
     ["meta", { name: "theme-color", content: "#3c8772" }], // 浏览器主题色（移动端地址栏颜色）
   ],
 

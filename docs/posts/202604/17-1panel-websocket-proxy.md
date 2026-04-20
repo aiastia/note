@@ -27,7 +27,7 @@ tags:
 
 ## 完整配置
 
-```openresty
+```nginx
 # 根路径统一处理
 location / {
     # WebSocket 握手 => 内部转到 /ws/xx，再删掉 /ws

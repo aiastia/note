@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted } from "vue";
+import { ref, provide, onMounted, computed } from "vue";
+import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
@@ -15,11 +16,9 @@ const configMap: Record<string, TeekConfig> = {
   "blog-card": teekBlogCardConfig,
 };
 
-const isHomePage = () => {
-  if (typeof window === "undefined") return false;
-  const path = window.location.pathname.replace(/\/$/, "");
-  return path === "" || path === "/note";
-};
+// 使用 VitePress 的 frontmatter 判断首页，兼容不同 base 路径（/note/ 和 /）
+const { frontmatter } = useData();
+const isHomePage = computed(() => frontmatter.value.layout === "home");
 
 // 从 localStorage 读取保存的配置
 // 非首页时排除 teekHome/vpHome 等首页专用属性，避免文章页面格式错乱
@@ -28,7 +27,7 @@ const getInitialConfig = (): TeekConfig => {
   const saved = localStorage.getItem("tk:configStyle");
   const config = saved ? (configMap[saved] || teekDocConfig) : teekDocConfig;
 
-  if (!isHomePage()) {
+  if (!isHomePage.value) {
     const { teekHome, vpHome, ...safeConfig } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
     return safeConfig as TeekConfig;
   }
@@ -91,7 +90,7 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
-  if (isHomePage()) {
+  if (isHomePage.value) {
     const links = getPostLinks();
     if (links.length > 0) {
       sessionStorage.setItem('postLinks', JSON.stringify(links));
@@ -121,7 +120,7 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
   // 非首页时排除首页专用属性，避免文章页面格式错乱
   let safeConfig = config;
-  if (!isHomePage()) {
+  if (!isHomePage.value) {
     const { teekHome, vpHome, ...rest } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
     safeConfig = rest as TeekConfig;
   }

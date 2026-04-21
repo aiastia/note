@@ -5,16 +5,34 @@ import { ref, provide, onMounted } from "vue";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
-// 从 localStorage 读取保存的配置，避免初始加载时需要 remount
-const getInitialConfig = () => {
+// 配置映射
+const configMap: Record<string, TeekConfig> = {
+  doc: teekDocConfig,
+  blog: teekBlogConfig,
+  "blog-part": teekBlogParkConfig,
+  "blog-full": teekBlogFullConfig,
+  "blog-body": teekBlogBodyConfig,
+  "blog-card": teekBlogCardConfig,
+};
+
+const isHomePage = () => {
+  if (typeof window === "undefined") return false;
+  const path = window.location.pathname.replace(/\/$/, "");
+  return path === "" || path === "/note";
+};
+
+// 从 localStorage 读取保存的配置
+// 非首页时排除 teekHome/vpHome 等首页专用属性，避免文章页面格式错乱
+const getInitialConfig = (): TeekConfig => {
   if (typeof window === "undefined") return teekDocConfig;
   const saved = localStorage.getItem("tk:configStyle");
-  if (saved === "blog") return teekBlogConfig;
-  if (saved === "blog-part") return teekBlogParkConfig;
-  if (saved === "blog-full") return teekBlogFullConfig;
-  if (saved === "blog-body") return teekBlogBodyConfig;
-  if (saved === "blog-card") return teekBlogCardConfig;
-  return teekDocConfig;
+  const config = saved ? (configMap[saved] || teekDocConfig) : teekDocConfig;
+
+  if (!isHomePage()) {
+    const { teekHome, vpHome, ...safeConfig } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
+    return safeConfig as TeekConfig;
+  }
+  return config;
 };
 
 const teekConfig = ref<TeekConfig>(getInitialConfig());
@@ -52,26 +70,6 @@ const goRandom = () => {
   }
 };
 
-// 首页时缓存文章链接 + 初始化一言
-onMounted(async () => {
-  if (window.location.pathname === '/' || window.location.pathname === '/note/') {
-    const links = getPostLinks();
-    if (links.length > 0) {
-      sessionStorage.setItem('postLinks', JSON.stringify(links));
-    }
-  }
-
-  // 初始加载时也获取一言，确保首次渲染就有打字机效果
-  const hitokotoList = await fetchHitokotoList(3);
-  if (teekConfig.value.banner) {
-    teekConfig.value.banner = {
-      ...teekConfig.value.banner,
-      descStyle: "types",
-      description: hitokotoList,
-    };
-  }
-});
-
 // 从一言 Hitokoto API 获取多条不重复句子
 const fetchHitokotoList = async (count: number): Promise<string[]> => {
   const fallbacks = ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"];
@@ -91,6 +89,26 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
   }
 };
 
+// 首页时缓存文章链接 + 初始化一言
+onMounted(async () => {
+  if (isHomePage()) {
+    const links = getPostLinks();
+    if (links.length > 0) {
+      sessionStorage.setItem('postLinks', JSON.stringify(links));
+    }
+
+    // 首页初始加载时获取一言，确保首次渲染就有打字机效果
+    const hitokotoList = await fetchHitokotoList(3);
+    if (teekConfig.value.banner) {
+      teekConfig.value.banner = {
+        ...teekConfig.value.banner,
+        descStyle: "types",
+        description: hitokotoList,
+      };
+    }
+  }
+});
+
 let previousStyle = "";
 
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
@@ -101,12 +119,19 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
   const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
 
+  // 非首页时排除首页专用属性，避免文章页面格式错乱
+  let safeConfig = config;
+  if (!isHomePage()) {
+    const { teekHome, vpHome, ...rest } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
+    safeConfig = rest as TeekConfig;
+  }
+
   // 先展开嵌套对象，创建新引用，确保 Vue 能追踪到深层变更
-  if (config.banner) teekConfig.value.banner = { ...config.banner };
-  if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+  if (safeConfig.banner) teekConfig.value.banner = { ...safeConfig.banner };
+  if (safeConfig.bodyBgImg) teekConfig.value.bodyBgImg = { ...safeConfig.bodyBgImg };
 
   // 其他配置再 merge
-  Object.assign(teekConfig.value, config);
+  Object.assign(teekConfig.value, safeConfig);
 
   // 再次展开，确保赋值后的引用也是新的
   if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };

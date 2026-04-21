@@ -56,7 +56,8 @@ export const teekBlogConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
     name: "🎉 西米露的笔记",
-    description: "记录学习与成长",
+    description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
+    descStyle: "types",
     bgStyle: "partImg",
     imgSrc: [`${cdn}/bg2.jpg`, `${cdn}/bg3.jpg`, `${cdn}/bg6.jpg`],
   },
@@ -69,8 +70,8 @@ export const teekBlogParkConfig: TeekConfig = {
     name: "🎉 西米露的笔记",
     bgStyle: "partImg",
     imgSrc: [`${cdn}/bg3.jpg`, `${cdn}/bg2.jpg`, `${cdn}/bg6.jpg`],
-    description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
-    descStyle: "switch",
+    description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
+    descStyle: "types",
   },
   footerGroup: [
     {

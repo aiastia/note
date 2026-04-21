@@ -86,9 +86,11 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 // 当前配置样式
 const currentStyle = ref("doc");
 
-// 判断是否为标签/分类等需要博客布局的特殊页面
+// 判断是否为标签/分类/归档等需要博客布局的特殊页面
 const isSpecialPage = computed(() =>
-  !!frontmatter.value.tagsPage || !!frontmatter.value.categoriesPage
+  !!frontmatter.value.tagsPage ||
+  !!frontmatter.value.categoriesPage ||
+  !!frontmatter.value.archivesPage
 );
 
 // 首页时缓存文章链接 + 初始化一言
@@ -98,11 +100,14 @@ onMounted(async () => {
     const saved = localStorage.getItem("tk:configStyle");
     if (saved && configMap[saved]) {
       currentStyle.value = saved;
+      // 立即应用保存的配置（watch 不会在 onMounted 时触发）
       const config = configMap[saved];
-      Object.assign(teekConfig.value, config);
+      Object.assign(teekConfig.value, config, {
+        teekHome: saved !== "doc",
+        vpHome: saved === "doc",
+      });
       if (config.banner) teekConfig.value.banner = { ...config.banner };
       if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-      lastAppliedStyle = saved;
     }
 
     const links = getPostLinks();
@@ -127,35 +132,26 @@ onMounted(async () => {
   }
 });
 
-// 记录最后应用的样式
-let lastAppliedStyle = "doc";
-
-// 监听页面切换
+// 监听页面切换，每次进首页都从 configMap 重新应用配置（无状态污染）
 watch(
   () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
   ({ isHome, isSpecial }) => {
     if (isHome) {
-      if (currentStyle.value === "doc") {
-        // 文档模式首页：关闭 teekHome
-        if (teekConfig.value.teekHome !== false) teekConfig.value.teekHome = false;
-        if (teekConfig.value.vpHome !== true) teekConfig.value.vpHome = true;
-        lastAppliedStyle = "doc";
-      } else if (currentStyle.value !== lastAppliedStyle) {
-        // 博客模式回首页，且样式已变化（在标签页切换过模式）：应用新配置
-        const config = configMap[currentStyle.value];
-        if (config) {
-          Object.assign(teekConfig.value, config);
-          if (config.banner) teekConfig.value.banner = { ...config.banner };
-          if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-          lastAppliedStyle = currentStyle.value;
-        }
+      // 每次进入首页，从 configMap 重新应用当前样式的完整配置
+      const config = configMap[currentStyle.value];
+      if (config) {
+        Object.assign(teekConfig.value, config, {
+          teekHome: currentStyle.value !== "doc",
+          vpHome: currentStyle.value === "doc",
+        });
+        if (config.banner) teekConfig.value.banner = { ...config.banner };
+        if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
       }
     } else if (isSpecial) {
-      // 标签/分类页需要 teekHome 来显示内容
+      // 标签/分类/归档页需要 teekHome 来显示内容
       if (teekConfig.value.teekHome !== true) teekConfig.value.teekHome = true;
     }
-  },
-  { flush: "sync" }
+  }
 );
 
 let previousStyle = "";
@@ -182,7 +178,6 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
     teekConfig.value.banner.descStyle = "types";
     teekConfig.value.banner.description = hitokotoList;
   }
-  lastAppliedStyle = style;
 };
 </script>
 

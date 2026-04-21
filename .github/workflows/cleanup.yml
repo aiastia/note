@@ -56,3 +56,17 @@ jobs:
           done
           
           echo "✅ All workflow runs deleted"
+
+
+  # Cleanup job
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Delete deployment
+        uses: strumwolf/delete-deployment-environment@v2.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+  

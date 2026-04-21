@@ -27,6 +27,7 @@ tags:
 | `.bz2` | `bunzip2 file.bz2` | `bzip2 -z file` |
 | `.zip` | `unzip file.zip` | `zip -r file.zip dir/` |
 | `.rar` | `rar x file.rar` | `rar a file.rar dir/` |
+| `.7z` | `7z x file.7z` | `7z a file.7z dir/` |
 | `.Z` | `uncompress file.Z` | `compress file` |
 | `.tar.Z` | `tar Zxvf file.tar.Z` | `tar Zcvf file.tar.Z dir/` |
 
@@ -173,6 +174,40 @@ rar a file.rar dir/
 - Ubuntu/Debian: `sudo apt install rar unrar`
 - CentOS/RHEL: `sudo yum install rar unrar`
 - macOS: `brew install rar`
+:::
+
+### .7z
+
+```bash
+# 解压
+7z x file.7z
+
+# 解压到指定目录
+7z x file.7z -o/target/directory/
+
+# 解压带密码
+7z x file.7z -p密码
+
+# 压缩
+7z a file.7z dir/
+
+# 压缩带密码
+7z a file.7z dir/ -p密码
+
+# 查看内容
+7z l file.7z
+
+# 批量解压（带密码）
+for i in *.7z; do 7z x -p密码 "$i"; done
+
+# 压缩为 tar.7z（更高压缩率）
+7z a -ttar -snl file.7z dir/
+```
+
+::: tip 安装
+- Ubuntu/Debian: `sudo apt install p7zip-full`
+- CentOS/RHEL: `sudo yum install p7zip p7zip-plugins`
+- macOS: `brew install p7zip`
 :::
 
 ### .rpm

@@ -27,6 +27,42 @@ tags:
 
 ---
 
+## 旁路由无法上网解决方案
+
+旁路由模式下设备无法上网时，开启 **动态伪装** 即可解决。
+
+![动态伪装设置](https://user-images.githubusercontent.com/19776350/152678245-61006ccf-04c9-424b-8503-70d7f2bc92a4.png)
+
+### MTU 设置
+
+旁路由 MTU 建议设置为 `1452`。
+
+### iKuai 端 MTU 设置
+
+路径：安全设置 > 高级设置
+
+- TCP 最大报文长度：启用
+- TCP-MSS 值：`1452` 字节（范围 1000-1500，长度需为 4 的整数倍）
+
+### Nginx 端口修改
+
+`/etc/nginx/uci.conf` 是自动生成的文件，修改 Nginx 端口需要在以下位置进行：
+
+```
+/etc/config/nginx
+```
+
+修改后重载：
+
+```bash
+service nginx reload
+```
+
+参考资料：
+- [旁路由相关问题讨论](https://github.com/kiddin9/OpenWrt_x86-r2s-r4s-r5s-N1/issues/490)
+
+---
+
 ## 一、基础软件包管理（opkg）
 
 ### 常用命令

@@ -5,7 +5,7 @@ title: 首页
 editLink: true
 
 hero:
-  name: 西米露的笔记
+  name: YOLO的笔记
   text: 记录技术探索与折腾之路
   tagline: 保持好奇，持续学习
   actions:

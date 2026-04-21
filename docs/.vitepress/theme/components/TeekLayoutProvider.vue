@@ -1,15 +1,8 @@
-<script setup lang="ts" name="TeekLayoutProvider">
+<script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
 import { ref, provide, onMounted } from "vue";
-import {
-  teekDocConfig,
-  teekBlogConfig,
-  teekBlogParkConfig,
-  teekBlogFullConfig,
-  teekBlogBodyConfig,
-  teekBlogCardConfig,
-} from "../config/teekConfig";
+import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
 
 // 从 localStorage 读取保存的配置，避免初始加载时需要 remount
@@ -35,7 +28,7 @@ const getPostLinks = (): string[] => {
     const href = (el as HTMLAnchorElement).href;
     if (href && !href.includes("#")) {
       const url = new URL(href);
-      if (url.pathname !== "/" && url.pathname !== "/note/") {
+      if (url.pathname !== '/' && url.pathname !== '/note/') {
         links.push(href);
       }
     }
@@ -45,13 +38,13 @@ const getPostLinks = (): string[] => {
 
 const goRandom = () => {
   let links: string[] = [];
-  const cached = sessionStorage.getItem("postLinks");
+  const cached = sessionStorage.getItem('postLinks');
   if (cached) {
     links = JSON.parse(cached);
   } else {
     links = getPostLinks();
     if (links.length > 0) {
-      sessionStorage.setItem("postLinks", JSON.stringify(links));
+      sessionStorage.setItem('postLinks', JSON.stringify(links));
     }
   }
   if (links.length > 0) {
@@ -59,27 +52,70 @@ const goRandom = () => {
   }
 };
 
-// 首页时缓存文章链接
-onMounted(() => {
-  if (window.location.pathname === "/" || window.location.pathname === "/note/") {
+// 首页时缓存文章链接 + 初始化一言
+onMounted(async () => {
+  if (window.location.pathname === '/' || window.location.pathname === '/note/') {
     const links = getPostLinks();
     if (links.length > 0) {
-      sessionStorage.setItem("postLinks", JSON.stringify(links));
+      sessionStorage.setItem('postLinks', JSON.stringify(links));
     }
+  }
+
+  // 初始加载时也获取一言，确保首次渲染就有打字机效果
+  const hitokotoList = await fetchHitokotoList(3);
+  if (teekConfig.value.banner) {
+    teekConfig.value.banner = {
+      ...teekConfig.value.banner,
+      descStyle: "types",
+      description: hitokotoList,
+    };
   }
 });
 
-// 参考官方实现：直接替换整个配置对象
+// 从一言 Hitokoto API 获取多条不重复句子
+const fetchHitokotoList = async (count: number): Promise<string[]> => {
+  const fallbacks = ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"];
+  const results: Set<string> = new Set();
+  try {
+    for (let i = 0; i < count * 2 && results.size < count; i++) {
+      const res = await fetch(`https://v1.hitokoto.cn/?c=a&c=b&c=d&c=i&c=k&_t=${Date.now()}-${i}`);
+      const data = await res.json();
+      if (data.hitokoto && !results.has(data.hitokoto)) {
+        results.add(data.hitokoto);
+      }
+    }
+    const list = Array.from(results);
+    return list.length > 0 ? list : fallbacks;
+  } catch {
+    return fallbacks;
+  }
+};
+
 let previousStyle = "";
-const handleConfigSwitch = (config: TeekConfig, style: string) => {
+
+const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   if (style === previousStyle) return;
   previousStyle = style;
 
-  // 直接替换整个 ref 值，确保 Vue 能追踪到所有深层变更
-  teekConfig.value = config;
+  // 所有博客模式都从一言 API 获取 description
+  const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
+  const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
 
-  // 博客全图模式：添加 body class
-  document.body.classList.toggle("tk-style-blog-body", style === "blog-body");
+  // 先展开嵌套对象，创建新引用，确保 Vue 能追踪到深层变更
+  if (config.banner) teekConfig.value.banner = { ...config.banner };
+  if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+
+  // 其他配置再 merge
+  Object.assign(teekConfig.value, config);
+
+  // 再次展开，确保赋值后的引用也是新的
+  if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };
+  if (teekConfig.value.bodyBgImg) teekConfig.value.bodyBgImg = { ...teekConfig.value.bodyBgImg };
+
+  if (blogStyles.includes(style) && teekConfig.value.banner) {
+    teekConfig.value.banner.descStyle = "types";
+    teekConfig.value.banner.description = hitokotoList;
+  }
 };
 </script>
 

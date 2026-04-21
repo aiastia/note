@@ -18,8 +18,14 @@ const configMap: Record<string, TeekConfig> = {
 };
 
 // 使用 VitePress 的 frontmatter 判断首页，兼容不同 base 路径（/note/ 和 /）
+// 排除标签、分类、归档等特殊页面（它们也使用 layout: home）
 const { frontmatter } = useData();
-const isHomePage = computed(() => frontmatter.value.layout === "home");
+const isHomePage = computed(() =>
+  frontmatter.value.layout === "home" &&
+  !frontmatter.value.tagsPage &&
+  !frontmatter.value.categoriesPage &&
+  !frontmatter.value.archivesPage
+);
 
 // 初始配置始终使用文档配置，避免 SSR 水合不匹配和 localStorage 缓存导致的问题
 // 保存的配置在 onMounted 中按需应用

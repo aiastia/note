@@ -1,0 +1,58 @@
+name: Cleanup History
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  clean-gh-pages:
+    name: Clean gh-pages history
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+
+      - name: Squash gh-pages to single commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 获取当前分支所有文件
+          git checkout --orphan temp-branch
+          git add -A
+          git commit -m "chore: squash gh-pages history $(date +%Y-%m-%d)"
+          
+          # 用 orphan 分支替换 gh-pages
+          git branch -D gh-pages
+          git branch -m gh-pages
+          git push origin gh-pages --force
+
+      - name: Print result
+        run: echo "✅ gh-pages history cleaned, now only 1 commit remains"
+
+  clean-actions-history:
+    name: Delete Actions history
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete all workflow runs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          
+          echo "Fetching all workflow runs..."
+          
+          # 获取所有 workflow runs 并逐个删除
+          # 用 --paginate 获取所有页面，--jq 提取 run ID
+          gh run list --repo "$REPO" --limit 500 --json databaseId --jq '.[].databaseId' | while read run_id; do
+            echo "Deleting run $run_id..."
+            gh run delete "$run_id" --repo "$REPO" || echo "Failed to delete run $run_id"
+          done
+          
+          echo "✅ All workflow runs deleted"

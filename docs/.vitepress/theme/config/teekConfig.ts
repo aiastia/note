@@ -1,12 +1,14 @@
 import type { TeekConfig } from "vitepress-theme-teek";
 
+const cdn = "https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog";
+
 // 文档配置
 export const teekDocConfig: TeekConfig = {
   banner: {
     descStyle: "types",
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     bgStyle: "partImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg6.jpg"],
+    imgSrc: [`${cdn}/bg6.jpg`, `${cdn}/bg3.jpg`, `${cdn}/bg2.jpg`],
   },
   themeEnhance: {
     layoutSwitch: {
@@ -56,7 +58,7 @@ export const teekBlogConfig: TeekConfig = {
     name: "🎉 西米露的笔记",
     description: "记录学习与成长",
     bgStyle: "partImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg2.jpg"],
+    imgSrc: [`${cdn}/bg2.jpg`, `${cdn}/bg3.jpg`, `${cdn}/bg6.jpg`],
   },
 };
 
@@ -66,12 +68,8 @@ export const teekBlogParkConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "partImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg3.jpg"],
-    description: [
-      "记录学习与成长",
-      "积跬步以至千里",
-      "这一生波澜壮阔或是不惊都没问题",
-    ],
+    imgSrc: [`${cdn}/bg3.jpg`, `${cdn}/bg2.jpg`, `${cdn}/bg6.jpg`],
+    description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "switch",
   },
   footerGroup: [
@@ -84,9 +82,7 @@ export const teekBlogParkConfig: TeekConfig = {
     },
     {
       title: "联系我",
-      links: [
-        { name: "X (Twitter)", link: "https://x.com/aiastia123" },
-      ],
+      links: [{ name: "X (Twitter)", link: "https://x.com/aiastia123" }],
     },
   ],
 };
@@ -100,12 +96,8 @@ export const teekBlogFullConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg4.jpg"],
-    description: [
-      "记录学习与成长",
-      "积跬步以至千里",
-      "这一生波澜壮阔或是不惊都没问题",
-    ],
+    imgSrc: [`${cdn}/bg4.jpg`, `${cdn}/bg5.jpg`, `${cdn}/bg1.jpg`],
+    description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
   codeBlock: {
@@ -118,15 +110,11 @@ export const teekBlogBodyConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   pageStyle: "segment-nav",
   bodyBgImg: {
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg1.jpg"],
+    imgSrc: [`${cdn}/bg1.jpg`, `${cdn}/bg4.jpg`, `${cdn}/bg5.jpg`],
   },
   banner: {
     name: "🎉 西米露的笔记",
-    description: [
-      "记录学习与成长",
-      "积跬步以至千里",
-      "这一生波澜壮阔或是不惊都没问题",
-    ],
+    description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
   themeEnhance: {
@@ -146,12 +134,8 @@ export const teekBlogCardConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: ["https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/bg5.jpg"],
-    description: [
-      "记录学习与成长",
-      "积跬步以至千里",
-      "这一生波澜壮阔或是不惊都没问题",
-    ],
+    imgSrc: [`${cdn}/bg5.jpg`, `${cdn}/bg4.jpg`, `${cdn}/bg1.jpg`],
+    description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
 };

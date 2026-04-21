@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted, computed, watch } from "vue";
+import { ref, provide, onMounted, onBeforeUpdate, computed, watch } from "vue";
 import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
@@ -126,23 +126,29 @@ onMounted(async () => {
   }
 });
 
-// 监听页面切换，动态调整配置（sync 确保在 DOM 更新前生效，防止闪烁）
+// 监听页面切换，动态调整配置
 watch(
   () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
   ({ isHome, isSpecial }) => {
     if (isHome) {
-      // 回到首页，恢复当前样式对应的完整配置
       const config = configMap[currentStyle.value] || teekDocConfig;
       Object.assign(teekConfig.value, config);
       if (config.banner) teekConfig.value.banner = { ...config.banner };
       if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
     } else if (isSpecial) {
-      // 进入标签/分类页，确保 teekHome 为 true 以显示内容
       teekConfig.value.teekHome = true;
     }
   },
   { flush: "sync" }
 );
+
+// 在每次组件重新渲染前，确保配置正确（防止从标签页回首页时文章列表闪现）
+onBeforeUpdate(() => {
+  if (isHomePage.value && teekConfig.value.teekHome && currentStyle.value === "doc") {
+    teekConfig.value.teekHome = false;
+    teekConfig.value.vpHome = true;
+  }
+});
 
 let previousStyle = "";
 

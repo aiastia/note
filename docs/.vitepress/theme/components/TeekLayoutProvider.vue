@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted, computed } from "vue";
+import { ref, provide, onMounted, computed, watch } from "vue";
 import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
@@ -86,6 +86,11 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
 // 当前配置样式
 const currentStyle = ref("doc");
 
+// 判断是否为标签/分类等需要博客布局的特殊页面
+const isSpecialPage = computed(() =>
+  !!frontmatter.value.tagsPage || !!frontmatter.value.categoriesPage
+);
+
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
   if (isHomePage.value) {
@@ -93,13 +98,10 @@ onMounted(async () => {
     const saved = localStorage.getItem("tk:configStyle");
     if (saved && configMap[saved]) {
       currentStyle.value = saved;
-      // 展开嵌套对象，确保 Vue 能追踪深层变更
       const config = configMap[saved];
+      Object.assign(teekConfig.value, config);
       if (config.banner) teekConfig.value.banner = { ...config.banner };
       if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-      Object.assign(teekConfig.value, config);
-      if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };
-      if (teekConfig.value.bodyBgImg) teekConfig.value.bodyBgImg = { ...teekConfig.value.bodyBgImg };
     }
 
     const links = getPostLinks();
@@ -117,6 +119,32 @@ onMounted(async () => {
       };
     }
   }
+
+  // 标签/分类页首次加载时，如果是文档模式则启用 teekHome 以显示内容
+  if (isSpecialPage.value && currentStyle.value === "doc") {
+    teekConfig.value.teekHome = true;
+  }
+});
+
+// 监听页面切换，动态调整配置
+watch(isHomePage, (newVal, oldVal) => {
+  if (newVal) {
+    // 回到首页，恢复当前样式对应的完整配置
+    const config = configMap[currentStyle.value] || teekDocConfig;
+    Object.assign(teekConfig.value, config);
+    if (config.banner) teekConfig.value.banner = { ...config.banner };
+    if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+  } else if (isSpecialPage.value) {
+    // 进入标签/分类页，确保 teekHome 为 true 以显示内容
+    teekConfig.value.teekHome = true;
+  }
+});
+
+// 监听特殊页面变化，确保标签/分类页始终能显示内容
+watch(isSpecialPage, (val) => {
+  if (val) {
+    teekConfig.value.teekHome = true;
+  }
 });
 
 let previousStyle = "";
@@ -125,26 +153,21 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   if (style === previousStyle) return;
   previousStyle = style;
   currentStyle.value = style;
-
-  // 非首页时不切换配置，避免博客布局属性破坏文章页面
+  // 注意：不再在非首页时 return，允许状态记录
+  // 但只在首页时实际切换配置
   if (!isHomePage.value) return;
 
-  // 所有博客模式都从一言 API 获取 description
-  const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
-  const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
+  // 所有模式都从一言 API 获取 description
+  const hitokotoList = await fetchHitokotoList(3);
 
-  // 先展开嵌套对象，创建新引用，确保 Vue 能追踪到深层变更
+  // 展开 + 赋值 + 再展开，确保 Vue 响应式追踪
   if (config.banner) teekConfig.value.banner = { ...config.banner };
   if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-
-  // 其他配置再 merge
   Object.assign(teekConfig.value, config);
-
-  // 再次展开，确保赋值后的引用也是新的
   if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };
   if (teekConfig.value.bodyBgImg) teekConfig.value.bodyBgImg = { ...teekConfig.value.bodyBgImg };
 
-  if (blogStyles.includes(style) && teekConfig.value.banner) {
+  if (teekConfig.value.banner) {
     teekConfig.value.banner.descStyle = "types";
     teekConfig.value.banner.description = hitokotoList;
   }

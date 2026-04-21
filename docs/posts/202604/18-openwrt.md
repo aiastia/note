@@ -1,6 +1,9 @@
 ---
 title: OpenWrt 实用配置与运维总结
 date: 2026-04-18
+sticky: 999
+top: true
+titleTag: 推荐
 categories:
   - 网络运维
 tags:

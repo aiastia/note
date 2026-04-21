@@ -59,7 +59,7 @@ export const teekBlogConfig: TeekConfig = {
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
     bgStyle: "partImg",
-    imgSrc: [`${cdn}/bg2.jpg`, `${cdn}/bg3.jpg`, `${cdn}/bg6.jpg`],
+    imgSrc: `${cdn}/bg2.jpg`,
   },
 };
 
@@ -69,7 +69,7 @@ export const teekBlogParkConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "partImg",
-    imgSrc: [`${cdn}/bg3.jpg`, `${cdn}/bg2.jpg`, `${cdn}/bg6.jpg`],
+    imgSrc: `${cdn}/bg3.jpg`,
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
@@ -97,7 +97,7 @@ export const teekBlogFullConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: [`${cdn}/bg4.jpg`, `${cdn}/bg5.jpg`, `${cdn}/bg1.jpg`],
+    imgSrc: `${cdn}/bg4.jpg`,
     description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
@@ -111,7 +111,7 @@ export const teekBlogBodyConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   pageStyle: "segment-nav",
   bodyBgImg: {
-    imgSrc: [`${cdn}/bg1.jpg`, `${cdn}/bg4.jpg`, `${cdn}/bg5.jpg`],
+    imgSrc: `${cdn}/bg1.jpg`,
   },
   banner: {
     name: "🎉 西米露的笔记",
@@ -135,7 +135,7 @@ export const teekBlogCardConfig: TeekConfig = {
   banner: {
     name: "🎉 西米露的笔记",
     bgStyle: "fullImg",
-    imgSrc: [`${cdn}/bg5.jpg`, `${cdn}/bg4.jpg`, `${cdn}/bg1.jpg`],
+    imgSrc: `${cdn}/bg5.jpg`,
     description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },

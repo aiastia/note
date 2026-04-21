@@ -205,6 +205,26 @@ KMS 激活服务器：
 docker run -d -p 12031:1688 --restart=always aiastia/kms
 ```
 
+### MetaTube
+
+视频元数据刮削服务：
+
+```bash
+docker run -d -p 8080:8080 --name metatube ghcr.io/metatube-community/metatube-server:latest
+```
+
+[官方部署文档](https://metatube-community.github.io/wiki/server-deployment/)
+
+### KKFileView
+
+文件在线预览服务，支持 Office、PDF、视频等：
+
+```bash
+docker run -it -p 8012:8012 keking/kkfileview:4.1.0
+```
+
+[官方部署文档](https://kkview.cn/zh-cn/docs/production.html)
+
 ---
 
 ## 网络代理

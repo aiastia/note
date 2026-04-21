@@ -84,9 +84,16 @@ const fetchHitokotoList = async (count: number): Promise<string[]> => {
   }
 };
 
+// 当前配置样式
+const currentStyle = ref("doc");
+
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
   if (isHomePage.value) {
+    // 读取保存的样式
+    const saved = localStorage.getItem("tk:configStyle");
+    if (saved) currentStyle.value = saved;
+
     const links = getPostLinks();
     if (links.length > 0) {
       sessionStorage.setItem('postLinks', JSON.stringify(links));
@@ -109,6 +116,7 @@ let previousStyle = "";
 const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   if (style === previousStyle) return;
   previousStyle = style;
+  currentStyle.value = style;
 
   // 非首页时不切换配置，避免博客布局属性破坏文章页面
   if (!isHomePage.value) return;
@@ -155,7 +163,7 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
     <template #home-hero-after>
       <ClientOnly>
-        <HitokotoBanner v-if="isHomePage" />
+        <HitokotoBanner v-if="isHomePage && currentStyle === 'doc'" />
       </ClientOnly>
     </template>
   </Teek.Layout>

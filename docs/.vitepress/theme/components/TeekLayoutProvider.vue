@@ -21,17 +21,12 @@ const { frontmatter } = useData();
 const isHomePage = computed(() => frontmatter.value.layout === "home");
 
 // 从 localStorage 读取保存的配置
-// 非首页时排除 teekHome/vpHome 等首页专用属性，避免文章页面格式错乱
+// 非首页时始终使用文档配置，避免博客布局属性破坏文章页面
 const getInitialConfig = (): TeekConfig => {
   if (typeof window === "undefined") return teekDocConfig;
+  if (!isHomePage.value) return teekDocConfig;
   const saved = localStorage.getItem("tk:configStyle");
-  const config = saved ? (configMap[saved] || teekDocConfig) : teekDocConfig;
-
-  if (!isHomePage.value) {
-    const { teekHome, vpHome, ...safeConfig } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
-    return safeConfig as TeekConfig;
-  }
-  return config;
+  return saved ? (configMap[saved] || teekDocConfig) : teekDocConfig;
 };
 
 const teekConfig = ref<TeekConfig>(getInitialConfig());
@@ -114,23 +109,19 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
   if (style === previousStyle) return;
   previousStyle = style;
 
+  // 非首页时不切换配置，避免博客布局属性破坏文章页面
+  if (!isHomePage.value) return;
+
   // 所有博客模式都从一言 API 获取 description
   const blogStyles = ["doc", "blog", "blog-part", "blog-full", "blog-body", "blog-card"];
   const hitokotoList = blogStyles.includes(style) ? await fetchHitokotoList(3) : [];
 
-  // 非首页时排除首页专用属性，避免文章页面格式错乱
-  let safeConfig = config;
-  if (!isHomePage.value) {
-    const { teekHome, vpHome, ...rest } = config as TeekConfig & { teekHome?: boolean; vpHome?: boolean };
-    safeConfig = rest as TeekConfig;
-  }
-
   // 先展开嵌套对象，创建新引用，确保 Vue 能追踪到深层变更
-  if (safeConfig.banner) teekConfig.value.banner = { ...safeConfig.banner };
-  if (safeConfig.bodyBgImg) teekConfig.value.bodyBgImg = { ...safeConfig.bodyBgImg };
+  if (config.banner) teekConfig.value.banner = { ...config.banner };
+  if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
 
   // 其他配置再 merge
-  Object.assign(teekConfig.value, safeConfig);
+  Object.assign(teekConfig.value, config);
 
   // 再次展开，确保赋值后的引用也是新的
   if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };

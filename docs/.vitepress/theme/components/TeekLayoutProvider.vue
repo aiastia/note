@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted, computed, watch, watchEffect } from "vue";
+import { ref, provide, onMounted, computed, watch } from "vue";
 import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
@@ -91,6 +91,14 @@ const isSpecialPage = computed(() =>
   !!frontmatter.value.tagsPage || !!frontmatter.value.categoriesPage
 );
 
+// Layout key：页面切换时强制重建组件，杜绝旧 DOM 闪现
+const layoutKey = computed(() => {
+  if (isHomePage.value) return "home-" + currentStyle.value;
+  if (frontmatter.value.tagsPage) return "tags";
+  if (frontmatter.value.categoriesPage) return "categories";
+  return "other";
+});
+
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
   if (isHomePage.value) {
@@ -126,32 +134,29 @@ onMounted(async () => {
   }
 });
 
-// 监听页面切换，动态调整配置
+// 监听页面切换，强制重建 config（不使用 Object.assign，避免旧字段残留）
 watch(
   () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
   ({ isHome, isSpecial }) => {
     if (isHome) {
       const config = configMap[currentStyle.value] || teekDocConfig;
-      Object.assign(teekConfig.value, config);
-      if (config.banner) teekConfig.value.banner = { ...config.banner };
-      if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+      // 关键：彻底重建，而不是 Object.assign merge
+      teekConfig.value = {
+        ...config,
+        teekHome: false,
+        vpHome: true,
+      };
     } else if (isSpecial) {
-      teekConfig.value.teekHome = true;
+      // 标签/分类页需要 teekHome 来显示内容
+      teekConfig.value = {
+        ...teekConfig.value,
+        teekHome: true,
+        vpHome: false,
+      };
     }
   },
   { flush: "sync" }
 );
-
-// 通过 body class 控制：文档模式首页隐藏文章列表，防止从标签页回首页时闪现
-// CSS 比 watch/onBeforeUpdate 更可靠，因为 CSS 变更在浏览器绘制前即时生效
-watchEffect(() => {
-  if (typeof document !== "undefined") {
-    document.body.classList.toggle(
-      "doc-mode-home",
-      isHomePage.value && currentStyle.value === "doc"
-    );
-  }
-});
 
 let previousStyle = "";
 
@@ -181,7 +186,7 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 </script>
 
 <template>
-  <Teek.Layout>
+  <Teek.Layout :key="layoutKey">
     <template #teek-theme-enhance-bottom>
       <ClientOnly>
         <ConfigSwitch @switch="handleConfigSwitch" />
@@ -223,10 +228,5 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 .nav-random-btn:hover {
   transform: rotate(180deg) scale(1.2);
   color: var(--vp-c-brand);
-}
-
-/* 文档模式首页：隐藏文章列表（aria-label="文章列表"），防止从标签页回首页时闪现 */
-body.doc-mode-home [aria-label="文章列表"] {
-  display: none !important;
 }
 </style>

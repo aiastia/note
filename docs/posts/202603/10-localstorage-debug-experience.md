@@ -1,6 +1,6 @@
 ---
 title: VitePress 主题配置缓存问题排查与 localStorage 调试经验
-date: 2026-04-10
+date: 2026-03-10
 tags:
   - VitePress
   - localStorage

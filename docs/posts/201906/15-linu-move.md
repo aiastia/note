@@ -1,4 +1,3 @@
-```md id="m4xq9v"
 ---
 title: Linux 批量移动视频文件（按类型整理）
 date: 2019-06-15
@@ -27,52 +26,41 @@ tags:
 
 ## 批量移动脚本
 
-```
-
-find -type f ( -name "*.avi" -o -name "*.mp4" -o -name "*.mkv" -o -name "*.mov" -o -name "*.flv" ) -print0 | while read -d $'\0' i; do
-
-```id="a8k2ld"
-```
-
-```
-v=${i:2}
-q=${v//\//-}
-mv "$i" ./"$q"
-```
-
+```bash
+find -type f \( -name "*.avi" -o -name "*.mp4" -o -name "*.mkv" -o -name "*.mov" -o -name "*.flv" \) -print0 | while read -d $'\0' i; do
+  v=${i:2}
+  q=${v//\//-}
+  mv "$i" ./"$q"
 done
-
-```id="x0p7cm"
+```
 
 ## 逻辑说明
 
 ### 1. 查找文件
+
 使用 `find` 递归搜索指定视频格式：
 
+```bash
+find -type f \( ... \)
 ```
 
-find -type f ( ... )
-
-```id="h2v9sd"
-
 ### 2. 防止空格与特殊字符问题
+
 使用 `-print0` + `read -d $'\0'` 处理文件名安全性。
 
 ### 3. 路径重命名
+
+```bash
+q=${v//\//-}
 ```
-
-q=${v////-}
-
-```id="k9r1wx"
 
 将路径中的 `/` 替换为 `-`，避免目录冲突。
 
 ### 4. 移动文件
-```
 
+```bash
 mv "$i" ./"$q"
-
-```id="n6c0tp"
+```
 
 统一移动到当前目录。
 
@@ -88,8 +76,3 @@ mv "$i" ./"$q"
 - 会将所有文件移动到当前目录，可能覆盖同名文件
 - 建议先取消 `mv`，用 `echo` 测试路径
 - 大量文件时注意磁盘空间
-
----
-
-*创建时间：2019-06-15*
-```

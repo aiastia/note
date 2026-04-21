@@ -91,14 +91,6 @@ const isSpecialPage = computed(() =>
   !!frontmatter.value.tagsPage || !!frontmatter.value.categoriesPage
 );
 
-// Layout key：页面切换时强制重建组件，杜绝旧 DOM 闪现
-const layoutKey = computed(() => {
-  if (isHomePage.value) return "home-" + currentStyle.value;
-  if (frontmatter.value.tagsPage) return "tags";
-  if (frontmatter.value.categoriesPage) return "categories";
-  return "other";
-});
-
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
   if (isHomePage.value) {
@@ -191,7 +183,7 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 </script>
 
 <template>
-  <Teek.Layout :key="layoutKey">
+  <Teek.Layout>
     <template #teek-theme-enhance-bottom>
       <ClientOnly>
         <ConfigSwitch @switch="handleConfigSwitch" />

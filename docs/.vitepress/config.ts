@@ -20,11 +20,11 @@ const teekConfig = defineTeekConfig({
   sidebarTrigger: true,
 
   // 文章默认作者信息，会显示在文章列表和文章页
-  author: { name: "西米露", link: "https://github.com/aiastia" },
+  author: { name: "YOLO", link: "https://github.com/aiastia" },
 
   // 博主信息卡片，显示在首页左侧
   blogger: {
-    name: "西米露",
+    name: "YOLO",
     slogan: "记录技术探索与折腾之路",
     avatar: "https://avatars.githubusercontent.com/u/19776350?v=4",
     shape: "circle-rotate", // 头像形状：circle-rotate 旋转圆形
@@ -38,7 +38,7 @@ const teekConfig = defineTeekConfig({
     },
     copyright: {
       createYear: 2026,    // 站点创建年份
-      suffix: "西米露",     // 版权所有者
+      suffix: "YOLO",     // 版权所有者
     },
   },
 
@@ -65,9 +65,9 @@ const teekConfig = defineTeekConfig({
 export default defineConfig({
   extends: teekConfig,   // 继承 Teek 主题配置
   lang: "zh-CN",         // 站点语言：中文
-  title: "西米露的笔记",  // 站点标题
+  title: "YOLO的笔记",  // 站点标题
   base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/note/"), // 部署基础路径：CF Pages 用根路径，本地用 /note
-  description: "西米露的技术博客 - 记录技术探索与折腾之路", // 站点描述（SEO）
+  description: "YOLO的技术博客 - 记录技术探索与折腾之路", // 站点描述（SEO）
   lastUpdated: true,     // 启用「最近更新」时间显示
   cleanUrls: true,       // 启用干净 URL（去掉 .html 后缀）
 
@@ -101,7 +101,7 @@ export default defineConfig({
     // 页脚配置
     footer: {
       message: "基于 VitePress + Teek 主题构建",
-      copyright: "Copyright © 2026-present 西米露",
+      copyright: "Copyright © 2026-present YOLO",
     },
 
     // 「最近更新」时间显示配置

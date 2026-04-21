@@ -4,6 +4,8 @@ const cdn = "https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog";
 
 // 文档配置
 export const teekDocConfig: TeekConfig = {
+  teekHome: false,
+  vpHome: true,
   banner: {
     descStyle: "types",
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
@@ -55,7 +57,7 @@ const teekBlogCommonConfig: TeekConfig = {
 export const teekBlogConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 西米露的笔记",
+    name: "🎉 YOLO的笔记",
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
     bgStyle: "partImg",
@@ -67,7 +69,7 @@ export const teekBlogConfig: TeekConfig = {
 export const teekBlogParkConfig: TeekConfig = {
   ...teekBlogCommonConfig,
   banner: {
-    name: "🎉 西米露的笔记",
+    name: "🎉 YOLO的笔记",
     bgStyle: "partImg",
     imgSrc: `${cdn}/bg3.jpg`,
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
@@ -95,7 +97,7 @@ export const teekBlogFullConfig: TeekConfig = {
     coverImgMode: "full",
   },
   banner: {
-    name: "🎉 西米露的笔记",
+    name: "🎉 YOLO的笔记",
     bgStyle: "fullImg",
     imgSrc: `${cdn}/bg4.jpg`,
     description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
@@ -114,7 +116,7 @@ export const teekBlogBodyConfig: TeekConfig = {
     imgSrc: `${cdn}/bg1.jpg`,
   },
   banner: {
-    name: "🎉 西米露的笔记",
+    name: "🎉 YOLO的笔记",
     description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
@@ -133,7 +135,7 @@ export const teekBlogCardConfig: TeekConfig = {
   },
   homeCardListPosition: "left",
   banner: {
-    name: "🎉 西米露的笔记",
+    name: "🎉 YOLO的笔记",
     bgStyle: "fullImg",
     imgSrc: `${cdn}/bg5.jpg`,
     description: ["记录学习与成长", "积跬步以至千里", "这一生波澜壮阔或是不惊都没问题"],

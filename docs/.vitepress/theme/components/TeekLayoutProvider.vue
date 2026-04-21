@@ -126,30 +126,20 @@ onMounted(async () => {
   }
 });
 
-// 监听页面切换，强制重建 config（不使用 Object.assign，避免旧字段残留）
+// 监听页面切换，只修改 teekHome/vpHome 属性（不重建整个 config，避免触发 Teek 重新加载）
 watch(
   () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
   ({ isHome, isSpecial }) => {
     if (isHome) {
-      const config = configMap[currentStyle.value] || teekDocConfig;
-      // 彻底重建 config，根据当前样式设置正确的 teekHome
       if (currentStyle.value === "doc") {
-        teekConfig.value = {
-          ...config,
-          teekHome: false,
-          vpHome: true,
-        };
-      } else {
-        // 博客模式保持原配置
-        teekConfig.value = { ...config };
+        // 文档模式首页：关闭 teekHome
+        teekConfig.value.teekHome = false;
+        teekConfig.value.vpHome = true;
       }
+      // 博客模式不需要改任何东西
     } else if (isSpecial) {
       // 标签/分类页需要 teekHome 来显示内容
-      teekConfig.value = {
-        ...teekConfig.value,
-        teekHome: true,
-        vpHome: false,
-      };
+      teekConfig.value.teekHome = true;
     }
   },
   { flush: "sync" }

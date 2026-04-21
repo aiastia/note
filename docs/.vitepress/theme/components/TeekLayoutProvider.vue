@@ -102,6 +102,7 @@ onMounted(async () => {
       Object.assign(teekConfig.value, config);
       if (config.banner) teekConfig.value.banner = { ...config.banner };
       if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+      lastAppliedStyle = saved;
     }
 
     const links = getPostLinks();
@@ -126,20 +127,32 @@ onMounted(async () => {
   }
 });
 
-// 监听页面切换，只修改 teekHome/vpHome 属性（不重建整个 config，避免触发 Teek 重新加载）
+// 记录最后应用的样式
+let lastAppliedStyle = "doc";
+
+// 监听页面切换
 watch(
   () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
   ({ isHome, isSpecial }) => {
     if (isHome) {
       if (currentStyle.value === "doc") {
         // 文档模式首页：关闭 teekHome
-        teekConfig.value.teekHome = false;
-        teekConfig.value.vpHome = true;
+        if (teekConfig.value.teekHome !== false) teekConfig.value.teekHome = false;
+        if (teekConfig.value.vpHome !== true) teekConfig.value.vpHome = true;
+        lastAppliedStyle = "doc";
+      } else if (currentStyle.value !== lastAppliedStyle) {
+        // 博客模式回首页，且样式已变化（在标签页切换过模式）：应用新配置
+        const config = configMap[currentStyle.value];
+        if (config) {
+          Object.assign(teekConfig.value, config);
+          if (config.banner) teekConfig.value.banner = { ...config.banner };
+          if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+          lastAppliedStyle = currentStyle.value;
+        }
       }
-      // 博客模式不需要改任何东西
     } else if (isSpecial) {
       // 标签/分类页需要 teekHome 来显示内容
-      teekConfig.value.teekHome = true;
+      if (teekConfig.value.teekHome !== true) teekConfig.value.teekHome = true;
     }
   },
   { flush: "sync" }
@@ -169,6 +182,7 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
     teekConfig.value.banner.descStyle = "types";
     teekConfig.value.banner.description = hitokotoList;
   }
+  lastAppliedStyle = style;
 };
 </script>
 

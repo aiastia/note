@@ -1,6 +1,6 @@
 ---
 title: AI 提示词收集
-date: 2023-04-23
+date: 2026-03-23
 categories:
   - AI
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 1Panel openresty反向代理
-date: 2026-04-20
+date: 2026-04-17
 categories:
   - 运维
 tags:

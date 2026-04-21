@@ -1,6 +1,6 @@
 ---
 title: Docker 搭建 Telegram Bot API 代理 + 1Panel Nginx 反代配置
-date: 2026-04-20
+date: 2026-04-16
 categories:
   - 运维
 tags:

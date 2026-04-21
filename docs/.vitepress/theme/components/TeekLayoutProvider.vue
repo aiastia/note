@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TeekConfig } from "vitepress-theme-teek";
 import Teek, { teekConfigContext } from "vitepress-theme-teek";
-import { ref, provide, onMounted, onBeforeUpdate, computed, watch } from "vue";
+import { ref, provide, onMounted, computed, watch, watchEffect } from "vue";
 import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
@@ -142,11 +142,14 @@ watch(
   { flush: "sync" }
 );
 
-// 在每次组件重新渲染前，确保配置正确（防止从标签页回首页时文章列表闪现）
-onBeforeUpdate(() => {
-  if (isHomePage.value && teekConfig.value.teekHome && currentStyle.value === "doc") {
-    teekConfig.value.teekHome = false;
-    teekConfig.value.vpHome = true;
+// 通过 body class 控制：文档模式首页隐藏文章列表，防止从标签页回首页时闪现
+// CSS 比 watch/onBeforeUpdate 更可靠，因为 CSS 变更在浏览器绘制前即时生效
+watchEffect(() => {
+  if (typeof document !== "undefined") {
+    document.body.classList.toggle(
+      "doc-mode-home",
+      isHomePage.value && currentStyle.value === "doc"
+    );
   }
 });
 
@@ -220,5 +223,10 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 .nav-random-btn:hover {
   transform: rotate(180deg) scale(1.2);
   color: var(--vp-c-brand);
+}
+
+/* 文档模式首页：隐藏文章列表（aria-label="文章列表"），防止从标签页回首页时闪现 */
+body.doc-mode-home [aria-label="文章列表"] {
+  display: none !important;
 }
 </style>

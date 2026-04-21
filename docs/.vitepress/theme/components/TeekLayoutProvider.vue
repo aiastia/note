@@ -21,16 +21,9 @@ const configMap: Record<string, TeekConfig> = {
 const { frontmatter } = useData();
 const isHomePage = computed(() => frontmatter.value.layout === "home");
 
-// 从 localStorage 读取保存的配置
-// 非首页时始终使用文档配置，避免博客布局属性破坏文章页面
-const getInitialConfig = (): TeekConfig => {
-  if (typeof window === "undefined") return teekDocConfig;
-  if (!isHomePage.value) return teekDocConfig;
-  const saved = localStorage.getItem("tk:configStyle");
-  return saved ? (configMap[saved] || teekDocConfig) : teekDocConfig;
-};
-
-const teekConfig = ref<TeekConfig>(getInitialConfig());
+// 初始配置始终使用文档配置，避免 SSR 水合不匹配和 localStorage 缓存导致的问题
+// 保存的配置在 onMounted 中按需应用
+const teekConfig = ref<TeekConfig>(teekDocConfig);
 provide(teekConfigContext, teekConfig);
 
 // 获取所有文章链接
@@ -90,9 +83,18 @@ const currentStyle = ref("doc");
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
   if (isHomePage.value) {
-    // 读取保存的样式
+    // 读取保存的样式，并在客户端应用对应配置
     const saved = localStorage.getItem("tk:configStyle");
-    if (saved) currentStyle.value = saved;
+    if (saved && configMap[saved]) {
+      currentStyle.value = saved;
+      // 展开嵌套对象，确保 Vue 能追踪深层变更
+      const config = configMap[saved];
+      if (config.banner) teekConfig.value.banner = { ...config.banner };
+      if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+      Object.assign(teekConfig.value, config);
+      if (teekConfig.value.banner) teekConfig.value.banner = { ...teekConfig.value.banner };
+      if (teekConfig.value.bodyBgImg) teekConfig.value.bodyBgImg = { ...teekConfig.value.bodyBgImg };
+    }
 
     const links = getPostLinks();
     if (links.length > 0) {

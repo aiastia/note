@@ -126,26 +126,23 @@ onMounted(async () => {
   }
 });
 
-// 监听页面切换，动态调整配置
-watch(isHomePage, (newVal, oldVal) => {
-  if (newVal) {
-    // 回到首页，恢复当前样式对应的完整配置
-    const config = configMap[currentStyle.value] || teekDocConfig;
-    Object.assign(teekConfig.value, config);
-    if (config.banner) teekConfig.value.banner = { ...config.banner };
-    if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-  } else if (isSpecialPage.value) {
-    // 进入标签/分类页，确保 teekHome 为 true 以显示内容
-    teekConfig.value.teekHome = true;
-  }
-});
-
-// 监听特殊页面变化，确保标签/分类页始终能显示内容
-watch(isSpecialPage, (val) => {
-  if (val) {
-    teekConfig.value.teekHome = true;
-  }
-});
+// 监听页面切换，动态调整配置（sync 确保在 DOM 更新前生效，防止闪烁）
+watch(
+  () => ({ isHome: isHomePage.value, isSpecial: isSpecialPage.value }),
+  ({ isHome, isSpecial }) => {
+    if (isHome) {
+      // 回到首页，恢复当前样式对应的完整配置
+      const config = configMap[currentStyle.value] || teekDocConfig;
+      Object.assign(teekConfig.value, config);
+      if (config.banner) teekConfig.value.banner = { ...config.banner };
+      if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+    } else if (isSpecial) {
+      // 进入标签/分类页，确保 teekHome 为 true 以显示内容
+      teekConfig.value.teekHome = true;
+    }
+  },
+  { flush: "sync" }
+);
 
 let previousStyle = "";
 

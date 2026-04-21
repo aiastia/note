@@ -1,6 +1,6 @@
 <script setup lang="ts" name="ConfigSwitch">
-import { TkSegmented, TkMessage, isClient, useCommon } from "vitepress-theme-teek";
-import { ref, onMounted, nextTick, watch } from "vue";
+import { TkSegmented, TkMessage } from "vitepress-theme-teek";
+import { ref, onMounted, watch } from "vue";
 import {
   teekDocConfig,
   teekBlogConfig,
@@ -28,43 +28,34 @@ const currentStyle = ref("doc");
 const teekConfig = ref(teekDocConfig);
 
 const storageKey = "tk:configStyle";
-const { isMobile } = useCommon();
 
-// 统一更新函数（只在客户端执行）
-const update = async (style: string) => {
-  if (style === "doc") teekConfig.value = teekDocConfig;
-  else if (style === "blog") teekConfig.value = teekBlogConfig;
-  else if (style === "blog-part") teekConfig.value = teekBlogParkConfig;
-  else if (style === "blog-full") teekConfig.value = teekBlogFullConfig;
-  else if (style === "blog-body") teekConfig.value = teekBlogBodyConfig;
-  else if (style === "blog-card") teekConfig.value = teekBlogCardConfig;
+const configMap: Record<string, typeof teekDocConfig> = {
+  doc: teekDocConfig,
+  blog: teekBlogConfig,
+  "blog-part": teekBlogParkConfig,
+  "blog-full": teekBlogFullConfig,
+  "blog-body": teekBlogBodyConfig,
+  "blog-card": teekBlogCardConfig,
+};
 
+// 统一更新函数
+const update = (style: string, shouldReload = false) => {
+  teekConfig.value = configMap[style] || teekDocConfig;
   emit("switch", teekConfig.value, style);
   localStorage.setItem(storageKey, style);
-
-  await nextTick();
-
-  // 博客全图模式：添加 body class
-  document.body.classList.toggle("tk-style-blog-body", style === "blog-body");
-
-  if (!isClient) return;
-  const navDom = document.querySelector(".VPNavBar") as HTMLElement;
-  if (
-    ["blog-full", "blog-body", "blog-card"].includes(style) &&
-    teekConfig.value.banner?.enabled !== false
-  ) {
-    navDom?.classList.add("full-img-nav-bar");
-  } else {
-    navDom?.classList.remove("full-img-nav-bar");
+  // 切换后刷新页面，确保 Banner 图片立即更新
+  // （Teek 内部 useSwitchData 不会即时响应配置变更）
+  if (shouldReload) {
+    setTimeout(() => window.location.reload(), 50);
   }
 };
 
-// 所有副作用统一延迟到客户端
 onMounted(() => {
   const saved = localStorage.getItem(storageKey);
   if (saved) currentStyle.value = saved;
   update(currentStyle.value);
-  watch(currentStyle, (val) => update(val));
+  // 用户手动切换时，保存后刷新页面
+  watch(currentStyle, (val) => update(val, true));
 });
 
 const handleCopy = async () => {

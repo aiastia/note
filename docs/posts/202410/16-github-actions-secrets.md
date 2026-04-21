@@ -17,12 +17,12 @@ tags:
 
 ## 仓库机密（Repository Secrets）
 
-直接使用 `${{ secrets.SECRET_NAME }}` 语法访问：
+直接使用 `secrets.SECRET_NAME` 语法访问：
 
 ```yaml
 steps:
   - name: 使用仓库机密
-    run: echo ${{ secrets.DOCKER_PASSWORD }}
+    run: echo "${{ secrets.DOCKER_PASSWORD }}"
 ```
 
 ## 环境机密（Environment Secrets）
@@ -33,10 +33,10 @@ steps:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production  # 指定环境
+    environment: production
     steps:
       - name: 访问环境机密
-        run: echo ${{ secrets.ENV_SECRET_NAME }}
+        run: echo "${{ secrets.ENV_SECRET_NAME }}"
 ```
 
 `ENV_SECRET_NAME` 是在 `production` 环境中定义的机密，通过设置 `environment` 字段即可访问。
@@ -61,10 +61,10 @@ jobs:
 
 | 层级 | 定义位置 | 调用方式 | 适用场景 |
 |------|----------|----------|----------|
-| 仓库机密 | Settings → Secrets and variables → Actions | `${{ secrets.NAME }}` | 通用密钥、Token |
-| 环境机密 | Settings → Environments → xxx → Secrets | `${{ secrets.NAME }}`（需指定 environment） | 按环境区分（dev/staging/production） |
-| 环境变量 | 工作流文件 `env` 字段 | `${{ env.NAME }}` 或 `$NAME` | 非敏感配置 |
-| 组织机密 | 组织 Settings → Secrets | `${{ secrets.NAME }}` | 跨仓库共享密钥 |
+| 仓库机密 | Settings → Secrets and variables → Actions | `secrets.NAME` | 通用密钥、Token |
+| 环境机密 | Settings → Environments → xxx → Secrets | `secrets.NAME`（需指定 environment） | 按环境区分（dev/staging/production） |
+| 环境变量 | 工作流文件 `env` 字段 | `env.NAME` 或 `$NAME` | 非敏感配置 |
+| 组织机密 | 组织 Settings → Secrets | `secrets.NAME` | 跨仓库共享密钥 |
 
 ## 使用建议
 

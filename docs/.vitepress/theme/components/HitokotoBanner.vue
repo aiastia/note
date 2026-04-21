@@ -67,23 +67,57 @@ onUnmounted(() => {
 
 <template>
   <div class="hitokoto-banner">
-    <span class="hitokoto-text">{{ displayText }}<span class="cursor">|</span></span>
+    <span class="hitokoto-text">{{ displayText }}</span><span class="cursor">|</span>
   </div>
 </template>
 
 <style scoped>
 .hitokoto-banner {
   text-align: center;
-  padding: 20px 16px;
-  font-size: 1.2rem;
+  padding: 24px 16px;
+  font-size: 1.3rem;
   color: var(--vp-c-text-2);
   min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+.hitokoto-banner:hover {
+  transform: translateY(-4px);
 }
 .hitokoto-text {
   line-height: 1.8;
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    #ff6b6b,
+    #ffa94d,
+    #ffd43b,
+    #69db7c,
+    #4dabf7,
+    #9775fa,
+    #f06595,
+    #ff6b6b
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-shift 4s linear infinite;
+  filter: drop-shadow(0 2px 8px rgba(255, 107, 107, 0.4))
+          drop-shadow(0 2px 8px rgba(77, 171, 247, 0.3));
+  transition: filter 0.3s ease;
+}
+.hitokoto-banner:hover .hitokoto-text {
+  filter: drop-shadow(0 4px 16px rgba(255, 107, 107, 0.6))
+          drop-shadow(0 4px 16px rgba(77, 171, 247, 0.5))
+          drop-shadow(0 4px 16px rgba(151, 117, 250, 0.4));
+}
+@keyframes rainbow-shift {
+  to {
+    background-position: 200% center;
+  }
 }
 .cursor {
   animation: blink 1s infinite;

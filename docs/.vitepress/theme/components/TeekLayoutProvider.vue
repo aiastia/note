@@ -5,6 +5,7 @@ import { ref, provide, onMounted, computed } from "vue";
 import { useData } from "vitepress";
 import { teekDocConfig, teekBlogConfig, teekBlogParkConfig, teekBlogFullConfig, teekBlogBodyConfig, teekBlogCardConfig } from "../config/teekConfig";
 import ConfigSwitch from "./ConfigSwitch.vue";
+import HitokotoBanner from "./HitokotoBanner.vue";
 
 // 配置映射
 const configMap: Record<string, TeekConfig> = {
@@ -150,6 +151,12 @@ const handleConfigSwitch = async (config: TeekConfig, style: string) => {
 
     <template #nav-bar-content-after>
       <button class="nav-random-btn" @click="goRandom" title="随机看一篇">🎲</button>
+    </template>
+
+    <template #home-hero-after>
+      <ClientOnly>
+        <HitokotoBanner v-if="isHomePage" />
+      </ClientOnly>
     </template>
   </Teek.Layout>
 </template>

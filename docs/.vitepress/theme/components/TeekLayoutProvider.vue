@@ -140,12 +140,17 @@ watch(
   ({ isHome, isSpecial }) => {
     if (isHome) {
       const config = configMap[currentStyle.value] || teekDocConfig;
-      // 关键：彻底重建，而不是 Object.assign merge
-      teekConfig.value = {
-        ...config,
-        teekHome: false,
-        vpHome: true,
-      };
+      // 彻底重建 config，根据当前样式设置正确的 teekHome
+      if (currentStyle.value === "doc") {
+        teekConfig.value = {
+          ...config,
+          teekHome: false,
+          vpHome: true,
+        };
+      } else {
+        // 博客模式保持原配置
+        teekConfig.value = { ...config };
+      }
     } else if (isSpecial) {
       // 标签/分类页需要 teekHome 来显示内容
       teekConfig.value = {

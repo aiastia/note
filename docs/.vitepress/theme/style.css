@@ -1,5 +1,5 @@
 /* 博客全图模式：给 Banner 文字区域添加半透明暗色背景 */
-body.tk-style-blog-body .tk-banner-content {
+.tk-body-bg-image ~ .tk-layout .tk-banner-content {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
   padding: 24px 32px !important;

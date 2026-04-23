@@ -1,5 +1,7 @@
 ---
 title: 笔记
+sidebar: true
+layout: doc
 ---
 
 # 📝 笔记

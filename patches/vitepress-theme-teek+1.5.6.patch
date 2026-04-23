@@ -1,0 +1,70 @@
+diff --git a/node_modules/vitepress-theme-teek/es/components/theme/ArticleOverviewPage/src/index.vue2.mjs b/node_modules/vitepress-theme-teek/es/components/theme/ArticleOverviewPage/src/index.vue2.mjs
+index da3036f..34f8108 100644
+--- a/node_modules/vitepress-theme-teek/es/components/theme/ArticleOverviewPage/src/index.vue2.mjs
++++ b/node_modules/vitepress-theme-teek/es/components/theme/ArticleOverviewPage/src/index.vue2.mjs
+@@ -33,7 +33,7 @@ var _sfc_main = /* @__PURE__ */ defineComponent({
+     const categoriesPageLink = computed(() => {
+       const localeIndexConst = localeIndex.value;
+       const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-      return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++      return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+     });
+     const getFileWords = (url) => {
+       return eachFileWords.value.filter((item) => {
+diff --git a/node_modules/vitepress-theme-teek/index.js b/node_modules/vitepress-theme-teek/index.js
+index 6de08f5..7fe0a36 100644
+--- a/node_modules/vitepress-theme-teek/index.js
++++ b/node_modules/vitepress-theme-teek/index.js
+@@ -6366,7 +6366,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`
+     const categoryPath = Vue.computed(() => {
+       const localeIndexConst = localeIndex.value;
+       const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-      return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++      return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+     });
+     const tagPath = Vue.computed(() => {
+       const localeIndexConst = localeIndex.value;
+@@ -13501,7 +13501,7 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
+       const categoriesPageLink = Vue.computed(() => {
+         const localeIndexConst = localeIndex.value;
+         const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-        return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++        return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+       });
+       const getFileWords = (url) => {
+         return eachFileWords.value.filter((item) => {
+diff --git a/node_modules/vitepress-theme-teek/index.mjs b/node_modules/vitepress-theme-teek/index.mjs
+index d295e95..ff4d62d 100644
+--- a/node_modules/vitepress-theme-teek/index.mjs
++++ b/node_modules/vitepress-theme-teek/index.mjs
+@@ -6349,7 +6349,7 @@ const usePagePath = () => {
+   const categoryPath = computed(() => {
+     const localeIndexConst = localeIndex.value;
+     const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-    return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++    return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+   });
+   const tagPath = computed(() => {
+     const localeIndexConst = localeIndex.value;
+@@ -13484,7 +13484,7 @@ var _sfc_main$Z = /* @__PURE__ */ defineComponent({
+     const categoriesPageLink = computed(() => {
+       const localeIndexConst = localeIndex.value;
+       const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-      return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++      return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+     });
+     const getFileWords = (url) => {
+       return eachFileWords.value.filter((item) => {
+diff --git a/node_modules/vitepress-theme-teek/lib/components/theme/ArticleOverviewPage/src/index.vue2.js b/node_modules/vitepress-theme-teek/lib/components/theme/ArticleOverviewPage/src/index.vue2.js
+index d179f03..e3fde13 100644
+--- a/node_modules/vitepress-theme-teek/lib/components/theme/ArticleOverviewPage/src/index.vue2.js
++++ b/node_modules/vitepress-theme-teek/lib/components/theme/ArticleOverviewPage/src/index.vue2.js
+@@ -37,7 +37,7 @@ var _sfc_main = /* @__PURE__ */ Vue.defineComponent({
+     const categoriesPageLink = Vue.computed(() => {
+       const localeIndexConst = localeIndex.value;
+       const localeName = localeIndexConst !== "root" ? `/${localeIndexConst}` : "";
+-      return `${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`;
++      return withBase(`${localeName}${categoryConfig.value.path}${site.value.cleanUrls ? "" : ".html"}`);
+     });
+     const getFileWords = (url) => {
+       return eachFileWords.value.filter((item) => {

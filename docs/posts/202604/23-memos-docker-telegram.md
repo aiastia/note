@@ -81,7 +81,7 @@ Memos 官方提供了 [Memogram](https://github.com/usememos/telegram-integratio
 
 ```yaml
   memogram:
-    image: ghcr.io/usememos/telegram-integration:latest
+    image: ghcr.io/aiastia123/telegram-integration:latest
     container_name: memogram
     restart: unless-stopped
     environment:

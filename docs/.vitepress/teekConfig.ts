@@ -147,6 +147,6 @@ export const teekConfig = defineTeekConfig({
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问
-    fileContentLoaderIgnore: ["**/ai/**"],
+    fileContentLoaderIgnore: ["**/ai/**", "**/posts/index.md"],
   },
 })

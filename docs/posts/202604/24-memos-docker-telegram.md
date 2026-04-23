@@ -9,7 +9,6 @@ tags:
   - Telegram
   - 自建
   - 开源
-top: true
 ---
 
 # Memos：自建轻量笔记服务，搭配 Telegram Bot 随手记录

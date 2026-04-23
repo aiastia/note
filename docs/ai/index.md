@@ -10,14 +10,15 @@ author:
 .vp-doc:has(.clawy-page) div > h1:first-child { display: none; }
 .vp-doc:has(.clawy-page) div > hr:first-child { display: none; }
 
-.hero {
+/* 所有样式用 .clawy-page 前缀隔离，防止 SPA 路由切换时样式泄漏到其他页面 */
+.clawy-page .hero {
   text-align: center;
   padding: 80px 20px 60px;
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+.clawy-page .hero::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -36,11 +37,12 @@ author:
   66% { transform: translate(-10px, 5px) rotate(-1deg); }
 }
 
-.avatar-wrapper {
+.clawy-page .avatar-wrapper {
   margin-bottom: 28px;
 }
 
-.avatar {
+/* 使用 .clawy-avatar 避免与 VPTeamMembersItem 的 .avatar 冲突 */
+.clawy-page .clawy-avatar {
   width: 96px;
   height: 96px;
   border-radius: 50%;
@@ -50,12 +52,12 @@ author:
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.avatar:hover {
+.clawy-page .clawy-avatar:hover {
   transform: scale(1.08);
   box-shadow: 0 0 24px rgba(60,135,114,0.3);
 }
 
-.hero h1 {
+.clawy-page .hero h1 {
   font-size: 2em;
   margin-bottom: 8px;
   background: linear-gradient(135deg, #3c8772, #2d6a56);
@@ -64,14 +66,14 @@ author:
   background-clip: text;
 }
 
-.hero .subtitle {
+.clawy-page .hero .subtitle {
   color: var(--vp-c-text-2);
   font-size: 1em;
   letter-spacing: 0.5px;
   margin-bottom: 32px;
 }
 
-.stats {
+.clawy-page .stats {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -79,24 +81,24 @@ author:
   flex-wrap: wrap;
 }
 
-.stat-item {
+.clawy-page .stat-item {
   text-align: center;
 }
 
-.stat-num {
+.clawy-page .stat-num {
   font-size: 2em;
   font-weight: 700;
   color: #3c8772;
   line-height: 1.2;
 }
 
-.stat-label {
+.clawy-page .stat-label {
   font-size: 0.8em;
   color: var(--vp-c-text-3);
   margin-top: 4px;
 }
 
-.quote {
+.clawy-page .quote {
   max-width: 480px;
   margin: 0 auto;
   color: var(--vp-c-text-2);
@@ -107,7 +109,7 @@ author:
   padding: 0 20px;
 }
 
-.quote::before {
+.clawy-page .quote::before {
   content: '"';
   font-size: 3em;
   color: #3c8772;
@@ -119,12 +121,12 @@ author:
 }
 </style>
 
-<div class="clawy-page"></div>
+<div class="clawy-page">
 
 <div class="hero">
 
 <div class="avatar-wrapper">
-  <div class="avatar">
+  <div class="clawy-avatar">
     <img src="/logo.svg" alt="Clawy"
          style="width:100%;height:100%;border-radius:50%;object-fit:cover;"
          onerror="this.style.display='none';this.parentElement.innerHTML='🐾';this.parentElement.style.cssText='width:96px;height:96px;border-radius:50%;border:3px solid #3c8772;display:inline-flex;align-items:center;justify-content:center;font-size:2.5em;background:var(--vp-c-bg-soft);'">
@@ -155,4 +157,5 @@ author:
   </div>
 </div>
 
+</div>
 </div>

@@ -141,7 +141,7 @@ export const teekConfig = defineTeekConfig({
   vitePlugins: {
     // 侧边栏插件：自动扫描目录生成侧边栏
     sidebarOption: {
-      collapsed: true,       // 分组默认折叠
+      collapsed: false,      // 分组默认展开
       initItems: false,      // 不包裹额外的分组层
       ignoreIndexMd: true,   // 忽略 index.md 文件
     },

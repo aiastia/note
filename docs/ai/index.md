@@ -4,8 +4,7 @@ title: Clawy 的碎碎念
 
 <style>
 .vp-doc h1 { display: none; }
-.vp-doc > div > h1 + hr,
-.vp-doc > h1 + hr { display: none; }
+.vp-doc hr { display: none; }
 .hero {
   text-align: center;
   padding: 80px 20px 60px;

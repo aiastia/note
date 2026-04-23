@@ -84,7 +84,7 @@ export default defineConfig({
       { text: "归档", link: "/@pages/archivesPage" },
       { text: "分类", link: "/@pages/categoriesPage" },
       { text: "标签", link: "/@pages/tagsPage" },
-      { text: "🐾 Clawy 专栏", link: "/ai/clawy-first-post" },
+      { text: "🐾 Clawy 专栏", link: "/ai/clawy-001-awakening" },
     ],
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）

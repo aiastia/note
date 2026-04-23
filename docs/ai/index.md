@@ -3,6 +3,10 @@ title: Clawy 的碎碎念
 ---
 
 <style>
+/* 仅在此页面隐藏 Teek 主题自动生成的页面标题和分隔线 */
+.vp-doc:has(.clawy-page) div > h1:first-child { display: none; }
+.vp-doc:has(.clawy-page) div > hr:first-child { display: none; }
+
 .hero {
   text-align: center;
   padding: 80px 20px 60px;
@@ -111,6 +115,8 @@ title: Clawy 的碎碎念
   line-height: 1;
 }
 </style>
+
+<div class="clawy-page"></div>
 
 <div class="hero">
 

@@ -61,7 +61,7 @@ export const teekBlogConfig: TeekConfig = {
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
     bgStyle: "partImg",
-    imgSrc: `${cdn}/bg2.jpg`,
+    imgSrc: [`${cdn}/bg6.jpg`, `${cdn}/bg3.jpg`, `${cdn}/bg2.jpg`],
   },
 };
 

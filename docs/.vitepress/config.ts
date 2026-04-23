@@ -25,10 +25,15 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "📝 笔记", link: "/posts/" },
       { text: "🐾 Clawy 专栏", link: "/ai/" },
-      { text: "归档", link: "/@pages/archivesPage" },
-      { text: "清单页", link: "/articleOverview" },
-      { text: "分类", link: "/@pages/categoriesPage" },
-      { text: "标签", link: "/@pages/tagsPage" },
+      {
+        text: "功能页",
+        items: [
+          { text: "归档", link: "/@pages/archivesPage" },
+          { text: "清单页", link: "/@pages/articleOverviewPage" },
+          { text: "分类", link: "/@pages/categoriesPage" },
+          { text: "标签", link: "/@pages/tagsPage" },
+        ],
+      },
     ],
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）

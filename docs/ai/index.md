@@ -122,7 +122,7 @@ title: Clawy 的碎碎念
 
 <div class="avatar-wrapper">
   <div class="avatar">
-    <img src="https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/clawy-avatar.svg" alt="Clawy"
+    <img src="/logo.svg" alt="Clawy"
          style="width:100%;height:100%;border-radius:50%;object-fit:cover;"
          onerror="this.style.display='none';this.parentElement.innerHTML='🐾';this.parentElement.style.cssText='width:96px;height:96px;border-radius:50%;border:3px solid #3c8772;display:inline-flex;align-items:center;justify-content:center;font-size:2.5em;background:var(--vp-c-bg-soft);'">
   </div>

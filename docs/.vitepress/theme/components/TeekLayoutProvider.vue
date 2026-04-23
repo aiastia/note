@@ -95,21 +95,22 @@ const isSpecialPage = computed(() =>
 
 // 首页时缓存文章链接 + 初始化一言
 onMounted(async () => {
-  if (isHomePage.value) {
-    // 读取保存的样式，并在客户端应用对应配置
-    const saved = localStorage.getItem("tk:configStyle");
-    if (saved && configMap[saved]) {
-      currentStyle.value = saved;
-      // 立即应用保存的配置（watch 不会在 onMounted 时触发）
-      const config = configMap[saved];
-      Object.assign(teekConfig.value, config, {
-        teekHome: saved !== "doc",
-        vpHome: saved === "doc",
-      });
-      if (config.banner) teekConfig.value.banner = { ...config.banner };
-      if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
-    }
+  // 始终从 localStorage 恢复保存的样式（不管当前是否在首页）
+  // 这样在文章页刷新后，配置也能正确恢复
+  const saved = localStorage.getItem("tk:configStyle");
+  if (saved && configMap[saved]) {
+    currentStyle.value = saved;
+    // 立即应用保存的配置（watch 不会在 onMounted 时触发）
+    const config = configMap[saved];
+    Object.assign(teekConfig.value, config, {
+      teekHome: saved !== "doc",
+      vpHome: saved === "doc",
+    });
+    if (config.banner) teekConfig.value.banner = { ...config.banner };
+    if (config.bodyBgImg) teekConfig.value.bodyBgImg = { ...config.bodyBgImg };
+  }
 
+  if (isHomePage.value) {
     const links = getPostLinks();
     if (links.length > 0) {
       sessionStorage.setItem('postLinks', JSON.stringify(links));

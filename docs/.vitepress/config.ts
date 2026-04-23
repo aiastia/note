@@ -52,6 +52,17 @@ const teekConfig = defineTeekConfig({
     // 侧边栏插件：使用 Teek 默认自动生成
     sidebarOption: {
       collapsed: true,              // 分组默认折叠
+      // 调试：查看插件生成的侧边栏数据
+      sidebarResolved: (data: any) => {
+        const postsData = data["/posts/"]
+        const firstItem = postsData?.[0]
+        console.log("[DEBUG] /posts/ first item keys:", Object.keys(firstItem || {}))
+        console.log("[DEBUG] /posts/ first item items count:", firstItem?.items?.length)
+        if (firstItem?.items) {
+          console.log("[DEBUG] /posts/ sub-items:", JSON.stringify(firstItem.items.slice(0, 3)))
+        }
+        return data
+      },
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问
@@ -84,7 +95,8 @@ export default defineConfig({
       { text: "归档", link: "/@pages/archivesPage" },
       { text: "分类", link: "/@pages/categoriesPage" },
       { text: "标签", link: "/@pages/tagsPage" },
-      { text: "🐾 Clawy 专栏", link: "/ai/clawy-001-awakening" },
+      { text: "📝 笔记", link: "/posts/" },
+      { text: "🐾 Clawy 专栏", link: "/ai/" },
     ],
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）
@@ -136,5 +148,6 @@ export default defineConfig({
     sidebarMenuLabel: "菜单",
     returnToTopLabel: "回到顶部",
     langMenuLabel: "选择语言",
+
   },
 })

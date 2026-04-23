@@ -1,65 +1,5 @@
 import { defineConfig } from "vitepress"
-import { defineTeekConfig } from "vitepress-theme-teek/config"
-
-/**
- * Teek 主题配置
- * 文档：https://teek.seasir.top/
- */
-const teekConfig = defineTeekConfig({
-  // Microsoft Clarity 站点分析
-  siteAnalytics: [
-    {
-      provider: "clarity" as any,
-      options: {
-        id: "wev0xq9wxg",
-      },
-    },
-  ],
-
-  // 启用侧边栏展开/折叠触发器
-  sidebarTrigger: true,
-
-  // 文章默认作者信息，会显示在文章列表和文章页
-  author: { name: "YOLO", link: "https://github.com/aiastia" },
-
-  // 博主信息卡片，显示在首页左侧
-  blogger: {
-    name: "YOLO",
-    slogan: "记录技术探索与折腾之路",
-    avatar: "https://avatars.githubusercontent.com/u/19776350?v=4",
-    shape: "circle-rotate", // 头像形状：circle-rotate 旋转圆形
-    circleSize: 120,        // 头像尺寸（px）
-  },
-
-  // 页脚信息配置
-  footerInfo: {
-    theme: {
-      name: "Theme By Teek", // 主题名称显示
-    },
-    copyright: {
-      createYear: 2026,    // 站点创建年份
-      suffix: "YOLO",     // 版权所有者
-    },
-  },
-
-  // 文章列表配置
-  post: {
-    showCapture: true, // 是否在文章列表显示摘要截取内容
-  },
-
-  // 内置 Vite 插件配置
-  vitePlugins: {
-    // 侧边栏插件：自动扫描目录生成侧边栏
-    sidebarOption: {
-      collapsed: true,
-      initItems: false,
-      ignoreIndexMd: true,
-    },
-    // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
-    // 但仍可通过导航栏直接访问
-    fileContentLoaderIgnore: ["**/ai/**"],
-  },
-})
+import { teekConfig } from "./teekConfig"
 
 /**
  * VitePress 站点配置
@@ -132,7 +72,6 @@ export default defineConfig({
 
     // 暗色模式切换按钮文字中文化
     darkModeSwitchLabel: "主题模式",
-    // 轻量/暗色模式文字
     lightModeSwitchTitle: "切换到浅色模式",
     darkModeSwitchTitle: "切换到深色模式",
 
@@ -140,6 +79,5 @@ export default defineConfig({
     sidebarMenuLabel: "菜单",
     returnToTopLabel: "回到顶部",
     langMenuLabel: "选择语言",
-
   },
 })

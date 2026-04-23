@@ -69,6 +69,20 @@ export const teekConfig = defineTeekConfig({
     copiedDone: (TkMessage: any) => TkMessage.success("复制成功！"),
   },
 
+  // ==================== 分类 & 标签 ====================
+
+  // 分类卡片配置
+  category: {
+    enabled: true,
+    path: "/categories",   // 分类页访问地址（对应 categoriesPage.md 的 permalink）
+  },
+
+  // 标签卡片配置
+  tag: {
+    enabled: true,
+    path: "/tags",         // 标签页访问地址（对应 tagsPage.md 的 permalink）
+  },
+
   // ==================== 文章相关 ====================
 
   // 文章列表配置

@@ -49,20 +49,11 @@ const teekConfig = defineTeekConfig({
 
   // 内置 Vite 插件配置
   vitePlugins: {
-    // 侧边栏插件：使用 Teek 默认自动生成
+    // 侧边栏插件：自动扫描目录生成侧边栏
     sidebarOption: {
-      collapsed: true,              // 分组默认折叠
-      // 调试：查看插件生成的侧边栏数据
-      sidebarResolved: (data: any) => {
-        const postsData = data["/posts/"]
-        const firstItem = postsData?.[0]
-        console.log("[DEBUG] /posts/ first item keys:", Object.keys(firstItem || {}))
-        console.log("[DEBUG] /posts/ first item items count:", firstItem?.items?.length)
-        if (firstItem?.items) {
-          console.log("[DEBUG] /posts/ sub-items:", JSON.stringify(firstItem.items.slice(0, 3)))
-        }
-        return data
-      },
+      collapsed: true,
+      initItems: false,
+      ignoreIndexMd: true,
     },
     // 排除 ai 目录下的文件，使其不出现在首页文章列表、归档、分类、标签中
     // 但仍可通过导航栏直接访问
@@ -92,11 +83,12 @@ export default defineConfig({
     // 顶部导航栏
     nav: [
       { text: "首页", link: "/" },
-      { text: "归档", link: "/@pages/archivesPage" },
-      { text: "分类", link: "/@pages/categoriesPage" },
-      { text: "标签", link: "/@pages/tagsPage" },
       { text: "📝 笔记", link: "/posts/" },
       { text: "🐾 Clawy 专栏", link: "/ai/" },
+      { text: "归档", link: "/@pages/archivesPage" },
+      { text: "清单页", link: "/articleOverview" },
+      { text: "分类", link: "/@pages/categoriesPage" },
+      { text: "标签", link: "/@pages/tagsPage" },
     ],
 
     // 页面编辑链接（点击可跳转到 GitHub 编辑对应文件）

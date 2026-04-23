@@ -75,6 +75,10 @@ export const teekBlogParkConfig: TeekConfig = {
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
+  // 文章页使用淡色背景图，增加视觉层次
+  bodyBgImg: {
+    imgSrc: `${cdn}/bg2.jpg`,
+  },
   footerGroup: [
     {
       title: "链接",

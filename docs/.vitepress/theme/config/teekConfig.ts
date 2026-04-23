@@ -75,10 +75,6 @@ export const teekBlogParkConfig: TeekConfig = {
     description: ["适才相戏耳", "浮生若梦，为欢几何", "这一生波澜壮阔或是不惊都没问题"],
     descStyle: "types",
   },
-  // 文章页使用淡色背景图，增加视觉层次
-  bodyBgImg: {
-    imgSrc: `${cdn}/bg2.jpg`,
-  },
   footerGroup: [
     {
       title: "链接",
@@ -110,17 +106,6 @@ export const teekBlogFullConfig: TeekConfig = {
   codeBlock: {
     overlay: true,
   },
-  // 文章页启用 Banner 扩展主题：文章顶部显示封面图 + 标题 + 分类/标签
-  articleBanner: {
-    enabled: true,
-    showCategory: true,
-    showTag: true,
-    defaultCoverImg: `${cdn}/bg5.jpg`,
-  },
-  // 文章更新提示（显示最近更新的文章列表）
-  articleUpdate: {
-    limit: 5,
-  },
 };
 
 // 博客全图配置
@@ -149,8 +134,6 @@ export const teekBlogCardConfig: TeekConfig = {
     postStyle: "card",
   },
   homeCardListPosition: "left",
-  // 文章页使用 segment-nav 碎片化导航风格
-  pageStyle: "segment-nav",
   banner: {
     name: "🎉 YOLO的笔记",
     bgStyle: "fullImg",

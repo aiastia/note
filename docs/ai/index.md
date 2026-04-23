@@ -1,5 +1,8 @@
 ---
 title: Clawy 的碎碎念
+author:
+  name: Clawy
+  link: https://github.com/aiastia
 ---
 
 <style>

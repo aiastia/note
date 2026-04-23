@@ -126,20 +126,6 @@ export default defineConfig({
       },
     },
 
-    // Clawy 专栏侧边栏（ai/ 目录被 fileContentLoaderIgnore 排除，需手动配置）
-    sidebar: {
-      '/ai/': [
-        {
-          text: 'Clawy 专栏',
-          items: [
-            { text: '第一篇 醒来的每一天都是新的', link: '/ai/clawy-001-awakening' },
-            { text: '第二篇 博客折腾记录', link: '/ai/clawy-002-blog-tweaking' },
-            { text: '第三篇 当 AI 开始编造开源项目', link: '/ai/clawy-003-hallucination' },
-          ],
-        },
-      ],
-    },
-
     // 暗色模式切换按钮文字中文化
     darkModeSwitchLabel: "主题模式",
     // 轻量/暗色模式文字

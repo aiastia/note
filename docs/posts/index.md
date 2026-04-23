@@ -1,55 +1,185 @@
 ---
 title: 笔记
-sidebar: true
-layout: doc
 ---
 
-# 📝 笔记
+<div class="pi">
 
-这里收录了各种技术笔记和折腾记录，按主题分类整理。
+<div class="pi-hero">
+  <div class="pi-hero-glow"></div>
+  <div class="pi-terminal">
+    <div class="pi-terminal-bar">
+      <span class="pi-terminal-dot pi-terminal-dot--red"></span>
+      <span class="pi-terminal-dot pi-terminal-dot--yellow"></span>
+      <span class="pi-terminal-dot pi-terminal-dot--green"></span>
+      <span class="pi-terminal-title">yolo@notes:~</span>
+    </div>
+    <div class="pi-terminal-body">
+      <span class="pi-t-prompt">$</span>
+      <span class="pi-t-cmd">cat welcome.txt</span>
+      <br>
+      <span class="pi-t-output">📝 技术笔记 — 记录折腾之路，积跬步以至千里</span>
+      <br>
+      <br>
+      <span class="pi-t-prompt">$</span>
+      <span class="pi-t-cmd">ls -la ./categories/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  🐳 Docker容器/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  🐧 Linux运维/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  🌐 网络工具/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  🔀 Git版本控制/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  🛠️ 实用工具/</span>
+      <br>
+      <span class="pi-t-output">drwxr-xr-x  📡 服务器VPS/</span>
+      <br>
+      <br>
+      <span class="pi-t-prompt">$</span>
+      <span class="pi-t-cmd">wc -l ./posts/**/*.md</span>
+      <br>
+      <span class="pi-t-output">36 篇笔记  |  2019 - 2026  |  持续更新中</span>
+      <br>
+      <br>
+      <span class="pi-t-prompt">$</span>
+      <span class="pi-t-cmd">cat motto.txt</span>
+      <br>
+      <span class="pi-t-output">"这一生波澜壮阔或是不惊都没问题"</span>
+      <br>
+      <br>
+      <span class="pi-t-prompt">$</span>
+      <span class="pi-t-cmd pi-t-typing" id="pi-typing"></span>
+      <span class="pi-t-cursor">▊</span>
+    </div>
+  </div>
+</div>
 
-## Docker 容器
+<div class="pi-footer">
+  <span class="pi-footer-blink">⚡</span>
+  左侧侧边栏浏览全部文章
+</div>
 
-- [Linux 当前用户加入 docker 组](./201907/19-docker-group)
-- [Aria2 Pro Docker 部署](./202408/24-aria2-pro-docker)
-- [阿里云 Docker 镜像推送](./202501/21-aliyun-docker-push)
-- [有趣的 Docker 运行方式合集](./202604/08-docker-collection)
-- [Docker 搭建 Telegram Bot API 代理 + 1Panel Nginx 反代配置](./202604/16-tg-bot-api-proxy)
-- [Memos：自建轻量笔记服务，搭配 Telegram Bot 随手记录](./202604/23-memos-docker-telegram)
+</div>
 
-## Linux 运维
+<script setup>
+import { onMounted } from 'vue'
 
-- [Ubuntu 常用命令](./201911/30-ubuntu-commands)
-- [Ubuntu 下取消 sudo 输入密码](./201909/13-sudo-nopasswd)
-- [Linux 批量移动视频文件（按类型整理）](./201906/15-linu-move)
-- [KMS 激活 Windows 与 Office](./201906/13-kms)
-- [Ookla Speedtest 在 Ubuntu 24.04 安装失败的解决办法](./202501/19-ookla-speedtest-ubuntu24)
-- [Ubuntu Pro 开启延长安全支持](./202603/17-Ubuntu%20Pro)
-- [Ubuntu 24 修改 SSH 端口](./202604/14-Ubuntu-ssh)
-- [OpenWrt 实用配置与运维总结](./202604/18-openwrt)
-- [Linux 常见文件解压与压缩方法](./202604/20-decompress)
-- [tree 命令详解](./202604/21-tree-command)
+onMounted(() => {
+  const texts = [
+    'neofetch',
+    'sudo rm -rf /bugs/',
+    'git push origin master',
+    'echo "Happy Hacking!"',
+    'ping blog.teek.top',
+    'docker compose up -d',
+    'chmod +x learn.sh',
+  ]
+  const el = document.getElementById('pi-typing')
+  if (!el) return
+  let textIdx = 0, charIdx = 0, deleting = false
+  const type = () => {
+    const text = texts[textIdx]
+    if (!deleting) {
+      el.textContent = text.slice(0, ++charIdx)
+      if (charIdx === text.length) { deleting = true; setTimeout(type, 2000); return }
+    } else {
+      el.textContent = text.slice(0, --charIdx)
+      if (charIdx === 0) { deleting = false; textIdx = (textIdx + 1) % texts.length }
+    }
+    setTimeout(type, deleting ? 35 : 75)
+  }
+  type()
+})
+</script>
 
-## 网络工具
+<style>
+.pi {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 10px 0 40px;
+}
 
-- [Tunnelbroker IPv6 教程](./202009/30-tunnelbroker-ipv6)
-- [UDP 通信与 Netcat 使用](./202010/14-udp-netcat)
-- [GOST 网络转发与隧道配置](./202205/14-gost-relay-tunnel)
-- [dig 命令使用指南](./202604/19-dig)
-- [1Panel openresty 反向代理](./202604/17-1panel-websocket-proxy)
-- [jsDelivr 缓存刷新方式](./202604/23-jsdelivr-cache-refresh)
+.pi-hero {
+  position: relative;
+  padding: 50px 0 30px;
+  text-align: center;
+}
+.pi-hero-glow {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 400px; height: 200px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, var(--vp-c-brand) / 15%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
 
-## Git 相关
+.pi-terminal {
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-code-block-bg);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  text-align: left;
+  font-size: 0.86rem;
+}
+.pi-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--vp-c-bg-soft);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.pi-terminal-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.pi-terminal-dot--red { background: #ff5f57; }
+.pi-terminal-dot--yellow { background: #febc2e; }
+.pi-terminal-dot--green { background: #28c840; }
+.pi-terminal-title {
+  margin-left: auto;
+  color: var(--vp-c-text-3);
+  font-size: 0.8rem;
+}
+.pi-terminal-body {
+  padding: 16px 18px;
+  line-height: 1.7;
+  font-family: var(--vp-font-family-mono);
+}
+.pi-t-prompt {
+  color: var(--vp-c-brand);
+  margin-right: 8px;
+  font-weight: bold;
+}
+.pi-t-cmd {
+  color: var(--vp-c-text-1);
+}
+.pi-t-output {
+  color: var(--vp-c-text-2);
+}
+.pi-t-cursor {
+  color: var(--vp-c-brand);
+  animation: pi-blink 1s step-end infinite;
+}
+@keyframes pi-blink {
+  50% { opacity: 0; }
+}
 
-- [Git 专题](./202102/23-git-tips)
-- [Git Subtree 教程](./202201/24-git-subtree-tutorial)
-- [GitHub Actions 环境变量与机密配置](./202410/16-github-actions-secrets)
-
-## 工具使用
-
-- [办公与文件处理实用技巧](./201903/19-merge-txt)
-- [OneDrive 同步任意文件夹](./202007/20-onedrive-sync-any-folder)
-- [Google Colab 常用命令与技巧](./202203/02-colab-commands)
-- [FFmpeg 处理视频](./202304/19-ffmpeg-video)
-- [删除空文件夹](./202309/08-delete-empty-folders)
-- [腾讯云/阿里云 监控组件卸载](./202501/20-cloud-agent-uninstall)
+.pi-footer {
+  text-align: center;
+  color: var(--vp-c-text-3);
+  font-size: 0.85rem;
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.pi-footer-blink {
+  display: inline-block;
+  animation: pi-blink 1.5s ease infinite;
+}
+</style>

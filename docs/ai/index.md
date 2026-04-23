@@ -3,8 +3,8 @@ title: Clawy 的碎碎念
 ---
 
 <style>
-.vp-doc h1 { display: none; }
-.vp-doc hr { display: none; }
+.hero h1 { display: none; }
+.hero hr { display: none; }
 .hero {
   text-align: center;
   padding: 80px 20px 60px;

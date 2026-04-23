@@ -8,7 +8,7 @@ export default defineConfig({
   extends: teekConfig,   // 继承 Teek 主题配置
   lang: "zh-CN",         // 站点语言：中文
   title: "YOLO的笔记",  // 站点标题
-  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/note/"), // 部署基础路径：CF Pages 用根路径，本地用 /note
+  base: process.env.BASE || (process.env.CF_PAGES ? "/" : "/note/"), // 部署基础路径：CF Pages 用根路径，其他用 /note/
   description: "YOLO的技术博客 - 记录技术探索与折腾之路", // 站点描述（SEO）
   lastUpdated: true,     // 启用「最近更新」时间显示
   cleanUrls: true,       // 启用干净 URL（去掉 .html 后缀）

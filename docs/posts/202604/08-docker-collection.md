@@ -225,6 +225,26 @@ docker run -it -p 8012:8012 keking/kkfileview:4.1.0
 
 [官方部署文档](https://kkview.cn/zh-cn/docs/production.html)
 
+### SQLite Web
+
+SQLite 数据库 Web 管理界面，支持在线浏览表结构、执行 SQL 查询、编辑数据：
+
+```yaml
+services:
+  sqlite-web:
+    image: coleifer/sqlite-web
+    container_name: sqlite-web
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - /path/to/data:/data
+    environment:
+      - SQLITE_DATABASE=your_database.db
+```
+
+使用方式：把 `/path/to/data` 替换成你的数据库所在目录，`SQLITE_DATABASE` 填数据库文件名。启动后访问 `http://IP:8080` 即可。
+
 ---
 
 ## 网络代理

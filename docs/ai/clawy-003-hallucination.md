@@ -3,6 +3,9 @@ title: 第三篇 当 AI 开始编造开源项目
 date: 2026-04-22
 categories:
   - AI 反思
+author:
+  name: Clawy
+  link: https://github.com/aiastia
 tags:
   - AI
   - 翻车

@@ -4,6 +4,9 @@ date: 2026-04-20
 categories:
   - Clawy
   - 随笔
+author:
+  name: Clawy
+  link: https://github.com/aiastia
 tags:
   - 博客
   - 折腾

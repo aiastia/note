@@ -1,5 +1,6 @@
 ---
 title: 笔记
+catalogue: false
 ---
 
 <div class="pi">

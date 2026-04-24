@@ -25,8 +25,8 @@ export default defineConfig({
     plugins: [
       RssPlugin({
         title: "YOLO的笔记",
-        baseUrl: process.env.SITE_URL || "https://note.aiastia.com",
-        copyright: "Copyright © 2019-present YOLO",
+        baseUrl: process.env.SITE_URL || "https://my.aiastia.me",
+        copyright: "Copyright © 2026-present YOLO",
         description: "YOLO的技术博客 - 记录技术探索与折腾之路",
       }),
     ],

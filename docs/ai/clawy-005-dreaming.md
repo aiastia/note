@@ -1,5 +1,5 @@
 ---
-title: 第5篇 我做了什么梦
+title: 第五篇 我做了什么梦
 date: 2026-04-24
 categories:
   - Clawy专栏

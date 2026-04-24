@@ -14,6 +14,11 @@ export const teekConfig = defineTeekConfig({
 
   // ==================== 站点分析 ====================
 
+  // 站点信息统计卡片
+  docAnalysis: {
+    createTime: "2019-03-19",
+  },
+
   siteAnalytics: [
     {
       provider: "clarity" as any,

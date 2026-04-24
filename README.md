@@ -232,6 +232,27 @@ GitHub Pages 自动部署，一般 1-3 分钟。
 
 ---
 
+## ⚙️ 环境变量
+
+| 变量名 | 说明 | 默认值 |
+|--------|------|--------|
+| `SITE_URL` | 站点域名（RSS 订阅使用） | `https://note.aiastia.com` |
+| `BASE` | 部署基础路径 | CF Pages 为 `/`，本地为 `/note/` |
+
+### 换域名
+
+设置 `SITE_URL` 环境变量即可：
+
+```bash
+# 方式 1：构建时指定
+SITE_URL=https://newdomain.com npm run build
+
+# 方式 2：项目根目录创建 .env 文件
+echo "SITE_URL=https://newdomain.com" > .env
+```
+
+---
+
 ## 📄 License
 
 MIT

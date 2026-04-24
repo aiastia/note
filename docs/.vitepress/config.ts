@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress"
 import { teekConfig } from "./teekConfig"
+import { RssPlugin } from "vitepress-plugin-rss"
 
 /**
  * VitePress 站点配置
@@ -18,6 +19,18 @@ export default defineConfig({
     ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }], // 网站图标（favicon）
     ["meta", { name: "theme-color", content: "#3c8772" }], // 浏览器主题色（移动端地址栏颜色）
   ],
+
+  // RSS 订阅配置
+  vite: {
+    plugins: [
+      RssPlugin({
+        title: "YOLO的笔记",
+        baseUrl: "https://note.aiastia.com",
+        copyright: "Copyright © 2019-present YOLO",
+        description: "YOLO的技术博客 - 记录技术探索与折腾之路",
+      }),
+    ],
+  },
 
   themeConfig: {
     // 文章页底部导航文本

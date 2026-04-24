@@ -70,6 +70,11 @@ export const teekConfig = defineTeekConfig({
     homeLabel: "首页",      // 首页图标提示文案
   },
 
+  // 风险链接提示：点击外部链接时显示安全警告页
+  riskLink: {
+    enabled: false, // 启用风险链接拦截（对应 @pages/riskLinkPage.md）
+  },
+
   // ==================== 页面样式 ====================
 
   // 右下角回到顶部

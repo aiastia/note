@@ -239,6 +239,10 @@ GitHub Pages 自动部署，一般 1-3 分钟。
 | `SITE_URL` | 站点域名（RSS 订阅使用） | `https://note.aiastia.com` |
 | `BASE` | 部署基础路径 | CF Pages 为 `/`，本地为 `/note/` |
 
+### 为什么不能用相对路径？
+
+RSS 是一种 XML 格式的订阅标准（[RSS 2.0 规范](https://validator.w3.org/feed/docs/rss2.html)），要求所有链接必须是**完整域名**（如 `https://note.aiastia.com/posts/foo`），不支持相对路径。这是为了让 RSS 阅读器（如 Feedly、Inoreader）能正确跳转到文章页面。
+
 ### 换域名
 
 设置 `SITE_URL` 环境变量即可：

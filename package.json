@@ -18,6 +18,7 @@
     "vitepress": "^1.6.4"
   },
   "dependencies": {
+    "vitepress-plugin-rss": "^0.4.3",
     "vitepress-theme-teek": "^1.5.6"
   }
 }

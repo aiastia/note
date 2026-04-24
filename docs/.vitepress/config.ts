@@ -20,6 +20,11 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    // 文章页底部导航文本
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
+    },
     // 顶部导航栏
     nav: [
       { text: "首页", link: "/" },
@@ -63,7 +68,10 @@ export default defineConfig({
     },
 
     // 文章大纲配置：显示 h1 ~ h3 级别标题
-    outline: [1, 3],
+    outline: {
+      level: [2, 3],
+      label: "本页导航",
+    },
 
     // 搜索配置：使用 VitePress 内置本地搜索
     search: {

@@ -9,16 +9,14 @@
     "preview": "vitepress serve docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "postinstall": "patch-package"
+    "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "patch-package": "^8.0.1",
     "vitepress": "^1.6.4"
   },
   "dependencies": {
     "vitepress-plugin-rss": "^0.4.3",
-    "vitepress-theme-teek": "^1.5.6"
+    "vitepress-theme-teek": "^1.5.7"
   }
 }

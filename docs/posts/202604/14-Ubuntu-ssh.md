@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 24 修改 SSH 端口
 date: 2026-04-14
+coverImg: /covers/Ubuntu-ssh.jpg
 categories:
   - 技术文档
   - Linux

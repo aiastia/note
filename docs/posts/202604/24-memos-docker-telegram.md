@@ -1,6 +1,7 @@
 ---
 title: Memos：自建轻量笔记服务，搭配 Telegram Bot 随手记录
 date: 2026-04-23
+coverImg: /covers/memos-docker-telegram.jpg
 categories:
   - Docker
 tags:

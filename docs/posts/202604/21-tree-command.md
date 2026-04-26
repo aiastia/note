@@ -1,6 +1,7 @@
 ---
 title: tree 命令详解
 date: 2026-04-21
+coverImg: /covers/tree-command.jpg
 categories:
   - 工具使用
 tags:

@@ -1,6 +1,7 @@
 ---
 title: Linux 常见文件解压与压缩方法
 date: 2026-04-20
+coverImg: /covers/decompress.jpg
 categories:
   - 工具使用
 tags:

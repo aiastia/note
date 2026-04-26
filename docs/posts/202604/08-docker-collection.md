@@ -1,6 +1,7 @@
 ---
 title: 有趣的 Docker 运行方式合集
 date: 2026-04-21
+coverImg: /covers/docker-collection.jpg
 categories:
   - Docker
 tags:

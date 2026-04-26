@@ -1,6 +1,7 @@
 ---
 title: Git 回滚与分支备份实战指南
 date: 2026-04-20
+coverImg: /covers/git-checkout.jpg
 categories:
   - 技术文档
   - Git

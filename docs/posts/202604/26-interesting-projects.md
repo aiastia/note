@@ -1,6 +1,7 @@
 ---
 title: 有趣的项目收集
 date: 2026-04-24
+coverImg: /covers/interesting-projects.jpg
 categories:
   - 收集
 tags:

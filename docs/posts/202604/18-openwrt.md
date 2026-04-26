@@ -1,6 +1,7 @@
 ---
 title: OpenWrt 实用配置与运维总结
 date: 2026-04-18
+coverImg: /covers/openwrt.jpg
 sticky: 999
 top: true
 titleTag: 推荐

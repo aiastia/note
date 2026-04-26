@@ -1,6 +1,7 @@
 ---
 title: 1Panel openresty反向代理
 date: 2026-04-17
+coverImg: /covers/1panel-websocket-proxy.jpg
 categories:
   - 运维
 tags:

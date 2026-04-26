@@ -1,6 +1,7 @@
 ---
 title: MuMuAINovel - AI 智能小说创作助手部署
 date: 2026-04-24
+coverImg: /covers/mumuainovel-docker.jpg
 categories:
   - AI
 tags:

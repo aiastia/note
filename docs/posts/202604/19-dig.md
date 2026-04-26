@@ -1,6 +1,7 @@
 ---
 title: dig 命令使用指南
 date: 2026-04-19
+coverImg: /covers/dig.jpg
 categories:
   - 工具使用
 tags:

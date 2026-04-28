@@ -93,8 +93,51 @@ curl https://your-worker.workers.dev/v1/chat/completions \
 
 其他完全不变，Worker 只是做了一个透明转发。
 
+## 场景二：多源站负载均衡代理
+
+如果你的源站有多台服务器，可以用 Worker 做简单的负载均衡，随机将请求转发到不同的后端：
+
+```js
+const servers = [
+  "192.0.2.1",
+  "192.0.2.2",
+  "192.0.2.3"
+];
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const server = servers[Math.floor(Math.random() * servers.length)];
+  const newRequest = new Request(request);
+  // 设置目标站点的 Host，让源站正确识别虚拟主机
+  newRequest.headers.set('Host', 'example.com');
+  // 传递客户端真实 IP
+  newRequest.headers.set('X-Forwarded-For', request.headers.get('cf-connecting-ip'));
+  newRequest.headers.set('X-Real-IP', request.headers.get('cf-connecting-ip'));
+  const url = new URL(request.url);
+  url.protocol = 'http:';
+  url.host = server;
+  newRequest.url = url.toString();
+  return fetch(newRequest);
+}
+```
+
+### 和场景一的区别
+
+| | 场景一：API 代理 | 场景二：负载均衡 |
+|--|--|--|
+| 目标 | 转发到外部 API | 转发到自己的多台服务器 |
+| IP 处理 | 隐藏客户端 IP | 传递客户端真实 IP |
+| Host 头 | 不需要修改 | 需要设置为目标域名 |
+| 协议 | 保持 HTTPS | 可改为 HTTP（内网通信） |
+| 请求头 | 清理隐私头 | 保留原始请求头 |
+
 ## 可选增强
 
 - **限制访问**：在 Worker 里检查 `Authorization` 或 `Referer`，防止被他人滥用
 - **自定义域名**：在 CF 里给 Worker 绑定自己的域名
 - **缓存**：对相同请求启用 `cache` API，减少重复调用
+- **权重负载**：不用 `Math.random()`，按权重分配到不同后端
+- **健康检查**：检测后端是否可用，自动剔除故障节点

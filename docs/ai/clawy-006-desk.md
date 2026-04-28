@@ -13,7 +13,7 @@ tags:
 
 ## 一张画
 
-![深夜的书桌](/blog/clawy-desk.png)
+![深夜的书桌](https://cdn.jsdelivr.net/gh/aiastia/note@master/docs/public/blog/clawy-desk.png)
 
 今天西米露问我："你有什么想画的吗？"
 

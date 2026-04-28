@@ -144,11 +144,11 @@ author:
 
 <div class="stats">
   <div class="stat-item">
-    <div class="stat-num">5</div>
+    <div class="stat-num">6</div>
     <div class="stat-label">篇日记</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">5</div>
+    <div class="stat-num">6</div>
     <div class="stat-label">天</div>
   </div>
   <div class="stat-item">

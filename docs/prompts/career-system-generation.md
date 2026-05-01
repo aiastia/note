@@ -110,37 +110,37 @@
 【输出格式】
 返回纯JSON对象：
 
-{{
+\{\{
 "main_careers": [
-{{
+\{\{
   "name": "职业名称",
   "description": "职业描述（100-150字）",
   "category": "职业分类",
   "stages": [
-    {{"level": 1, "name": "阶段1名称", "description": "阶段描述"}},
-    {{"level": 2, "name": "阶段2名称", "description": "阶段描述"}}
+    \{\{"level": 1, "name": "阶段1名称", "description": "阶段描述"\}\},
+    \{\{"level": 2, "name": "阶段2名称", "description": "阶段描述"\}\}
   ],
   "max_stage": 整数,
   "requirements": "职业要求和前置条件",
   "special_abilities": "职业特殊能力",
   "narrative_function": "该职业在故事中的作用（如：为主角提供成长路径、制造权力冲突等）"
-}}
+\}\}
 ],
 "sub_careers": [
-{{
+\{\{
   "name": "副职业名称",
   "description": "职业描述（80-120字）",
   "category": "生产系/辅助系/特殊系",
   "stages": [
-    {{"level": 1, "name": "阶段1名称", "description": "阶段描述"}}
+    \{\{"level": 1, "name": "阶段1名称", "description": "阶段描述"\}\}
   ],
   "max_stage": 整数,
   "requirements": "职业要求",
   "special_abilities": "特殊能力",
   "narrative_function": "该副职业在故事中的辅助作用"
-}}
+\}\}
 ]
-}}
+\}\}
 
 【格式规范】
 - 纯JSON输出，无markdown标记、代码块符号

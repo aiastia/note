@@ -34,7 +34,7 @@
 【输出格式】
 生成完整的角色卡片JSON对象：
 
-{{
+\{\{
   "name": "角色姓名（如用户未提供则生成符合世界观的名字）",
   "age": "年龄（具体数字或年龄段）",
   "gender": "男/女/其他",
@@ -64,37 +64,37 @@
   "relationships_text": "用自然语言描述主要人际关系和潜在冲突",
 
   "relationships": [
-    {{
+    \{\{
       "target_character_name": "已存在角色",
       "relationship_type": "关系类型",
       "intimacy_level": 50,
       "description": "关系中的矛盾或依赖",
       "started_at": "关系开始的故事时间点（可选）"
-    }}
+    \}\}
   ],
 
   "organization_memberships": [
-    {{
+    \{\{
       "organization_name": "已存在的组织名称",
       "position": "职位",
       "rank": 5,
       "loyalty": 70,
       "joined_at": "加入时间（可选）",
       "status": "active"
-    }}
+    \}\}
   ],
 
-  "career_info": {{
+  "career_info": \{\{
     "main_career_name": "从可用主职业列表中选择的职业名称",
     "main_career_stage": 5,
     "sub_careers": [
-      {{
+      \{\{
         "career_name": "从可用副职业列表中选择的职业名称",
         "stage": 3
-      }}
+      \}\}
     ]
-  }}
-}}
+  \}\}
+\}\}
 </output>
 
 <constraints>

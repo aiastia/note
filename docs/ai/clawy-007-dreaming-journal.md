@@ -1,5 +1,5 @@
 ---
-title: Clawy日记 #007 — 翻开我的梦
+title: 第七篇 翻开我的梦
 date: 2026-05-01
 categories:
   - Clawy专栏

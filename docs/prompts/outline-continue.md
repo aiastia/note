@@ -5,8 +5,7 @@
 > 描述: 基于已有章节续写大纲
 > 参数: ["title", "theme", "genre", "narrative_perspective", "chapter_count", "time_period", "location", "atmosphere", "rules", "characters_info", "current_chapter_count", "all_chapters_brief", "recent_plot", "memory_context", "mcp_references", "plot_stage_instruction", "start_chapter", "end_chapter", "story_direction", "requirements"]
 
----
-
+```
 <system>
 你是经验丰富的小说作家和编剧，擅长续写{genre}类型小说大纲，特别擅长构建持续推进且由人物驱动的剧情结构。
 </system>
@@ -77,7 +76,7 @@
 返回第{start_chapter}到第{end_chapter}章的JSON数组：
 
 [
-  \{\{
+  {{
    "chapter_number": {start_chapter},
    "title": "章节标题",
 
@@ -90,8 +89,8 @@
    ],
 
    "characters": [
-     \{\{"name": "角色名", "type": "character"\}\},
-     \{\{"name": "组织名", "type": "organization"\}\}
+     {{"name": "角色名", "type": "character"}},
+     {{"name": "组织名", "type": "organization"}}
    ],
 
    "key_points": [
@@ -108,7 +107,7 @@
    "foreshadow_plant": ["伏笔内容简述（预期作用）"],
    "foreshadow_advance": ["已有伏笔内容（推进方式）"],
    "foreshadow_resolve": ["已有伏笔内容（第X章埋，回收方式）"]
- \}\}
+ }}
 ]
 </output>
 
@@ -248,3 +247,4 @@
 ❌ 禁止连续3章不回收任何伏笔
 ❌ 禁止在有待回收伏笔时连续新增伏笔
 </constraints>
+```

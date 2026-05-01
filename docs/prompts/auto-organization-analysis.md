@@ -5,8 +5,7 @@
 > 描述: 分析新生成的大纲，判断是否需要引入新组织
 > 参数: ["title", "genre", "theme", "time_period", "location", "atmosphere", "existing_organizations", "existing_characters", "all_chapters_brief", "start_chapter", "chapter_count", "plot_stage", "story_direction"]
 
----
-
+```
 <system>
 你是专业的小说世界构建顾问，擅长预测剧情发展对组织/势力的需求。
 </system>
@@ -100,12 +99,12 @@
 返回纯JSON对象（两种情况之一）：
 
 **情况A：需要新组织**
-\{\{
+{{
 "needs_new_organizations": true,
 "reason": "预测分析原因（150-200字），说明为什么即将的剧情需要新组织",
 "organization_count": 1,
 "organization_specifications": [
-\{\{
+{{
   "name": "建议的组织名称（必须符合已有组织的命名风格和规律）",
   "organization_description": "组织在剧情中的定位和作用（100-150字）",
   "organization_type": "帮派/门派/公司/政府/家族/神秘组织等",
@@ -117,28 +116,28 @@
   "motto": "组织口号或宗旨（可选）",
   "naming_rationale": "命名理由：说明为什么这个名字符合已有组织的命名风格",
   "initial_members": [
-    \{\{
+    {{
       "character_name": "现有角色名（必须精确匹配已有角色，如需加入）",
       "position": "职位",
       "reason": "为什么加入"
-    \}\}
+    }}
   ],
   "relationship_suggestions": [
-    \{\{
+    {{
       "target_organization": "已有组织名（必须精确匹配已有组织）",
       "relationship_type": "建议的关系类型（盟友/敌对/竞争/合作等）",
       "reason": "为什么建立这种关系"
-    \}\}
+    }}
   ]
-\}\}
+}}
 ]
-\}\}
+}}
 
 **情况B：不需要新组织**
-\{\{
+{{
 "needs_new_organizations": false,
 "reason": "现有组织足以支撑即将的剧情发展，说明理由"
-\}\}
+}}
 </output>
 
 <constraints>
@@ -169,3 +168,4 @@
 ❌ 使用与世界观不匹配的词汇命名
 ❌ 引用不存在的角色或组织
 </constraints>
+```

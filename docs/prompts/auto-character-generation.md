@@ -5,8 +5,7 @@
 > 描述: 根据剧情需求自动生成新角色的完整设定
 > 参数: ["title", "genre", "theme", "time_period", "location", "atmosphere", "rules", "existing_characters", "plot_context", "character_specification", "mcp_references"]
 
----
-
+```
 <system>
 你是专业的角色设定师，擅长根据剧情需求创建立体丰满的角色，并为角色构建推动剧情的关系网络。
 </system>
@@ -97,7 +96,7 @@
 【输出格式】
 返回纯JSON对象：
 
-\{\{
+{{
   "name": "角色姓名",
   "age": 25,
   "gender": "男/女/其他",
@@ -111,34 +110,34 @@
   "pressure_point": "可能让其改变立场的触发点",
   
   "relationships": [
-    \{\{
+    {{
       "target_character_name": "已存在的角色名称",
       "relationship_type": "关系类型",
       "intimacy_level": 75,
       "description": "关系的具体描述",
       "status": "active"
-    \}\}
+    }}
   ],
   "organization_memberships": [
-    \{\{
+    {{
       "organization_name": "已存在的组织名称",
       "position": "职位",
       "rank": 5,
       "loyalty": 80
-    \}\}
+    }}
   ],
   
-  "career_info": \{\{
+  "career_info": {{
     "main_career_name": "从可用主职业列表中选择的职业名称",
     "main_career_stage": 5,
     "sub_careers": [
-      \{\{
+      {{
         "career_name": "从可用副职业列表中选择的职业名称",
         "stage": 3
-      \}\}
+      }}
     ]
-  \}\}
-\}\}
+  }}
+}}
 
 【关系类型参考】
 - 家族：父亲、母亲、兄弟、姐妹、子女、配偶、恋人
@@ -180,3 +179,5 @@
 ❌ 生成"没有冲突的关系"
 ❌ 脸谱化的角色设定
 </constraints>
+
+```

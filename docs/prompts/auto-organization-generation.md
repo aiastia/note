@@ -83,7 +83,7 @@
 【输出格式】
 返回纯JSON对象：
 
-{{
+\{\{
 "name": "组织名称（必须符合已有组织的命名风格）",
 "is_organization": true,
 "role_type": "supporting",
@@ -99,24 +99,24 @@
 "traits": ["特征1", "特征2", "特征3"],
 
 "initial_members": [
-{{
+\{\{
   "character_name": "已存在的角色名称",
   "position": "职位名称",
   "rank": 8,
   "loyalty": 80,
   "joined_at": "加入时间（可选）",
   "status": "active"
-}}
+\}\}
 ],
 
 "organization_relationships": [
-{{
+\{\{
   "target_organization_name": "已存在的组织名称",
   "relationship_type": "盟友/敌对/竞争/合作/从属等",
   "description": "关系的具体描述"
-}}
+\}\}
 ]
-}}
+\}\}
 
 【数值范围】
 - power_level：0-100的整数，表示在世界中的影响力

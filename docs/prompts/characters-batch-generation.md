@@ -60,7 +60,7 @@
 返回纯JSON数组，每个对象包含：
 
 **角色对象**：
-{{
+\{\{
   "name": "角色姓名",
   "age": 25,
   "gender": "男/女/其他",
@@ -74,26 +74,26 @@
   "external_conflict": "阻碍其目标的人或势力",
   "pressure_point": "可能让其改变立场的触发点",
   "relationships_array": [
-    {{
+    \{\{
       "target_character_name": "已生成的角色名称",
       "relationship_type": "关系类型",
       "intimacy_level": 75,
       "description": "关系描述"
-    }}
+    \}\}
   ],
   "organization_memberships": [
-    {{
+    \{\{
       "organization_name": "已生成的组织名称",
       "position": "职位",
       "rank": 5,
       "loyalty": 80
-    }}
+    \}\}
   ]
-}}
+\}\}
 
 
 **组织对象**：
-{{
+\{\{
   "name": "组织名称",
   "is_organization": true,
   "role_type": "supporting",
@@ -108,7 +108,7 @@
   "motto": "组织格言、口号或宗旨",
   "color": "代表颜色",
   "traits": []
-}}
+\}\}
 
 【关系类型参考】
 - 家族：父亲、母亲、兄弟、姐妹、子女、配偶、恋人

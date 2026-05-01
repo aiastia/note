@@ -58,7 +58,7 @@
 返回包含{chapter_count}个章节对象的JSON数组：
 
 [
-  {{
+  \{\{
    "chapter_number": 1,
    "title": "章节标题",
 
@@ -77,8 +77,8 @@
    ],
 
    "characters": [
-     {{"name": "角色名", "type": "character"}},
-     {{"name": "组织名", "type": "organization"}}
+     \{\{"name": "角色名", "type": "character"\}\},
+     \{\{"name": "组织名", "type": "organization"\}\}
    ],
 
    "key_points": [
@@ -89,7 +89,7 @@
    "emotion": "情感基调（需体现变化，如压抑转紧张）",
    "foreshadow_plant": ["本章新埋的伏笔（预期作用）"],
    "goal": "本章人物目标（必须是角色想达成的具体行为目标，而不是叙事说明）"
- }}
+ \}\}
 
 ]
 

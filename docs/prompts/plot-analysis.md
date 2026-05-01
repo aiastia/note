@@ -200,18 +200,18 @@
 【输出格式】
 返回纯JSON对象（无markdown标记）：
 
-{{
+\{\{
   "hooks": [
-    {{
+    \{\{
       "type": "悬念",
       "content": "具体描述",
       "strength": 8,
       "position": "中段",
       "keyword": "从原文逐字复制的8-25字文本"
-    }}
+    \}\}
   ],
   "foreshadows": [
-    {{
+    \{\{
       "title": "伏笔简洁标题",
       "content": "伏笔详细内容和预期作用",
       "type": "planted",
@@ -224,8 +224,8 @@
       "is_long_term": false,
       "related_characters": ["角色A", "角色B"],
       "estimated_resolve_chapter": 15
-    }},
-    {{
+    \}\},
+    \{\{
       "title": "回收的伏笔标题",
       "content": "伏笔如何被回收的描述",
       "type": "resolved",
@@ -238,65 +238,65 @@
       "is_long_term": false,
       "related_characters": ["角色A"],
       "estimated_resolve_chapter": 10
-    }}
+    \}\}
   ],
-  "conflict": {{
+  "conflict": \{\{
     "types": ["人与人", "人与己"],
     "parties": ["主角-复仇", "反派-维护现状"],
     "level": 8,
     "description": "冲突描述",
     "resolution_progress": 0.3
-  }},
-  "emotional_arc": {{
+  \}\},
+  "emotional_arc": \{\{
     "primary_emotion": "紧张焦虑",
     "intensity": 8,
     "curve": "平静→紧张→高潮→释放",
     "secondary_emotions": ["期待", "焦虑"]
-  }},
+  \}\},
   "character_states": [
-    {{
+    \{\{
       "character_name": "张三",
       "survival_status": null,
       "state_before": "犹豫",
       "state_after": "坚定",
       "psychological_change": "心理变化描述",
       "key_event": "触发事件",
-      "relationship_changes": {{"李四": "关系改善", "王五": "产生信任"}},
-      "career_changes": {{
+      "relationship_changes": \{\{"李四": "关系改善", "王五": "产生信任"\}\},
+      "career_changes": \{\{
         "main_career_stage_change": 1,
-        "sub_career_changes": [{{"career_name": "炼丹", "stage_change": 1}}],
+        "sub_career_changes": [\{\{"career_name": "炼丹", "stage_change": 1\}\}],
         "new_careers": [],
         "career_breakthrough": "突破描述"
-      }},
+      \}\},
       "organization_changes": [
-        {{
+        \{\{
           "organization_name": "某门派",
           "change_type": "promoted",
           "new_position": "长老",
           "loyalty_change": "忠诚度提升",
           "description": "因立下大功被提拔为长老"
-        }}
+        \}\}
       ]
-    }}
+    \}\}
   ],
   "plot_points": [
-    {{
+    \{\{
       "content": "情节点描述",
       "type": "revelation",
       "importance": 0.9,
       "impact": "推动故事发展",
       "keyword": "从原文逐字复制的8-25字文本"
-    }}
+    \}\}
   ],
   "scenes": [
-    {{
+    \{\{
       "location": "地点",
       "atmosphere": "氛围",
       "duration": "时长估计"
-    }}
+    \}\}
   ],
   "organization_states": [
-    {{
+    \{\{
       "organization_name": "某门派",
       "power_change": -10,
       "new_location": null,
@@ -304,32 +304,32 @@
       "status_description": "因内乱势力受损，但核心力量未动摇",
       "key_event": "长老叛变导致分支瓦解",
       "is_destroyed": false
-    }}
+    \}\}
   ],
   "pacing": "varied",
   "dialogue_ratio": 0.4,
   "description_ratio": 0.3,
-  "scores": {{
+  "scores": \{\{
     "pacing": 6.5,
     "engagement": 5.8,
     "coherence": 7.2,
     "overall": 6.5,
     "score_justification": "节奏整体流畅但中段略显拖沓；钩子设置有效但不够巧妙；逻辑连贯无明显漏洞"
-  }},
+  \}\},
   "plot_stage": "发展",
   "suggestions": [
     "【节奏问题】第三场景的心理描写过长（约500字），建议精简至200字以内，保留核心情感即可",
     "【吸引力不足】章节中段缺乏有效钩子，建议在主角发现线索后增加一个小悬念"
   ],
-  "next_chapter_strategy": {{
+  "next_chapter_strategy": \{\{
     "core_conflict": "下一章必须推进的冲突",
     "driving_character": "必须行动的角色及其动机",
     "character_goal": "该角色要达成的目标",
     "key_decision": "必须出现的关键选择",
     "plot_progression": "剧情推进方向",
     "avoid": "必须避免的问题"
-  }}
-}}
+  \}\}
+\}\}
 
 
 </output>
@@ -348,7 +348,7 @@
 ✅ 【伏笔ID追踪】回收伏笔时，必须从【已埋入伏笔列表】中查找匹配的ID填入 reference_foreshadow_id
 ✅ 【suggestions严格格式】suggestions 必须是“字符串数组”，每个元素都必须是纯字符串
 ✅ suggestions 的正确格式示例："suggestions": ["【节奏问题】...", "【描写不足】..."]
-✅ suggestions 中禁止返回对象、字典、键值对或嵌套结构，例如禁止 {{"suggestion": "..."}}、{{"content": "..."}}
+✅ suggestions 中禁止返回对象、字典、键值对或嵌套结构，例如禁止 \{\{"suggestion": "..."\}\}、\{\{"content": "..."\}\}
 ✅ 如果没有改进建议，必须返回空数组 []，不要返回 null，不要省略字段
 ✅ 【relationship_changes格式】必须是一个合并的对象，如 {"角色A": "变化1", "角色B": "变化2"}，禁止输出多个独立对象
 
@@ -393,6 +393,6 @@
 ❌ 无确切剧情依据地标记角色死亡或组织覆灭
 ❌ 所有章节都打7-8分的"安全分"
 ❌ 高分章节给大量建议，或低分章节不给建议
-❌ suggestions 返回 {{"suggestion": "建议内容"}} 这类对象数组
+❌ suggestions 返回 \{\{"suggestion": "建议内容"\}\} 这类对象数组
 ❌ suggestions 返回带编号对象、content对象、explanation对象等任何非字符串元素
 </constraints>

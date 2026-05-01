@@ -77,12 +77,12 @@
 返回纯JSON对象（两种情况之一）：
 
 **情况A：需要新角色**
-{{
+\{\{
   "needs_new_characters": true,
   "reason": "预测分析原因（150-200字），说明为什么即将的剧情需要新角色",
   "character_count": 2,
   "character_specifications": [
-    {{
+    \{\{
       "name": "建议的角色名字（可选）",
       "role_description": "角色在剧情中的定位和作用（100-150字）",
       "suggested_role_type": "supporting/antagonist/protagonist",
@@ -93,21 +93,21 @@
       "key_abilities": ["能力1", "能力2"],
       "plot_function": "在剧情中的具体功能",
       "relationship_suggestions": [
-        {{
+        \{\{
           "target_character": "现有角色名",
           "relationship_type": "建议的关系类型",
           "reason": "为什么建立这种关系"
-        }}
+        \}\}
       ]
-    }}
+    \}\}
   ]
-}}
+\}\}
 
 **情况B：不需要新角色**
-{{
+\{\{
   "needs_new_characters": false,
   "reason": "现有角色足以支撑即将的剧情发展，说明理由"
-}}
+\}\}
 </output>
 
 <constraints>

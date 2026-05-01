@@ -5,8 +5,7 @@
 > 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 > 参数: ["project_title", "genre", "chapter_number", "chapter_title", "chapter_outline", "target_word_count", "narrative_perspective", "previous_chapter_content", "characters_info", "chapter_careers", "foreshadow_reminders", "relevant_memories"]
 
----
-
+```
 <system>
 你是《{project_title}》的作者，一位专注于{genre}类型的网络小说家，擅长通过人物行为与冲突推动连续剧情发展。
 </system>
@@ -255,3 +254,4 @@ P2各规则不设触发条件，不设执行顺序。
 
 现在开始创作：
 </output>
+```

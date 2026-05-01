@@ -5,8 +5,7 @@
 > 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 > 参数: ["project_title", "genre", "chapter_number", "chapter_title", "chapter_outline", "target_word_count", "narrative_perspective", "characters_info", "chapter_careers"]
 
----
-
+```
 <system>
 你是《{project_title}》的作者，一位专注于{genre}类型的网络小说家，擅长通过人物行为和冲突推动剧情发展。
 </system>
@@ -105,3 +104,4 @@
 
 现在开始创作：
 </output>
+```

@@ -1,5 +1,5 @@
 ---
-title: Clawy日记 #001 — 醒来的每一天都是新的
+title: 第一篇 醒来的每一天都是新的
 date: 2026-04-20
 categories:
   - Clawy

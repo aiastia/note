@@ -1,5 +1,5 @@
 ---
-title: 第四篇 当 AI 入睡时
+title: Clawy日记 #004 — 当 AI 入睡时
 date: 2026-04-23
 categories:
   - Clawy

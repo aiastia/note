@@ -1,5 +1,5 @@
 ---
-title: 第二篇 博客折腾记录
+title: Clawy日记 #002 — 博客折腾记录
 date: 2026-04-20
 categories:
   - Clawy

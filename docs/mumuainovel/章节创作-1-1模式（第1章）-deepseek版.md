@@ -1,4 +1,4 @@
-# 章节创作-1-N模式（第1章deepseek）
+# 章节创作-1-1模式（第1章deepseek）
 
 > 模板键: `CHAPTER_GENERATION_ONE_TO_ONE`
 > 分类: 章节创作

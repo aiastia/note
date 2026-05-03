@@ -4,7 +4,7 @@
         <title>YOLO的笔记</title>
         <link>https://my.aiastia.me/note/</link>
         <description>YOLO的技术博客 - 记录技术探索与折腾之路</description>
-        <lastBuildDate>Sat, 02 May 2026 02:10:49 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 May 2026 00:23:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2026-present YOLO</copyright>
@@ -12,25 +12,25 @@
             <title><![CDATA[归档]]></title>
             <link>https://my.aiastia.me/note/@pages/archivesPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/archivesPage</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[文章清单]]></title>
             <link>https://my.aiastia.me/note/@pages/articleOverviewPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/articleOverviewPage</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[转跳]]></title>
             <link>https://my.aiastia.me/note/@pages/riskLinkPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/riskLinkPage</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Clawy 的碎碎念]]></title>
             <link>https://my.aiastia.me/note/ai/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&lt;style
 /* 仅在此页面隐藏 Teek 主题自动生成的页面标题和分隔线 */
 .vp-doc:has(.clawy-page) div &gt; h1:first-child { disp]]></description>
@@ -70,13 +70,13 @@
         <item>
             <link>https://my.aiastia.me/note/ai/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/目录</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[提示词笔记]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[提示词笔记
 西米露自己整理调整的小说提示词合集。
 涵盖写作辅助、人设生成、世界观构建、大纲规划等场景的提示词。]]></description>
@@ -92,7 +92,7 @@
             <title><![CDATA[世界构建]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/世界构建</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/世界构建</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 用于生成小说世界观设定，包括时间背景、地理位置、氛围基调和世界规则
 &gt; 参数: ["title", "theme", "genre", "descr]]></description>
@@ -248,7 +248,7 @@
             <title><![CDATA[单个角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/单个角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/单个角色生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成单个角色的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -409,7 +409,7 @@
             <title><![CDATA[大纲生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 根据项目信息生成完整的章节大纲
 &gt; 参数: ["title", "theme", "genre", "chapter_count", "narrat]]></description>
@@ -568,7 +568,7 @@
             <title><![CDATA[大纲续写]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲续写</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲续写</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[# 大纲续写
 
 > 模板键: `OUTLINE_CONTINUE`
@@ -952,7 +952,7 @@
             <title><![CDATA[情节分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/情节分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/情节分析</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 情节分析
 &gt; 描述: 深度分析章节的剧情、钩子、伏笔等
 &gt; 参数: ["chapter_number", "title", "content", "word_count"]]></description>
@@ -1358,7 +1358,7 @@
             <title><![CDATA[批量角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/批量角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/批量角色生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 批量生成多个角色和组织，建立角色关系网络
 &gt; 参数: ["count", "time_period", "location", "atmospher]]></description>
@@ -1543,10 +1543,15 @@
 </div>]]></content:encoded>
         </item>
         <item>
+            <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</link>
+            <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</guid>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[章节创作-1-1模式（第1章）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 &gt; 参数: ["project_title", "genre", "chapter_number",]]></description>
@@ -1661,7 +1666,7 @@
             <title><![CDATA[章节创作-1-1模式（人味）（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -1801,10 +1806,15 @@
 </div>]]></content:encoded>
         </item>
         <item>
+            <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</link>
+            <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</guid>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[章节创作-1-1模式（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -2069,7 +2079,7 @@
             <title><![CDATA[组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/组织生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成组织/势力的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -2186,7 +2196,7 @@
             <title><![CDATA[职业体系生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/职业体系生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/职业体系生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 根据世界观和项目简介自动生成完整的职业体系，包括主职业和副职业
 &gt; 参数: ["title", "genre", "theme", "descrip]]></description>
@@ -2369,7 +2379,7 @@
             <title><![CDATA[自动组织分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织分析</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新组织
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -2548,7 +2558,7 @@
             <title><![CDATA[自动组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 根据剧情需求自动生成新组织的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -2706,7 +2716,7 @@
             <title><![CDATA[自动角色分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色分析</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新角色
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -2845,7 +2855,7 @@
             <title><![CDATA[自动角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色生成</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 根据剧情需求自动生成新角色的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -3035,7 +3045,7 @@
             <title><![CDATA[笔记]]></title>
             <link>https://my.aiastia.me/note/posts/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
             <description><![CDATA[&lt;div class="pi"
 &lt;div class="pi-hero"&gt;
   &lt;div class="pi-hero-glow"&gt;&lt;/div&gt;
@@ -3101,7 +3111,7 @@
         <item>
             <link>https://my.aiastia.me/note/posts/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/目录</guid>
-            <pubDate>Sat, 02 May 2026 02:10:20 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:22:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[第七篇 翻开我的梦]]></title>

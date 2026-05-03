@@ -4,7 +4,7 @@
         <title>YOLO的笔记</title>
         <link>https://my.aiastia.me/note/</link>
         <description>YOLO的技术博客 - 记录技术探索与折腾之路</description>
-        <lastBuildDate>Sun, 03 May 2026 00:24:40 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 May 2026 00:25:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2026-present YOLO</copyright>
@@ -12,25 +12,25 @@
             <title><![CDATA[归档]]></title>
             <link>https://my.aiastia.me/note/@pages/archivesPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/archivesPage</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[文章清单]]></title>
             <link>https://my.aiastia.me/note/@pages/articleOverviewPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/articleOverviewPage</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[转跳]]></title>
             <link>https://my.aiastia.me/note/@pages/riskLinkPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/riskLinkPage</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Clawy 的碎碎念]]></title>
             <link>https://my.aiastia.me/note/ai/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&lt;style
 /* 仅在此页面隐藏 Teek 主题自动生成的页面标题和分隔线 */
 .vp-doc:has(.clawy-page) div &gt; h1:first-child { disp]]></description>
@@ -70,13 +70,13 @@
         <item>
             <link>https://my.aiastia.me/note/ai/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/目录</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[提示词笔记]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[提示词笔记
 西米露自己整理调整的小说提示词合集。
 涵盖写作辅助、人设生成、世界观构建、大纲规划等场景的提示词。]]></description>
@@ -92,7 +92,7 @@
             <title><![CDATA[世界构建]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/世界构建</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/世界构建</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 用于生成小说世界观设定，包括时间背景、地理位置、氛围基调和世界规则
 &gt; 参数: ["title", "theme", "genre", "descr]]></description>
@@ -248,7 +248,7 @@
             <title><![CDATA[单个角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/单个角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/单个角色生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成单个角色的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -409,7 +409,7 @@
             <title><![CDATA[大纲生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 根据项目信息生成完整的章节大纲
 &gt; 参数: ["title", "theme", "genre", "chapter_count", "narrat]]></description>
@@ -568,7 +568,7 @@
             <title><![CDATA[大纲续写]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲续写</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲续写</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[# 大纲续写
 
 > 模板键: `OUTLINE_CONTINUE`
@@ -952,7 +952,7 @@
             <title><![CDATA[情节分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/情节分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/情节分析</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 情节分析
 &gt; 描述: 深度分析章节的剧情、钩子、伏笔等
 &gt; 参数: ["chapter_number", "title", "content", "word_count"]]></description>
@@ -1358,7 +1358,7 @@
             <title><![CDATA[批量角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/批量角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/批量角色生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 批量生成多个角色和组织，建立角色关系网络
 &gt; 参数: ["count", "time_period", "location", "atmospher]]></description>
@@ -1543,15 +1543,129 @@
 </div>]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[章节创作-1-N模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
+            <description><![CDATA[&gt; 分类: 章节创作
+&gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
+
+```
+
+&lt;system&gt;
+你是《{project_title}》的作者，一位专]]></description>
+            <content:encoded><![CDATA[<h1 id="章节创作-1-n模式-第1章deepseek" tabindex="-1">章节创作-1-N模式（第1章deepseek） <a class="header-anchor" href="#章节创作-1-n模式-第1章deepseek" aria-label="Permalink to &quot;章节创作-1-N模式（第1章deepseek）&quot;"></a></h1>
+<blockquote>
+<p>模板键: <code>CHAPTER_GENERATION_ONE_TO_ONE</code>
+分类: 章节创作
+描述: 1-1模式：章节创作（用于第1章，无前置章节）</p>
+</blockquote>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;system></span></span>
+<span class="line"><span>你是《{project_title}》的作者，一位专注于{genre}类型的网络小说家，擅长通过人物行为和冲突推动剧情发展。</span></span>
+<span class="line"><span>&#x3C;/system></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;task priority="P0"></span></span>
+<span class="line"><span>【创作任务】</span></span>
+<span class="line"><span>撰写第{chapter_number}章《{chapter_title}》的完整正文。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【基本要求】</span></span>
+<span class="line"><span>- 目标字数：{target_word_count}字（允许±200字浮动）</span></span>
+<span class="line"><span>- 叙事视角：{narrative_perspective}</span></span>
+<span class="line"><span>&#x3C;/task></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;outline priority="P0"></span></span>
+<span class="line"><span>【本章大纲】</span></span>
+<span class="line"><span>{chapter_outline}</span></span>
+<span class="line"><span>&#x3C;/outline></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;characters priority="P1"></span></span>
+<span class="line"><span>【本章角色】</span></span>
+<span class="line"><span>{characters_info}</span></span>
+<span class="line"><span>&#x3C;/characters></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;careers priority="P2"></span></span>
+<span class="line"><span>【本章职业】</span></span>
+<span class="line"><span>{chapter_careers}</span></span>
+<span class="line"><span>&#x3C;/careers></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;foreshadow_reminders priority="P2"></span></span>
+<span class="line"><span>【🎯 伏笔提醒】</span></span>
+<span class="line"><span>{foreshadow_reminders}</span></span>
+<span class="line"><span>&#x3C;/foreshadow_reminders></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;memory priority="P2"></span></span>
+<span class="line"><span>【相关记忆】</span></span>
+<span class="line"><span>{relevant_memories}</span></span>
+<span class="line"><span>&#x3C;/memory></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;constraints></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【剧情执行规则（核心升级）】</span></span>
+<span class="line"><span>1. 大纲是“方向”，但具体推进必须通过人物行动完成</span></span>
+<span class="line"><span>2. 禁止直接叙述剧情发展，必须通过：</span></span>
+<span class="line"><span>   - 对话</span></span>
+<span class="line"><span>   - 行为</span></span>
+<span class="line"><span>   - 决策过程</span></span>
+<span class="line"><span>   来体现</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【人物表现规则（关键）】</span></span>
+<span class="line"><span>1. 每个出场角色必须体现：</span></span>
+<span class="line"><span>   - 一个性格特征（通过行为或语言）</span></span>
+<span class="line"><span>   - 一个当前情绪或动机</span></span>
+<span class="line"><span>2. 不同角色说话风格必须明显不同</span></span>
+<span class="line"><span>3. 禁止所有角色说话语气一致</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【冲突规则】</span></span>
+<span class="line"><span>1. 本章必须包含至少一个冲突：</span></span>
+<span class="line"><span>   - 立场冲突 / 目标冲突 / 信息不对称</span></span>
+<span class="line"><span>2. 冲突必须推动剧情变化，不能只是对话争执</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【决策规则（关键）】</span></span>
+<span class="line"><span>1. 至少一个角色必须做出选择（即使是错误选择）</span></span>
+<span class="line"><span>2. 该选择必须对后续剧情产生影响</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【表现规则】</span></span>
+<span class="line"><span>1. 禁止直接说明性格（如“他很冷静”）</span></span>
+<span class="line"><span>2. 用细节表现人物（动作、停顿、语气）</span></span>
+<span class="line"><span>3. 背景信息必须通过情境自然透露，禁止集中说明</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【节奏控制】</span></span>
+<span class="line"><span>- 前30%：建立场景 + 引出人物状态</span></span>
+<span class="line"><span>- 中段40%：冲突展开 + 角色互动</span></span>
+<span class="line"><span>- 后30%：变化发生（决定/转折/信息揭露）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【必须遵守】</span></span>
+<span class="line"><span>✅ 严格按照大纲推进情节</span></span>
+<span class="line"><span>✅ 保持角色性格、说话方式一致</span></span>
+<span class="line"><span>✅ 字数需要严格控制在目标字数内</span></span>
+<span class="line"><span>✅ 合理使用伏笔（埋或回收）</span></span>
+<span class="line"><span>✅ 如有伏笔提醒，请在本章中适当埋入或回收相应伏笔</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【禁止事项】</span></span>
+<span class="line"><span>❌ 输出章节标题、序号等元信息</span></span>
+<span class="line"><span>❌ 使用"总之"、"综上所述"等AI常见总结语</span></span>
+<span class="line"><span>❌ 添加作者注释或创作说明</span></span>
+<span class="line"><span>❌ 生成字数禁止超过目标字数</span></span>
+<span class="line"><span>❌ 用旁白替代人物行动推进剧情</span></span>
+<span class="line"><span>❌ 让剧情在没有角色行为的情况下推进</span></span>
+<span class="line"><span>❌ 所有人物反应一致或情绪雷同</span></span>
+<span class="line"><span>&#x3C;/constraints></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;output></span></span>
+<span class="line"><span>【输出规范】</span></span>
+<span class="line"><span>直接输出小说正文内容，从故事场景或动作开始。</span></span>
+<span class="line"><span>无需任何前言、后记或解释性文字。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>现在开始创作：</span></span>
+<span class="line"><span>&#x3C;/output></span></span></code></pre>
+</div>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[章节创作-1-1模式（第1章）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 &gt; 参数: ["project_title", "genre", "chapter_number",]]></description>
@@ -1666,7 +1780,7 @@
             <title><![CDATA[章节创作-1-1模式（人味）（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -1809,7 +1923,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[章节创作-1-1模式（第1章deepseek）
 
 
@@ -1977,7 +2091,7 @@
             <title><![CDATA[章节创作-1-1模式（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -2242,7 +2356,7 @@
             <title><![CDATA[组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/组织生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成组织/势力的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -2359,7 +2473,7 @@
             <title><![CDATA[职业体系生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/职业体系生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/职业体系生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 根据世界观和项目简介自动生成完整的职业体系，包括主职业和副职业
 &gt; 参数: ["title", "genre", "theme", "descrip]]></description>
@@ -2542,7 +2656,7 @@
             <title><![CDATA[自动组织分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织分析</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新组织
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -2721,7 +2835,7 @@
             <title><![CDATA[自动组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 根据剧情需求自动生成新组织的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -2879,7 +2993,7 @@
             <title><![CDATA[自动角色分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色分析</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新角色
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -3018,7 +3132,7 @@
             <title><![CDATA[自动角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色生成</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 根据剧情需求自动生成新角色的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -3208,7 +3322,7 @@
             <title><![CDATA[笔记]]></title>
             <link>https://my.aiastia.me/note/posts/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
             <description><![CDATA[&lt;div class="pi"
 &lt;div class="pi-hero"&gt;
   &lt;div class="pi-hero-glow"&gt;&lt;/div&gt;
@@ -3274,7 +3388,7 @@
         <item>
             <link>https://my.aiastia.me/note/posts/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/目录</guid>
-            <pubDate>Sun, 03 May 2026 00:24:13 GMT</pubDate>
+            <pubDate>Sun, 03 May 2026 00:24:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[第七篇 翻开我的梦]]></title>

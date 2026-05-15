@@ -86,6 +86,7 @@ permissions:
   contents: write
   actions: write
   packages: write
+  deployments: write
 
 jobs:
   cleanup:

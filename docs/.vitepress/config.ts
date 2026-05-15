@@ -42,6 +42,7 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       { text: "📝 笔记", link: "/posts/" },
+      { text: "mumu提示词", link: "/mumuainovel/" },
       { text: "🐾 Clawy 专栏", link: "/ai/" },
       {
         text: "功能页",

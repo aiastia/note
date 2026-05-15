@@ -39,7 +39,7 @@ on:
       clean_images:
         description: '清理 GHCR 旧镜像（含 untagged）'
         required: true
-        default: 'true'
+        default: 'false'
         type: choice
         options:
           - 'true'
@@ -60,7 +60,7 @@ on:
       clean_artifacts:
         description: '清理 Actions Artifacts'
         required: true
-        default: 'false'
+        default: 'true'
         type: choice
         options:
           - 'true'

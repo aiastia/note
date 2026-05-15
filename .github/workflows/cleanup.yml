@@ -1,0 +1,323 @@
+# Full Cleanup - 仓库全面清理工具
+#
+# 大部分功能使用默认 GITHUB_TOKEN 即可。
+# 如果需要清理 GHCR 镜像且遇到 403 错误，请在仓库 Settings > Secrets 中添加：
+#   GH_TOKEN = <Personal Access Token (Classic)>
+# 需要的权限：delete:packages, read:packages, repo
+# Fine-grained PAT 需要：Packages (read & delete), Contents (read & write)
+# 如果未设置 GH_TOKEN，将自动回退使用 GITHUB_TOKEN。
+#
+name: Full Cleanup
+
+on:
+  workflow_dispatch:
+    inputs:
+      # ---- gh-pages 类 ----
+      clean_gh_pages:
+        description: '清理 gh-pages 历史并压缩为 1 个提交'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      remove_deployments:
+        description: '删除 GitHub Pages 部署环境'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      # ---- Actions 类 ----
+      clean_actions:
+        description: '清理 Actions 运行记录'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      clean_caches:
+        description: '清理 Actions Caches'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      clean_artifacts:
+        description: '清理 Actions Artifacts'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      # ---- Docker / GHCR 类 ----
+      clean_images:
+        description: '清理 GHCR 旧镜像（含 untagged）'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      keep_latest:
+        description: '每个标签保留最近几个版本'
+        required: true
+        default: '3'
+        type: string
+      # ---- 其他 ----
+      clean_releases_tags:
+        description: '清理所有 Releases 和 Tags'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+concurrency:
+  group: full-cleanup
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+  packages: write
+  deployments: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # --------------------------
+      # 清理 gh-pages 历史
+      # --------------------------
+      - name: Clean gh-pages history
+        if: ${{ inputs.clean_gh_pages == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git checkout --orphan temp-branch
+          git add -A
+          git commit -m "chore: squash gh-pages history $(date +%Y-%m-%d)"
+          git branch -D gh-pages || true
+          git branch -m gh-pages
+          git push origin gh-pages --force
+          echo "✅ gh-pages history cleaned"
+
+      # --------------------------
+      # 删除 Actions 运行记录
+      # --------------------------
+      - name: Delete Actions workflow runs
+        if: ${{ inputs.clean_actions == 'true' }}
+        run: |
+          echo "📋 清理 Actions 运行记录..."
+          REPO="${{ github.repository }}"
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          PAGE=1
+          COUNT=0
+          while true; do
+            RUNS=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/actions/runs?per_page=100&page=$PAGE" \
+              | jq -r '.workflow_runs[].id')
+            [ -z "$RUNS" ] && break
+            for id in $RUNS; do
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/actions/runs/$id" > /dev/null
+              COUNT=$((COUNT+1))
+              echo "  已删除 run $id"
+            done
+            PAGE=$((PAGE+1))
+          done
+          echo "✅ 已删除 $COUNT 条 Actions 记录"
+
+      # --------------------------
+      # 删除 Actions caches
+      # --------------------------
+      - name: Delete Actions caches
+        if: ${{ inputs.clean_caches == 'true' }}
+        run: |
+          echo "📦 清理 Actions Caches..."
+          REPO="${{ github.repository }}"
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          PAGE=1
+          COUNT=0
+          while true; do
+            RESPONSE=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/actions/caches?per_page=100&page=$PAGE")
+            IDS=$(echo "$RESPONSE" | jq -r '.actions_caches[]?.id // empty')
+            [ -z "$IDS" ] && break
+            for id in $IDS; do
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/actions/caches/$id" > /dev/null
+              COUNT=$((COUNT+1))
+              echo "  已删除 cache id=$id"
+            done
+            PAGE=$((PAGE+1))
+          done
+          echo "✅ 已删除 $COUNT 个 caches"
+
+      # --------------------------
+      # 删除 Actions Artifacts
+      # --------------------------
+      - name: Delete Actions artifacts
+        if: ${{ inputs.clean_artifacts == 'true' }}
+        run: |
+          echo "🗄️ 清理 Actions Artifacts..."
+          REPO="${{ github.repository }}"
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          PAGE=1
+          COUNT=0
+          while true; do
+            RESPONSE=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/actions/artifacts?per_page=100&page=$PAGE")
+            IDS=$(echo "$RESPONSE" | jq -r '.artifacts[]?.id // empty')
+            [ -z "$IDS" ] && break
+            for id in $IDS; do
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/actions/artifacts/$id" > /dev/null
+              COUNT=$((COUNT+1))
+              echo "  已删除 artifact id=$id"
+            done
+            PAGE=$((PAGE+1))
+          done
+          echo "✅ 已删除 $COUNT 个 artifacts"
+
+      # --------------------------
+      # 清理 GHCR 镜像
+      # --------------------------
+      - name: Delete GHCR old images
+        if: ${{ inputs.clean_images == 'true' }}
+        run: |
+          echo "🗑️ 清理 GHCR 镜像..."
+          OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          PACKAGE=$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')
+          # 优先使用 GH_TOKEN（PAT），回退到 GITHUB_TOKEN
+          TOKEN="${{ secrets.GH_TOKEN }}"
+          if [ -z "$TOKEN" ]; then
+            echo "  ℹ️ 未设置 GH_TOKEN secret，使用默认 GITHUB_TOKEN"
+            TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          else
+            echo "  🔑 使用 GH_TOKEN (PAT)"
+          fi
+          KEEP=${{ inputs.keep_latest }}
+
+          # 尝试获取镜像版本列表（先 org 后 user）
+          VERSIONS=$(curl -s -H "Authorization: token $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/orgs/$OWNER/packages/container/$PACKAGE/versions?per_page=100" 2>/dev/null)
+
+          if ! echo "$VERSIONS" | jq -e 'if type == "array" then true else false end' > /dev/null 2>&1; then
+            echo "  orgs 端点失败，尝试 user 端点..."
+            VERSIONS=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/user/packages/container/$PACKAGE/versions?per_page=100" 2>/dev/null)
+          fi
+
+          if ! echo "$VERSIONS" | jq -e 'if type == "array" then true else false end' > /dev/null 2>&1; then
+            echo "  ❌ 无法获取镜像版本列表"; exit 0
+          fi
+
+          # 确定使用哪个 API 端点（user 或 org）
+          DELETE_PREFIX="https://api.github.com/orgs/$OWNER/packages/container/$PACKAGE/versions"
+          RESP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token $TOKEN" \
+            "https://api.github.com/orgs/$OWNER/packages/container/$PACKAGE/versions")
+          if [ "$RESP_CODE" -ne 200 ]; then
+            DELETE_PREFIX="https://api.github.com/user/packages/container/$PACKAGE/versions"
+          fi
+          echo "  使用端点: $DELETE_PREFIX"
+
+          # 删除 untagged
+          UNTAGGED_IDS=$(echo "$VERSIONS" | jq -r '[.[] | select(.metadata.container.tags | length == 0) | .id] | .[]')
+          for id in $UNTAGGED_IDS; do
+            echo "    删除 untagged id=$id"
+            curl -s -X DELETE -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$DELETE_PREFIX/$id" > /dev/null 2>&1 || true
+          done
+
+          # 按标签保留最新 N 个
+          TAGS=$(echo "$VERSIONS" | jq -r '[.[].metadata.container.tags[]] | unique | .[]' 2>/dev/null)
+          for tag in $TAGS; do
+            # 使用 --arg 安全传递 tag 变量到 jq
+            IDS=$(echo "$VERSIONS" | jq -r --arg tag "$tag" --argjson keep "$KEEP" \
+              '[.[] | select(.metadata.container.tags | index($tag))] 
+              | sort_by(.created_at) | reverse 
+              | .[$keep:] | .[] | .id')
+            for id in $IDS; do
+              [ -n "$id" ] && echo "    删除 tag=$tag id=$id"
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "$DELETE_PREFIX/$id" > /dev/null 2>&1 || true
+            done
+          done
+
+          echo "✅ GHCR 镜像清理完成"
+
+      # --------------------------
+      # 删除所有 Releases 和 Tags
+      # --------------------------
+      - name: Delete all releases and tags
+        if: ${{ inputs.clean_releases_tags == 'true' }}
+        run: |
+          echo "🏷️ 清理 Releases 和 Tags..."
+          REPO="${{ github.repository }}"
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+
+          # 删除所有 Releases
+          PAGE=1
+          REL_COUNT=0
+          while true; do
+            RELEASES=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/releases?per_page=100&page=$PAGE" \
+              | jq -r '.[].id')
+            [ -z "$RELEASES" ] && break
+            for id in $RELEASES; do
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/releases/$id" > /dev/null
+              REL_COUNT=$((REL_COUNT+1))
+              echo "  已删除 release id=$id"
+            done
+            PAGE=$((PAGE+1))
+          done
+          echo "✅ 已删除 $REL_COUNT 个 releases"
+
+          # 删除所有远程 Tags
+          TAGS=$(git ls-remote --tags origin | awk '{print $2}' | sed 's|refs/tags/||' | sed 's|\^{}||' | sort -u)
+          TAG_COUNT=0
+          for tag in $TAGS; do
+            git push origin ":refs/tags/$tag" --quiet 2>/dev/null || true
+            TAG_COUNT=$((TAG_COUNT+1))
+            echo "  已删除 tag: $tag"
+          done
+          echo "✅ 已删除 $TAG_COUNT 个 tags"
+
+      # --------------------------
+      # 删除 GitHub Pages 部署环境
+      # --------------------------
+      - name: Delete GitHub Pages deployment environment
+        if: ${{ inputs.remove_deployments == 'true' }}
+        uses: strumwolf/delete-deployment-environment@v2.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true

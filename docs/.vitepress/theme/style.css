@@ -1,0 +1,43 @@
+/* 博客全图模式：给 Banner 文字区域添加半透明暗色背景 */
+.tk-body-bg-image ~ .tk-layout .tk-banner-content {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 24px 32px !important;
+}
+
+/* 博客模式 Banner 描述文字区域半透明背景 */
+.tk-banner-content__desc {
+  backdrop-filter: blur(4px);
+  background-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 8px;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+/* 博客模式 Banner 描述文字彩虹渐变 */
+.tk-banner-content__desc span {
+  background: linear-gradient(
+    90deg,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82,
+    #f37055
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: .1em;
+  animation: tk-rainbow-shift 4s linear infinite;
+}
+
+@keyframes tk-rainbow-shift {
+  to {
+    background-position: 200% center;
+  }
+}

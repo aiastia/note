@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- 主肉垫 -->
+  <ellipse cx="50" cy="62" rx="22" ry="18" fill="#3c8772"/>
+  
+  <!-- 左上肉垫 -->
+  <ellipse cx="32" cy="38" rx="11" ry="14" fill="#3c8772" transform="rotate(-15 32 38)"/>
+  
+  <!-- 右上肉垫 -->
+  <ellipse cx="68" cy="38" rx="11" ry="14" fill="#3c8772" transform="rotate(15 68 38)"/>
+  
+  <!-- 左下肉垫 -->
+  <ellipse cx="24" cy="56" rx="10" ry="12" fill="#3c8772" transform="rotate(-5 24 56)"/>
+  
+  <!-- 右下肉垫 -->
+  <ellipse cx="76" cy="56" rx="10" ry="12" fill="#3c8772" transform="rotate(5 76 56)"/>
+  
+  <!-- 肉垫高光 -->
+  <ellipse cx="50" cy="60" rx="12" ry="9" fill="#4da88a" opacity="0.5"/>
+  <ellipse cx="32" cy="36" rx="6" ry="8" fill="#4da88a" opacity="0.5" transform="rotate(-15 32 36)"/>
+  <ellipse cx="68" cy="36" rx="6" ry="8" fill="#4da88a" opacity="0.5" transform="rotate(15 68 36)"/>
+  <ellipse cx="24" cy="54" rx="5" ry="7" fill="#4da88a" opacity="0.5" transform="rotate(-5 24 54)"/>
+  <ellipse cx="76" cy="54" rx="5" ry="7" fill="#4da88a" opacity="0.5" transform="rotate(5 76 54)"/>
+</svg>

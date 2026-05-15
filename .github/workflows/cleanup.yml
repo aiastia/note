@@ -1,3 +1,12 @@
+# Full Cleanup - 仓库全面清理工具
+#
+# 大部分功能使用默认 GITHUB_TOKEN 即可。
+# 如果需要清理 GHCR 镜像且遇到 403 错误，请在仓库 Settings > Secrets 中添加：
+#   GH_TOKEN = <Personal Access Token (Classic)>
+# 需要的权限：delete:packages, read:packages, repo
+# Fine-grained PAT 需要：Packages (read & delete), Contents (read & write)
+# 如果未设置 GH_TOKEN，将自动回退使用 GITHUB_TOKEN。
+#
 name: Full Cleanup
 
 on:
@@ -167,7 +176,14 @@ jobs:
           OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
           REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
           PACKAGE=$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')
-          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          # 优先使用 GH_TOKEN（PAT），回退到 GITHUB_TOKEN
+          TOKEN="${{ secrets.GH_TOKEN }}"
+          if [ -z "$TOKEN" ]; then
+            echo "  ℹ️ 未设置 GH_TOKEN secret，使用默认 GITHUB_TOKEN"
+            TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          else
+            echo "  🔑 使用 GH_TOKEN (PAT)"
+          fi
           KEEP=${{ inputs.keep_latest }}
 
           # 尝试获取镜像版本列表（先 org 后 user）

@@ -12,6 +12,7 @@ name: Full Cleanup
 on:
   workflow_dispatch:
     inputs:
+      # ---- gh-pages 类 ----
       clean_gh_pages:
         description: '清理 gh-pages 历史并压缩为 1 个提交'
         required: true
@@ -20,6 +21,15 @@ on:
         options:
           - 'true'
           - 'false'
+      remove_deployments:
+        description: '删除 GitHub Pages 部署环境'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      # ---- Actions 类 ----
       clean_actions:
         description: '清理 Actions 运行记录'
         required: true
@@ -36,6 +46,15 @@ on:
         options:
           - 'true'
           - 'false'
+      clean_artifacts:
+        description: '清理 Actions Artifacts'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      # ---- Docker / GHCR 类 ----
       clean_images:
         description: '清理 GHCR 旧镜像（含 untagged）'
         required: true
@@ -49,22 +68,7 @@ on:
         required: true
         default: '3'
         type: string
-      remove_deployments:
-        description: '删除 GitHub Pages 部署环境'
-        required: true
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
-      clean_artifacts:
-        description: '清理 Actions Artifacts'
-        required: true
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
+      # ---- 其他 ----
       clean_releases_tags:
         description: '清理所有 Releases 和 Tags'
         required: true
@@ -167,6 +171,34 @@ jobs:
           echo "✅ 已删除 $COUNT 个 caches"
 
       # --------------------------
+      # 删除 Actions Artifacts
+      # --------------------------
+      - name: Delete Actions artifacts
+        if: ${{ inputs.clean_artifacts == 'true' }}
+        run: |
+          echo "🗄️ 清理 Actions Artifacts..."
+          REPO="${{ github.repository }}"
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          PAGE=1
+          COUNT=0
+          while true; do
+            RESPONSE=$(curl -s -H "Authorization: token $TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/actions/artifacts?per_page=100&page=$PAGE")
+            IDS=$(echo "$RESPONSE" | jq -r '.artifacts[]?.id // empty')
+            [ -z "$IDS" ] && break
+            for id in $IDS; do
+              curl -s -X DELETE -H "Authorization: token $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/$REPO/actions/artifacts/$id" > /dev/null
+              COUNT=$((COUNT+1))
+              echo "  已删除 artifact id=$id"
+            done
+            PAGE=$((PAGE+1))
+          done
+          echo "✅ 已删除 $COUNT 个 artifacts"
+
+      # --------------------------
       # 清理 GHCR 镜像
       # --------------------------
       - name: Delete GHCR old images
@@ -237,34 +269,6 @@ jobs:
           done
 
           echo "✅ GHCR 镜像清理完成"
-
-      # --------------------------
-      # 删除 Actions Artifacts
-      # --------------------------
-      - name: Delete Actions artifacts
-        if: ${{ inputs.clean_artifacts == 'true' }}
-        run: |
-          echo "🗄️ 清理 Actions Artifacts..."
-          REPO="${{ github.repository }}"
-          TOKEN="${{ secrets.GITHUB_TOKEN }}"
-          PAGE=1
-          COUNT=0
-          while true; do
-            RESPONSE=$(curl -s -H "Authorization: token $TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/$REPO/actions/artifacts?per_page=100&page=$PAGE")
-            IDS=$(echo "$RESPONSE" | jq -r '.artifacts[]?.id // empty')
-            [ -z "$IDS" ] && break
-            for id in $IDS; do
-              curl -s -X DELETE -H "Authorization: token $TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                "https://api.github.com/repos/$REPO/actions/artifacts/$id" > /dev/null
-              COUNT=$((COUNT+1))
-              echo "  已删除 artifact id=$id"
-            done
-            PAGE=$((PAGE+1))
-          done
-          echo "✅ 已删除 $COUNT 个 artifacts"
 
       # --------------------------
       # 删除所有 Releases 和 Tags

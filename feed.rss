@@ -4,7 +4,7 @@
         <title>YOLO的笔记</title>
         <link>https://my.aiastia.me/note/</link>
         <description>YOLO的技术博客 - 记录技术探索与折腾之路</description>
-        <lastBuildDate>Fri, 15 May 2026 02:21:23 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 May 2026 09:13:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2026-present YOLO</copyright>
@@ -12,25 +12,25 @@
             <title><![CDATA[归档]]></title>
             <link>https://my.aiastia.me/note/@pages/archivesPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/archivesPage</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[文章清单]]></title>
             <link>https://my.aiastia.me/note/@pages/articleOverviewPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/articleOverviewPage</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[转跳]]></title>
             <link>https://my.aiastia.me/note/@pages/riskLinkPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/riskLinkPage</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Clawy 的碎碎念]]></title>
             <link>https://my.aiastia.me/note/ai/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&lt;style
 /* 仅在此页面隐藏 Teek 主题自动生成的页面标题和分隔线 */
 .vp-doc:has(.clawy-page) div &gt; h1:first-child { disp]]></description>
@@ -70,13 +70,13 @@
         <item>
             <link>https://my.aiastia.me/note/ai/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/目录</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[提示词笔记]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[提示词笔记
 西米露自己整理调整的小说提示词合集。
 涵盖写作辅助、人设生成、世界观构建、大纲规划等场景的提示词。]]></description>
@@ -92,7 +92,7 @@
             <title><![CDATA[世界构建]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/世界构建</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/世界构建</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 用于生成小说世界观设定，包括时间背景、地理位置、氛围基调和世界规则
 &gt; 参数: ["title", "theme", "genre", "descr]]></description>
@@ -248,7 +248,7 @@
             <title><![CDATA[单个角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/单个角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/单个角色生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成单个角色的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -409,7 +409,7 @@
             <title><![CDATA[大纲生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 根据项目信息生成完整的章节大纲
 &gt; 参数: ["title", "theme", "genre", "chapter_count", "narrat]]></description>
@@ -566,7 +566,7 @@
             <title><![CDATA[大纲续写]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲续写</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲续写</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 基于已有章节续写大纲
 &gt; 参数: ["title", "theme", "genre", "narrative_perspective", "cha]]></description>
@@ -798,7 +798,7 @@
             <title><![CDATA[情节分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/情节分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/情节分析</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 情节分析
 &gt; 描述: 深度分析章节的剧情、钩子、伏笔等
 &gt; 参数: ["chapter_number", "title", "content", "word_count"]]></description>
@@ -1204,7 +1204,7 @@
             <title><![CDATA[批量角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/批量角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/批量角色生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 批量生成多个角色和组织，建立角色关系网络
 &gt; 参数: ["count", "time_period", "location", "atmospher]]></description>
@@ -1392,7 +1392,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 
@@ -1540,7 +1540,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 &gt; 参数: ["project_title", "genre", "chapter_number",]]></description>
@@ -1655,7 +1655,7 @@
             <title><![CDATA[章节创作-1-1模式（人味）（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -1798,7 +1798,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[章节创作-1-1模式（第1章deepseek）
 
 
@@ -1966,7 +1966,7 @@
             <title><![CDATA[章节创作-1-1模式（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -2231,7 +2231,7 @@
             <title><![CDATA[组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/组织生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成组织/势力的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -2348,7 +2348,7 @@
             <title><![CDATA[职业体系生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/职业体系生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/职业体系生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 根据世界观和项目简介自动生成完整的职业体系，包括主职业和副职业
 &gt; 参数: ["title", "genre", "theme", "descrip]]></description>
@@ -2531,7 +2531,7 @@
             <title><![CDATA[自动组织分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织分析</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新组织
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -2710,7 +2710,7 @@
             <title><![CDATA[自动组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 根据剧情需求自动生成新组织的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -2868,7 +2868,7 @@
             <title><![CDATA[自动角色分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色分析</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新角色
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -3007,7 +3007,7 @@
             <title><![CDATA[自动角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色生成</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 根据剧情需求自动生成新角色的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -3197,7 +3197,7 @@
             <title><![CDATA[笔记]]></title>
             <link>https://my.aiastia.me/note/posts/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
             <description><![CDATA[&lt;div class="pi"
 &lt;div class="pi-hero"&gt;
   &lt;div class="pi-hero-glow"&gt;&lt;/div&gt;
@@ -3263,7 +3263,197 @@
         <item>
             <link>https://my.aiastia.me/note/posts/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/目录</guid>
-            <pubDate>Fri, 15 May 2026 02:20:57 GMT</pubDate>
+            <pubDate>Fri, 22 May 2026 09:12:26 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu Netplan 静态 IP 配置指南（含 IPv6）]]></title>
+            <link>https://my.aiastia.me/note/posts/202605/22-ubuntu-netplan-static-ip</link>
+            <guid isPermaLink="false">https://my.aiastia.me/note/posts/202605/22-ubuntu-netplan-static-ip</guid>
+            <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+# Ubuntu Netplan 静态 IP 配置指南（含 IPv6）
+
+Netplan 是 Ubuntu 18.04+ 的默认网络配置工具，配置文件放在 `/etc/netplan/` 目录下，YAML 格式。
+
+> ⚠️ 修改前建议备份：`sudo cp /etc/netplan/50-manual-config.yaml{,.bak}`
+
+## 配置文件位置
+
+```bash
+/etc/netplan/50-manual-config.yaml
+```
+
+文件名不固定，`/etc/netplan/` 下的 `.yaml` 文件都会被读取，按字母顺序合并。
+
+## 完整模板（IPv4 + IPv6）
+
+```yaml
+network:
+  version: 2
+  renderer: networkd          # 桌面版用 NetworkManager，服务器用 networkd
+  ethernets:
+    eth0:                     # 网卡名，用 `ip a` 查看，可能是 ens3、enp1s0 等
+      dhcp4: false
+      dhcp6: false
+
+      # ]]></description>
+            <content:encoded><![CDATA[<h1 id="ubuntu-netplan-静态-ip-配置指南-含-ipv6" tabindex="-1">Ubuntu Netplan 静态 IP 配置指南（含 IPv6） <a class="header-anchor" href="#ubuntu-netplan-静态-ip-配置指南-含-ipv6" aria-label="Permalink to &quot;Ubuntu Netplan 静态 IP 配置指南（含 IPv6）&quot;"></a></h1>
+<p>Netplan 是 Ubuntu 18.04+ 的默认网络配置工具，配置文件放在 <code>/etc/netplan/</code> 目录下，YAML 格式。</p>
+<blockquote>
+<p>⚠️ 修改前建议备份：<code>sudo cp /etc/netplan/50-manual-config.yaml{,.bak}</code></p>
+</blockquote>
+<h2 id="配置文件位置" tabindex="-1">配置文件位置 <a class="header-anchor" href="#配置文件位置" aria-label="Permalink to &quot;配置文件位置&quot;"></a></h2>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">/etc/netplan/50-manual-config.yaml</span></span></code></pre>
+</div><p>文件名不固定，<code>/etc/netplan/</code> 下的 <code>.yaml</code> 文件都会被读取，按字母顺序合并。</p>
+<h2 id="完整模板-ipv4-ipv6" tabindex="-1">完整模板（IPv4 + IPv6） <a class="header-anchor" href="#完整模板-ipv4-ipv6" aria-label="Permalink to &quot;完整模板（IPv4 + IPv6）&quot;"></a></h2>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  renderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">networkd</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">          # 桌面版用 NetworkManager，服务器用 networkd</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  ethernets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    eth0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:                     </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 网卡名，用 `ip a` 查看，可能是 ens3、enp1s0 等</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp4</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp6</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # ---- IPv4 ----</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">192.168.1.100/24</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      routes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">default</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">192.168.1.1</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      nameservers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">        addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">8.8.8.8</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">1.1.1.1</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">        search</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">localdomain</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # ---- IPv6 ----</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # addresses 里直接追加 IPv6 地址即可</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # 例如下面是 /128 单地址 + /64 子网两种常见写法：</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # addresses 里可混合写 IPv4 和 IPv6：</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # addresses:</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #   - 192.168.1.100/24</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #   - "2001:db8:1234::100/128"</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #   - "2001:db8:1234::/64"        # 如果你有整个 /64 段</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # IPv6 默认路由（网关用 link-local 或全局地址）</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # routes:</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #   - to: "::/0"</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #     via: "fe80::1"              # VPS 常见：用 link-local 网关</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # IPv6 DNS</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # nameservers:</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #   addresses:</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #     - "2001:4860:4860::8888"</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      #     - "2606:4700:4700::1111"</span></span></code></pre>
+</div><h2 id="合并写法-更常用" tabindex="-1">合并写法（更常用） <a class="header-anchor" href="#合并写法-更常用" aria-label="Permalink to &quot;合并写法（更常用）&quot;"></a></h2>
+<p>实际中 IPv4 和 IPv6 写在同一个 addresses 列表里：</p>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  renderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">networkd</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  ethernets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    eth0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp4</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp6</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">192.168.1.100/24</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:db8:1234::100/128"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      routes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">default</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">192.168.1.1</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"::/0"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"fe80::1"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      nameservers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">        addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">8.8.8.8</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">1.1.1.1</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:4860:4860::8888"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2606:4700:4700::1111"</span></span></code></pre>
+</div><h2 id="vps-常见场景-hetzner-vultr-等" tabindex="-1">VPS 常见场景（Hetzner/Vultr 等） <a class="header-anchor" href="#vps-常见场景-hetzner-vultr-等" aria-label="Permalink to &quot;VPS 常见场景（Hetzner/Vultr 等）&quot;"></a></h2>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  renderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">networkd</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  ethernets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    ens3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp4</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp6</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"203.0.113.50/24"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:db8:abcd::1/64"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      routes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">default</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"203.0.113.1"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"::/0"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"fe80::1"</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      nameservers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">        addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">8.8.8.8</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:4860:4860::8888"</span></span></code></pre>
+</div><h2 id="只用-dhcp-最简单" tabindex="-1">只用 DHCP（最简单） <a class="header-anchor" href="#只用-dhcp-最简单" aria-label="Permalink to &quot;只用 DHCP（最简单）&quot;"></a></h2>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  renderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">networkd</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  ethernets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    eth0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp4</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp6</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span></code></pre>
+</div><h2 id="ipv6-只开-slaac-自动获取" tabindex="-1">IPv6 只开 SLAAC（自动获取） <a class="header-anchor" href="#ipv6-只开-slaac-自动获取" aria-label="Permalink to &quot;IPv6 只开 SLAAC（自动获取）&quot;"></a></h2>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  renderer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">networkd</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  ethernets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    eth0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      dhcp4</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">192.168.1.100/24</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      routes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        - </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">to</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">default</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">          via</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">192.168.1.1</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      ipv6-accept-ra</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      # 接受路由通告，自动配置 IPv6</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      nameservers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">        addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">8.8.8.8</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:4860:4860::8888"</span></span></code></pre>
+</div><h2 id="应用配置" tabindex="-1">应用配置 <a class="header-anchor" href="#应用配置" aria-label="Permalink to &quot;应用配置&quot;"></a></h2>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 验证语法（不会真正生效）</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> netplan</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> try</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 直接应用</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> netplan</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> apply</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># debug 模式（排错用）</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> netplan</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --debug</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> apply</span></span></code></pre>
+</div><blockquote>
+<p><code>netplan try</code> 会在 120 秒后自动回滚，防止把自己踢下线。<strong>远程操作强烈建议用它。</strong></p>
+</blockquote>
+<h2 id="常见问题" tabindex="-1">常见问题 <a class="header-anchor" href="#常见问题" aria-label="Permalink to &quot;常见问题&quot;"></a></h2>
+<h3 id="_1-网卡名不知道是什么" tabindex="-1">1. 网卡名不知道是什么 <a class="header-anchor" href="#_1-网卡名不知道是什么" aria-label="Permalink to &quot;1. 网卡名不知道是什么&quot;"></a></h3>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ip</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> a</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 或</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ls</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /sys/class/net/</span></span></code></pre>
+</div><h3 id="_2-ipv6-不通" tabindex="-1">2. IPv6 不通 <a class="header-anchor" href="#_2-ipv6-不通" aria-label="Permalink to &quot;2. IPv6 不通&quot;"></a></h3>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 检查地址是否生效</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ip</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -6</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> addr</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> show</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> eth0</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 测试连通性</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ping6</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> google.com</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># 查看路由</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ip</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -6</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> route</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> show</span></span></code></pre>
+</div><h3 id="_3-yaml-缩进报错" tabindex="-1">3. YAML 缩进报错 <a class="header-anchor" href="#_3-yaml-缩进报错" aria-label="Permalink to &quot;3. YAML 缩进报错&quot;"></a></h3>
+<p>Netplan 对缩进<strong>非常敏感</strong>，必须用空格（不能用 Tab）。可以用 <code>netplan generate</code> 先检查语法。</p>
+<h3 id="_4-多个-ip-段" tabindex="-1">4. 多个 IP / 段 <a class="header-anchor" href="#_4-多个-ip-段" aria-label="Permalink to &quot;4. 多个 IP / 段&quot;"></a></h3>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">addresses</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">192.168.1.100/24</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">192.168.1.101/32</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">        # 额外 IP</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2001:db8::100/128"</span></span></code></pre>
+</div><hr>
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a href="https://netplan.io/reference" target="_blank" rel="noreferrer">Netplan 官方文档</a></li>
+<li><a href="https://ubuntu.com/server/docs/network-configuration" target="_blank" rel="noreferrer">Ubuntu 网络配置</a></li>
+</ul>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Redis 常用命令速查]]></title>

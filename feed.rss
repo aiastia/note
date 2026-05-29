@@ -4,7 +4,7 @@
         <title>YOLO的笔记</title>
         <link>https://my.aiastia.me/note/</link>
         <description>YOLO的技术博客 - 记录技术探索与折腾之路</description>
-        <lastBuildDate>Mon, 25 May 2026 08:28:24 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 May 2026 03:06:10 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2026-present YOLO</copyright>
@@ -12,25 +12,25 @@
             <title><![CDATA[归档]]></title>
             <link>https://my.aiastia.me/note/@pages/archivesPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/archivesPage</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[文章清单]]></title>
             <link>https://my.aiastia.me/note/@pages/articleOverviewPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/articleOverviewPage</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[转跳]]></title>
             <link>https://my.aiastia.me/note/@pages/riskLinkPage</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/@pages/riskLinkPage</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Clawy 的碎碎念]]></title>
             <link>https://my.aiastia.me/note/ai/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&lt;style
 /* 仅在此页面隐藏 Teek 主题自动生成的页面标题和分隔线 */
 .vp-doc:has(.clawy-page) div &gt; h1:first-child { disp]]></description>
@@ -70,13 +70,13 @@
         <item>
             <link>https://my.aiastia.me/note/ai/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/ai/目录</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[提示词笔记]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[提示词笔记
 西米露自己整理调整的小说提示词合集。
 涵盖写作辅助、人设生成、世界观构建、大纲规划等场景的提示词。]]></description>
@@ -92,7 +92,7 @@
             <title><![CDATA[世界构建]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/世界构建</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/世界构建</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 用于生成小说世界观设定，包括时间背景、地理位置、氛围基调和世界规则
 &gt; 参数: ["title", "theme", "genre", "descr]]></description>
@@ -248,7 +248,7 @@
             <title><![CDATA[单个角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/单个角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/单个角色生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成单个角色的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -409,7 +409,7 @@
             <title><![CDATA[大纲生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 根据项目信息生成完整的章节大纲
 &gt; 参数: ["title", "theme", "genre", "chapter_count", "narrat]]></description>
@@ -566,7 +566,7 @@
             <title><![CDATA[大纲续写]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/大纲续写</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/大纲续写</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 大纲生成
 &gt; 描述: 基于已有章节续写大纲
 &gt; 参数: ["title", "theme", "genre", "narrative_perspective", "cha]]></description>
@@ -798,7 +798,7 @@
             <title><![CDATA[情节分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/情节分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/情节分析</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 情节分析
 &gt; 描述: 深度分析章节的剧情、钩子、伏笔等
 &gt; 参数: ["chapter_number", "title", "content", "word_count"]]></description>
@@ -1204,7 +1204,7 @@
             <title><![CDATA[批量角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/批量角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/批量角色生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 批量生成多个角色和组织，建立角色关系网络
 &gt; 参数: ["count", "time_period", "location", "atmospher]]></description>
@@ -1392,7 +1392,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）-deepseek版</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 
@@ -1540,7 +1540,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第1章）</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：章节创作（用于第1章，无前置章节）
 &gt; 参数: ["project_title", "genre", "chapter_number",]]></description>
@@ -1655,7 +1655,7 @@
             <title><![CDATA[章节创作-1-1模式（人味）（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后(人味）</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -1798,7 +1798,7 @@
             <title><![CDATA[章节创作-1-1模式（第1章deepseek）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）-deepseek版</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[章节创作-1-1模式（第1章deepseek）
 
 
@@ -1966,7 +1966,7 @@
             <title><![CDATA[章节创作-1-1模式（第2章及以后）]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/章节创作-1-1模式（第2章及以后）</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 章节创作
 &gt; 描述: 1-1模式：基于上一章内容创作新章节（用于第2章及以后）
 &gt; 参数: ["project_title", "genre", "chapter_num]]></description>
@@ -2231,7 +2231,7 @@
             <title><![CDATA[组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/组织生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 角色生成
 &gt; 描述: 生成组织/势力的详细设定
 &gt; 参数: ["project_context", "user_input"]
@@ -2348,7 +2348,7 @@
             <title><![CDATA[职业体系生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/职业体系生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/职业体系生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 世界构建
 &gt; 描述: 根据世界观和项目简介自动生成完整的职业体系，包括主职业和副职业
 &gt; 参数: ["title", "genre", "theme", "descrip]]></description>
@@ -2531,7 +2531,7 @@
             <title><![CDATA[自动组织分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织分析</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新组织
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -2710,7 +2710,7 @@
             <title><![CDATA[自动组织生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动组织生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动组织生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动组织引入
 &gt; 描述: 根据剧情需求自动生成新组织的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -2868,7 +2868,7 @@
             <title><![CDATA[自动角色分析]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色分析</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色分析</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 分析新生成的大纲，判断是否需要引入新角色
 &gt; 参数: ["title", "genre", "theme", "time_period", "l]]></description>
@@ -3007,7 +3007,7 @@
             <title><![CDATA[自动角色生成]]></title>
             <link>https://my.aiastia.me/note/mumuainovel/自动角色生成</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/mumuainovel/自动角色生成</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&gt; 分类: 自动角色引入
 &gt; 描述: 根据剧情需求自动生成新角色的完整设定
 &gt; 参数: ["title", "genre", "theme", "time_period", "loc]]></description>
@@ -3197,7 +3197,7 @@
             <title><![CDATA[笔记]]></title>
             <link>https://my.aiastia.me/note/posts/</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
             <description><![CDATA[&lt;div class="pi"
 &lt;div class="pi-hero"&gt;
   &lt;div class="pi-hero-glow"&gt;&lt;/div&gt;
@@ -3263,7 +3263,205 @@
         <item>
             <link>https://my.aiastia.me/note/posts/目录</link>
             <guid isPermaLink="false">https://my.aiastia.me/note/posts/目录</guid>
-            <pubDate>Mon, 25 May 2026 08:27:54 GMT</pubDate>
+            <pubDate>Fri, 29 May 2026 03:05:25 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu 24 解决 AdGuard Home 53 端口被占用问题]]></title>
+            <link>https://my.aiastia.me/note/posts/202605/29-ubuntu24-adguard-home-53-port</link>
+            <guid isPermaLink="false">https://my.aiastia.me/note/posts/202605/29-ubuntu24-adguard-home-53-port</guid>
+            <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+# Ubuntu 24 解决 AdGuard Home 53 端口被占用问题
+
+Ubuntu 24 默认启用了 `systemd-resolved`，它会占用 53 端口作为 DNS Stub Listener，导致 AdGuard Home 无法绑定 DNS 端口。
+
+最常见的报错：
+
+```
+listen tcp 0.0.0.0:53: bind: address already in use
+```
+
+或者：
+
+```
+bind: address already in use
+```
+
+本质上是 `systemd-resolved` 抢占了 `127.0.0.53:53`。
+
+## 确认是谁占用了 53 端口
+
+```bash
+sudo ss -tulnp | grep :53
+```
+
+如果看到 `systemd-resolved`，说明就是它在捣鬼。
+
+## 推荐方案：禁用 DNS Stub Listener（Ubuntu 24 最稳定）
+
+### 第一步：编辑 resolved.conf
+
+```bash
+sudo nano /etc/systemd/resolved.conf
+```
+
+找到 `#DNSStubListener=yes`，修改为：
+
+```ini
+[Resolve]
+DNS=1.1.1.1
+DNSStubListener=no
+```
+
+- `DNSStubListener=no`：关闭 53 端口监听，释放给 AdGuard Home
+- `DNS=1.1.1.1`：设置一个备用上游 DNS，确保系统自身解析不受影响
+
+### 第二步：重建 resolv.conf
+
+这是 Ubuntu 24 **非常关键**的一步。
+
+先删除原来的软链接：
+
+```bash
+sudo rm /etc/resolv.conf
+```
+
+然后指向 systemd-resolved 生成的真实配置：
+
+```bash
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+### 第三步：重启 systemd-resolved
+
+```bash
+sudo systemctl restart systemd-resolved
+```
+
+### 第四步：确认 53 端口已释放
+
+```bash
+sudo ss -tulnp | grep :53
+```
+
+正常情况下不应该再看到 `127.0.0.53:53`。
+
+### 第五步：启动 AdGuard Home
+
+Docker 部署：
+
+```bash
+docker compose up -d
+```
+
+原生安装：
+
+```bash
+sudo ./AdGuardHome -s start
+```
+
+## Docker 部署注意事项
+
+如果你用 Docker 部署 AdGuard Home，端口映射必须是真正的 53：
+
+```yaml
+ports:
+  - "53:53/tcp"
+  - "53:53/udp"
+```
+
+**不要改成 `5353:53`**——大多数设备（路由器、手机等）无法指定 DNS 端口，改了之后 DNS 查询会完全失效。
+
+## 备选方案：直接禁用 systemd-resolved
+
+```bash
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+```
+
+这种方式更暴力，但 Ubuntu 24 有时会导致系统自身的 DNS 解析失效，因此**更推荐上面的 `DNSStubListener=no` 方案**。
+
+## 总结
+
+| 方案 | 推荐度 | 风险 |
+|]]></description>
+            <content:encoded><![CDATA[<h1 id="ubuntu-24-解决-adguard-home-53-端口被占用问题" tabindex="-1">Ubuntu 24 解决 AdGuard Home 53 端口被占用问题 <a class="header-anchor" href="#ubuntu-24-解决-adguard-home-53-端口被占用问题" aria-label="Permalink to &quot;Ubuntu 24 解决 AdGuard Home 53 端口被占用问题&quot;"></a></h1>
+<p>Ubuntu 24 默认启用了 <code>systemd-resolved</code>，它会占用 53 端口作为 DNS Stub Listener，导致 AdGuard Home 无法绑定 DNS 端口。</p>
+<p>最常见的报错：</p>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>listen tcp 0.0.0.0:53: bind: address already in use</span></span></code></pre>
+</div><p>或者：</p>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>bind: address already in use</span></span></code></pre>
+</div><p>本质上是 <code>systemd-resolved</code> 抢占了 <code>127.0.0.53:53</code>。</p>
+<h2 id="确认是谁占用了-53-端口" tabindex="-1">确认是谁占用了 53 端口 <a class="header-anchor" href="#确认是谁占用了-53-端口" aria-label="Permalink to &quot;确认是谁占用了 53 端口&quot;"></a></h2>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ss</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -tulnp</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> grep</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> :53</span></span></code></pre>
+</div><p>如果看到 <code>systemd-resolved</code>，说明就是它在捣鬼。</p>
+<h2 id="推荐方案-禁用-dns-stub-listener-ubuntu-24-最稳定" tabindex="-1">推荐方案：禁用 DNS Stub Listener（Ubuntu 24 最稳定） <a class="header-anchor" href="#推荐方案-禁用-dns-stub-listener-ubuntu-24-最稳定" aria-label="Permalink to &quot;推荐方案：禁用 DNS Stub Listener（Ubuntu 24 最稳定）&quot;"></a></h2>
+<h3 id="第一步-编辑-resolved-conf" tabindex="-1">第一步：编辑 resolved.conf <a class="header-anchor" href="#第一步-编辑-resolved-conf" aria-label="Permalink to &quot;第一步：编辑 resolved.conf&quot;"></a></h3>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> nano</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /etc/systemd/resolved.conf</span></span></code></pre>
+</div><p>找到 <code>#DNSStubListener=yes</code>，修改为：</p>
+<div class="language-ini vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ini</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">[Resolve]</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">DNS</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=1.1.1.1</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">DNSStubListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=no</span></span></code></pre>
+</div><ul>
+<li><code>DNSStubListener=no</code>：关闭 53 端口监听，释放给 AdGuard Home</li>
+<li><code>DNS=1.1.1.1</code>：设置一个备用上游 DNS，确保系统自身解析不受影响</li>
+</ul>
+<h3 id="第二步-重建-resolv-conf" tabindex="-1">第二步：重建 resolv.conf <a class="header-anchor" href="#第二步-重建-resolv-conf" aria-label="Permalink to &quot;第二步：重建 resolv.conf&quot;"></a></h3>
+<p>这是 Ubuntu 24 <strong>非常关键</strong>的一步。</p>
+<p>先删除原来的软链接：</p>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> rm</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /etc/resolv.conf</span></span></code></pre>
+</div><p>然后指向 systemd-resolved 生成的真实配置：</p>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ln</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /run/systemd/resolve/resolv.conf</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /etc/resolv.conf</span></span></code></pre>
+</div><h3 id="第三步-重启-systemd-resolved" tabindex="-1">第三步：重启 systemd-resolved <a class="header-anchor" href="#第三步-重启-systemd-resolved" aria-label="Permalink to &quot;第三步：重启 systemd-resolved&quot;"></a></h3>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemctl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> restart</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemd-resolved</span></span></code></pre>
+</div><h3 id="第四步-确认-53-端口已释放" tabindex="-1">第四步：确认 53 端口已释放 <a class="header-anchor" href="#第四步-确认-53-端口已释放" aria-label="Permalink to &quot;第四步：确认 53 端口已释放&quot;"></a></h3>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ss</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -tulnp</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> |</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> grep</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> :53</span></span></code></pre>
+</div><p>正常情况下不应该再看到 <code>127.0.0.53:53</code>。</p>
+<h3 id="第五步-启动-adguard-home" tabindex="-1">第五步：启动 AdGuard Home <a class="header-anchor" href="#第五步-启动-adguard-home" aria-label="Permalink to &quot;第五步：启动 AdGuard Home&quot;"></a></h3>
+<p>Docker 部署：</p>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">docker</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> compose</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> up</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -d</span></span></code></pre>
+</div><p>原生安装：</p>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> ./AdGuardHome</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -s</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> start</span></span></code></pre>
+</div><h2 id="docker-部署注意事项" tabindex="-1">Docker 部署注意事项 <a class="header-anchor" href="#docker-部署注意事项" aria-label="Permalink to &quot;Docker 部署注意事项&quot;"></a></h2>
+<p>如果你用 Docker 部署 AdGuard Home，端口映射必须是真正的 53：</p>
+<div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ports</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"53:53/tcp"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"53:53/udp"</span></span></code></pre>
+</div><p><strong>不要改成 <code>5353:53</code></strong>——大多数设备（路由器、手机等）无法指定 DNS 端口，改了之后 DNS 查询会完全失效。</p>
+<h2 id="备选方案-直接禁用-systemd-resolved" tabindex="-1">备选方案：直接禁用 systemd-resolved <a class="header-anchor" href="#备选方案-直接禁用-systemd-resolved" aria-label="Permalink to &quot;备选方案：直接禁用 systemd-resolved&quot;"></a></h2>
+<div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemctl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> disable</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemd-resolved</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemctl</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> stop</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> systemd-resolved</span></span></code></pre>
+</div><p>这种方式更暴力，但 Ubuntu 24 有时会导致系统自身的 DNS 解析失效，因此<strong>更推荐上面的 <code>DNSStubListener=no</code> 方案</strong>。</p>
+<h2 id="总结" tabindex="-1">总结 <a class="header-anchor" href="#总结" aria-label="Permalink to &quot;总结&quot;"></a></h2>
+<table tabindex="0">
+<thead>
+<tr>
+<th>方案</th>
+<th>推荐度</th>
+<th>风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DNSStubListener=no</code> + 重建 resolv.conf</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>低，系统 DNS 不受影响</td>
+</tr>
+<tr>
+<td>直接禁用 systemd-resolved</td>
+<td>⭐⭐</td>
+<td>高，可能导致系统 DNS 失效</td>
+</tr>
+</tbody>
+</table>
+<p>核心思路就是：<strong>让 systemd-resolved 别监听 53 端口，把位置让给 AdGuard Home</strong>。</p>
+<h2 id="参考" tabindex="-1">参考 <a class="header-anchor" href="#参考" aria-label="Permalink to &quot;参考&quot;"></a></h2>
+<ul>
+<li><a href="https://blog.einverne.info/post/2024/01/adguard-home-53-port-systemd-resolve.html" target="_blank" rel="noreferrer">Einverne - AdGuard Home 53 端口与 systemd-resolved 冲突解决</a></li>
+<li><a href="https://localtonet.com/blog/how-to-self-host-adguard-home" target="_blank" rel="noreferrer">Localtonet - How to Self-Host AdGuard Home</a></li>
+<li><a href="https://ramnode.com/guides/adguard-home" target="_blank" rel="noreferrer">RamNode - AdGuard Home Guide</a></li>
+</ul>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[ESXi 通过 SSH 修改管理 IP]]></title>
